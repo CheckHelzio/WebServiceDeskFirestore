@@ -1,20 +1,977 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<app-header-layout fullbleed>
+  <app-header fixed shadow slot="header">
+    <app-toolbar id="toolbar">
+      <img src="/assets/imagenes/cta.png" id="logo_cta">
+      <div main-title>Service Desk CUCSH</div>
+      <div *ngIf="afAuth.authState | async as user; else showLogin">
+        <div [ngSwitch]="user.email">
+          <div *ngSwitchCase="'oscar.mendez@csh.udg.mx'" #avatar id="avatar" style="width: 32px; height: 32px; overflow: hidden; border-radius: 50%; background-size: cover;
+    background-position: center; background-image: url('/assets/imagenes/oscar.jpg')"
+               (click)="logoutDialog(avatar, logout_dialog)">
+          </div>
+          <div *ngSwitchCase="'idania.gomez@csh.udg.mx'" #avatar id="avatar" style="width: 32px; height: 32px; overflow: hidden; border-radius: 50%; background-size: cover;
+    background-position: center; background-image: url('/assets/imagenes/idania.png')"
+               (click)="logoutDialog(avatar, logout_dialog)">
+          </div>
+          <div *ngSwitchCase="'juan.mancilla@csh.udg.mx'" #avatar id="avatar" style="width: 32px; height: 32px; overflow: hidden; border-radius: 50%; background-size: cover;
+    background-position: center; background-image: url('/assets/imagenes/juan.png')"
+               (click)="logoutDialog(avatar, logout_dialog)">
+          </div>
+          <div *ngSwitchCase="'hiram.franco@csh.udg.mx'" #avatar id="avatar" style="width: 32px; height: 32px; overflow: hidden; border-radius: 50%; background-size: cover;
+    background-position: center; background-image: url('/assets/imagenes/hiram.jpg')"
+               (click)="logoutDialog(avatar, logout_dialog)">
+          </div>
+          <div *ngSwitchCase="'ricardo.cortes@csh.udg.mx'" #avatar id="avatar" style="width: 32px; height: 32px; overflow: hidden; border-radius: 50%; background-size: cover;
+    background-position: center; background-image: url('/assets/imagenes/ricardo.png')"
+               (click)="logoutDialog(avatar, logout_dialog)">
+          </div>
+          <div *ngSwitchCase="'teresa.dlsantos@csh.udg.mx'" #avatar id="avatar" style="width: 32px; height: 32px; overflow: hidden; border-radius: 50%; background-size: cover;
+    background-position: center; background-image: url('/assets/imagenes/tere.png')"
+               (click)="logoutDialog(avatar, logout_dialog)">
+          </div>
+          <div *ngSwitchCase="'deleon.jonathan@csh.udg.mx'" #avatar id="avatar" style="width: 32px; height: 32px; overflow: hidden; border-radius: 50%; background-size: cover;
+    background-position: center; background-image: url('/assets/imagenes/jona.png')"
+               (click)="logoutDialog(avatar, logout_dialog)">
+          </div>
+          <div *ngSwitchCase="'jose.carrillom@csh.udg.mx'" #avatar id="avatar" style="width: 32px; height: 32px; overflow: hidden; border-radius: 50%; background-size: cover;
+    background-position: center; background-image: url('/assets/imagenes/gera.png')"
+               (click)="logoutDialog(avatar, logout_dialog)">
+          </div>
+          <div *ngSwitchCase="'eduardo.solano@redudg.udg.mx'" #avatar id="avatar" style="width: 32px; height: 32px; overflow: hidden; border-radius: 50%; background-size: cover;
+    background-position: center; background-image: url('/assets/imagenes/solano.png')"
+               (click)="logoutDialog(avatar, logout_dialog)">
+          </div>
+          <div *ngSwitchCase="'octavio.cortazar@csh.udg.mx'" #avatar id="avatar" style="width: 32px; height: 32px; overflow: hidden; border-radius: 50%; background-size: cover;
+    background-position: center; background-image: url('/assets/imagenes/octavio.png')"
+               (click)="logoutDialog(avatar, logout_dialog)">
+          </div>
+          <div *ngSwitchCase="'oswaldo.mendoza@csh.udg.mx'" #avatar id="avatar" style="width: 32px; height: 32px; overflow: hidden; border-radius: 50%; background-size: cover;
+    background-position: center; background-image: url('/assets/imagenes/oswaldo.png')"
+               (click)="logoutDialog(avatar, logout_dialog)">
+          </div>
+          <div *ngSwitchCase="'elba.moralesg@csh.udg.mx'" #avatar id="avatar" style="width: 32px; height: 32px; overflow: hidden; border-radius: 50%; background-size: cover;
+    background-position: center; background-image: url('/assets/imagenes/elba.png')"
+               (click)="logoutDialog(avatar, logout_dialog)">
+          </div>
+          <div *ngSwitchCase="'hector.shimizu@csh.udg.mx'" #avatar id="avatar" style="width: 32px; height: 32px; overflow: hidden; border-radius: 50%; background-size: cover;
+    background-position: center; background-image: url('/assets/imagenes/hector.png')"
+               (click)="logoutDialog(avatar, logout_dialog)">
+          </div>
+          <div *ngSwitchCase="'eduardo.salazar@csh.udg.mx'" #avatar id="avatar" style="width: 32px; height: 32px; overflow: hidden; border-radius: 50%; background-size: cover;
+    background-position: center; background-image: url('/assets/imagenes/lalo.png')"
+               (click)="logoutDialog(avatar, logout_dialog)">
+          </div>
+          <div *ngSwitchCase="'enrique.vega@csh.udg.mx'" #avatar id="avatar" style="width: 32px; height: 32px; overflow: hidden; border-radius: 50%; background-size: cover;
+    background-position: center; background-image: url('/assets/imagenes/enrique.png')"
+               (click)="logoutDialog(avatar, logout_dialog)">
+          </div>
+          <div *ngSwitchCase="'emmanuelchacon_1@csh.udg.mx'" #avatar id="avatar" style="width: 32px; height: 32px; overflow: hidden; border-radius: 50%; background-size: cover;
+    background-position: center; background-image: url('/assets/imagenes/manny.png')"
+               (click)="logoutDialog(avatar, logout_dialog)">
+          </div>
+          <div *ngSwitchCase="'omara@csh.udg.mx'" #avatar id="avatar" style="width: 32px; height: 32px; overflow: hidden; border-radius: 50%; background-size: cover;
+    background-position: center; background-image: url('/assets/imagenes/omar.png')"
+               (click)="logoutDialog(avatar, logout_dialog)">
+          </div>
+          <div *ngSwitchCase="'zyanya.lopez@csh.udg.mx'" #avatar id="avatar" style="width: 32px; height: 32px; overflow: hidden; border-radius: 50%; background-size: cover;
+    background-position: center; background-image: url('/assets/imagenes/zyan.png')"
+               (click)="logoutDialog(avatar, logout_dialog)">
+          </div>
+          <div *ngSwitchCase="'nancy.verdin@csh.udg.mx'" #avatar id="avatar" style="width: 32px; height: 32px; overflow: hidden; border-radius: 50%; background-size: cover;
+    background-position: center; background-image: url('/assets/imagenes/nancy.png')"
+               (click)="logoutDialog(avatar, logout_dialog)">
+          </div>
+        </div>
+      </div>
+      <ng-template #showLogin>
+        <paper-icon-button icon="social:person-add" onclick="dialogIniciarSesion.open();"></paper-icon-button>
+      </ng-template>
+      <paper-icon-button icon="menu" onclick="drawer.toggle()"></paper-icon-button>
+    </app-toolbar>
+  </app-header>
 
+  <app-drawer-layout>
+
+    <app-drawer slot="drawer" persistent opened>
+
+      <paper-material elevation="4" style="flex: 0 1 auto;">
+        <paper-tabs #pager selected="0" (iron-select)="cambioPagina(pager.selected)">
+          <paper-tab>Todos</paper-tab>
+          <paper-tab>Redes</paper-tab>
+          <paper-tab>Taller</paper-tab>
+          <paper-tab>UMI</paper-tab>
+          <paper-tab>Belenes</paper-tab>
+        </paper-tabs>
+      </paper-material>
+
+      <paper-material elevation="3" style="overflow: scroll; height:  calc(100vh - 48px - 48px);">
+        <div>
+          <div *ngFor="let i of incidentes | async; let indice = index;">
+            <div style="position: relative" (click)="eventoPresionado(i, indice)"
+                 [class.active]="indice == selectedRow">
+              <div style="padding: 12px">
+                <div style="width: 100%; display: flex; align-items: center; box-sizing: border-box;">
+
+                  <div style="width: 16%">
+                    <div class="label">Folio:</div>
+
+                  </div>
+
+                  <div style="box-sizing: border-box; padding-left: 8px; padding-right: 8px; width: 55%">
+                    <div class="labelBold">{{i.folio}}</div>
+                  </div>
+
+                  <div style="width: 25%">
+                    <div class="labelChico">{{i.fecha | date:'dd/MM/yy'}}</div>
+                  </div>
+
+                </div>
+                <div style="width: 100%; display: flex; align-items: center; box-sizing: border-box;">
+
+                  <div style="width: 16%">
+                    <div class="label">Estatus:</div>
+
+                  </div>
+
+                  <div style="box-sizing: border-box; padding-left: 8px; padding-right: 8px; width: 55%"
+                       [style.color]="fondoEstatus[i.estatus]">
+                    <div class="labelBold">{{status[i.estatus]}}</div>
+                  </div>
+
+                  <div style="width: 25%">
+                    <div class="labelChico">{{i.fecha | date:'hh:mm a'}}</div>
+                  </div>
+
+                </div>
+                <div style="width: 100%; display: flex; align-items: center; box-sizing: border-box;">
+
+                  <div style="width: 16%">
+                    <div class="label">Técnico:</div>
+
+                  </div>
+
+                  <div style="box-sizing: border-box; padding-left: 8px; padding-right: 8px; width: 55%;">
+                    <div class="labelBold" style=" overflow: hidden; white-space: nowrap; text-overflow:ellipsis;">
+                      {{i.tecnico}}
+                    </div>
+                  </div>
+
+                  <div style="width: 25%" [style.color]="fondo[i.prioridad - 1]">
+                    <div class="circulo">&#x25CF;</div>
+                  </div>
+
+                </div>
+                <div style="width: 100%; display: flex; align-items: center; box-sizing: border-box;">
+
+                  <div style="width: 16%">
+                    <div class="label">Tipo:</div>
+                  </div>
+
+                  <div style="box-sizing: border-box; padding-left: 8px; padding-right: 8px; width: 84%;">
+                    <div class="labelBold" style=" overflow: hidden; white-space: nowrap; text-overflow:ellipsis;">
+                      {{i.tipoDeIncidente}}
+                    </div>
+                  </div>
+
+                </div>
+
+              </div>
+              <div style="background-color: #999999; height: 1px; width: 100%"></div>
+              <paper-ripple></paper-ripple>
+            </div>
+          </div>
+        </div>
+      </paper-material>
+    </app-drawer>
+
+    <div id="detalle" style="box-sizing: border-box; height: calc(100vh - 64px); flex-direction: column; display: flex"
+         *ngIf="incidente_seleccionado">
+      <paper-material #header elevation="2" id="toolbarIncidente" style="height: 96px;"
+                      [style.background]="fondo[incidente_seleccionado.prioridad - 1]">
+        <div>
+          <div main-title style="font-weight: bold; font-size: large">{{'Folio ' +
+            incidente_seleccionado.folio}}
+          </div>
+          <div main-title style="font-weight: bold; font-size: medium">{{'Técnico: ' +
+            incidente_seleccionado.tecnico}}
+          </div>
+          <div main-title style="font-size: small">{{'Registrado por: ' +
+            incidente_seleccionado.quienRegistro}}
+          </div>
+        </div>
+        <paper-icon-button icon="icons:delete-forever" style="position: absolute; left: 122px; top: 8px"
+                           *ngIf="getNivel((user | async)?.email) == 4 || getNivel((user | async)?.email) == 4"></paper-icon-button>
+        <paper-icon-button icon="editor:mode-edit" style="position: absolute; right: 17px; top: 8px"
+                           *ngIf="getNivel((user | async)?.email) == 4 || getNivel((user | async)?.email) == 4"></paper-icon-button>
+      </paper-material>
+
+      <paper-fab style="top: 96px; position: absolute; right: 16px; background: #e66100;" icon="social:person-add"
+                 *ngIf="getNivel((user | async)?.email) == 1 || getNivel((user | async)?.email) == 3">
+      </paper-fab>
+
+      <div style="overflow: auto; flex-grow: 1; padding: 16px;" id="contenido">
+        <div style="width: 100%; box-sizing: border-box; padding: 16px; display: flex;">
+
+          <div style="width: 33%; display: flex; align-items: center;">
+
+            <iron-icon icon="communication:dialpad"></iron-icon>
+
+            <div style="padding-left: 16px">
+              <div>
+                Código:
+              </div>
+              <div>
+                *********
+              </div>
+            </div>
+          </div>
+
+          <div style="width: 33%; display: flex; align-items: center;">
+
+            <iron-icon icon="social:person"></iron-icon>
+
+            <div style="padding-left: 16px">
+              <div>
+                Nombre:
+              </div>
+              <div>
+                {{(cliente | async)?.nombreDelCliente}}
+              </div>
+            </div>
+          </div>
+
+          <div style="width: 33%; display: flex; align-items: center;">
+
+            <iron-icon icon="communication:mail-outline"></iron-icon>
+
+            <div style="padding-left: 16px">
+              <div>
+                Correo:
+              </div>
+              <div>
+                {{(cliente | async)?.correoElectronicoDelCliente}}
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+
+        <div
+          style="width: 100%; box-sizing: border-box; padding-left: 16px;  padding-right: 16px;  padding-bottom: 16px; display: flex;">
+
+          <div style="width: 33%; display: flex; align-items: center;">
+
+            <iron-icon icon="communication:phone"></iron-icon>
+
+            <div style="padding-left: 16px">
+              <div>
+                Teléfono:
+              </div>
+              <div>
+                {{(cliente | async)?.telefonoDelCliente}}
+              </div>
+            </div>
+          </div>
+
+          <div style="width: 33%; display: flex; align-items: center;">
+
+            <iron-icon icon="social:domain"></iron-icon>
+
+            <div style="padding-left: 16px">
+              <div>
+                Dependencia:
+              </div>
+              <div>
+                {{(cliente | async)?.dependenciaDelCliente}}
+              </div>
+            </div>
+          </div>
+
+          <div style="width: 33%; display: flex; align-items: center;">
+
+            <iron-icon icon="communication:location-on"></iron-icon>
+
+            <div style="padding-left: 16px">
+              <div>
+                Ubicación:
+              </div>
+              <div>
+                {{(cliente | async)?.ubicacionDelCliente}}
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+
+        <div
+          style=" box-sizing: border-box; background-color: #999999; height: 1px; width: auto; margin-left: 16px; margin-right: 16px"></div>
+
+        <div style="width: 100%; box-sizing: border-box; padding: 16px; display: flex;">
+
+          <div style="width: 100%; display: flex; align-items: center;">
+
+            <iron-icon icon="icons:assignment"></iron-icon>
+
+            <div style="padding-left: 16px">
+              <div>
+                Incidente:
+              </div>
+              <div>
+                {{incidente_seleccionado.tipoDeIncidente}}
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div
+          style=" box-sizing: border-box; background-color: #999999; height: 1px; width: auto; margin-left: 16px; margin-right: 16px"></div>
+
+        <div style="width: 100%; box-sizing: border-box; padding: 16px; display: flex;">
+
+          <div style="width: 100%; align-items: flex-start;">
+
+            <iron-icon icon="icons:info-outline" style="float: left; height: 24px; width: 24px"></iron-icon>
+
+            <div style="padding-left: 40px">
+              <div>
+                Descripción:
+              </div>
+              <div>
+                <div>{{incidente_seleccionado.descripcionDelReporte}}</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div
+          style=" box-sizing: border-box; background-color: #999999; height: 1px; width: auto; margin-left: 16px; margin-right: 16px"></div>
+
+        <div style="width: 100%; box-sizing: border-box; padding: 16px; display: flex;">
+
+          <div style="width: 100%; display: flex;">
+
+            <img src="/assets/imagenes/ic_progress.png" id="ic_progress">
+
+            <div style="width: 100%; margin-left: 16px">
+              <div style="padding-top: 2px">
+                Progreso:
+              </div>
+              <div *ngFor="let i of progreso | async" style="width: 100%;">
+                <div style="position: relative">
+                  <div style="padding-top: 8px; padding-bottom: 8px">
+                    <div style="width: 100%; display: flex; align-items: center; box-sizing: border-box;">
+
+                      <div style="width: 16%">
+                        <div class="label">Estatus:</div>
+
+                      </div>
+
+                      <div style="box-sizing: border-box; padding-left: 8px; padding-right: 8px; width: 55%"
+                           [style.color]="fondoEstatus[i.progreso]">
+                        <div class="labelBold">{{status[i.progreso]}}</div>
+                      </div>
+
+                      <div style="width: 25%">
+                        <div class="labelChico">{{i.timestamp | date:'dd/MM/yy'}}</div>
+                      </div>
+
+                    </div>
+                    <div style="width: 100%; display: flex; align-items: center; box-sizing: border-box;">
+
+                      <div style="width: 16%">
+                        <div class="label">Por quién:</div>
+
+                      </div>
+
+                      <div style="box-sizing: border-box; padding-left: 8px; padding-right: 8px; width: 55%">
+                        <div class="labelBold">{{i.nombre}}</div>
+                      </div>
+
+                      <div style="width: 25%">
+                        <div class="labelChico">{{i.timestamp | date:'hh:mm a'}}</div>
+                      </div>
+
+                    </div>
+                    <div style="width: 100%; display: flex; align-items: center; box-sizing: border-box;"
+                         *ngIf="i.mensaje">
+
+                      <div style="width: 16%">
+                        <div class="label">Mensaje:</div>
+
+                      </div>
+
+                      <div style="box-sizing: border-box; padding-left: 8px; padding-right: 8px; width: 55%;">
+                        <div class="labelBold" style=" overflow: hidden; white-space: nowrap; text-overflow:ellipsis;">
+                          {{i.mensaje}}
+                        </div>
+                      </div>
+
+                    </div>
+
+                  </div>
+                  <div style="background-color: #999999; height: 1px; width: 100%"></div>
+                  <paper-ripple></paper-ripple>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div style="position: absolute; bottom: 0; background: #424242; margin: 0; right: 24px; left: 122px;"
+           *ngIf="getNivel((user | async)?.email) > 4">
+
+        <div
+          style="position: relative; display: flex; box-sizing: border-box; padding: 4px; margin-bottom: 16px; min-height: 48px; background: #fff; color: #424242; border-radius: 24px;">
+          <iron-autogrow-textarea class="textarea_mensaje" max-rows="4" placeholder="Escribir mensaje"
+                                  style="padding: 0 !important; align-self: center; line-height: 24px; margin-left: 16px; margin-right: 48px; width: 100%; border: transparent"></iron-autogrow-textarea>
+          <paper-icon-button icon="icons:send" style="position: absolute; bottom: 4px; right: 4px"></paper-icon-button>
+        </div>
+
+      </div>
+
+      <!--<footer style="background-color: #424242">
+        <app-toolbar style="position: fixed; bottom: 0; right: 0;">
+          <paper-button class="botonera">Editar</paper-button>
+          <paper-button class="botonera">Cancelar</paper-button>
+          <paper-button class="botonera">Eliminar</paper-button>
+        </app-toolbar>
+      </footer>-->
+    </div>
+
+    <!--
+
+        <app-drawer align="right" id="drawer" swipe-open>
+          <div style="position: relative" align="left">
+            <div style="margin-left: 16px; margin-right: 16px; margin-top: 24px; margin-bottom: 8px"><b>Filtros:</b></div>
+
+            <paper-checkbox class="c1" #c1 checked noink="true" (change)="checkboxchange(1, c1.checked)">Ver incidentes
+              asignados
+            </paper-checkbox>
+            <paper-checkbox class="c2" #c2 checked noink="true" (change)="checkboxchange(2, c2.checked)">Ver incidentes en
+              progreso
+            </paper-checkbox>
+            <paper-checkbox class="c3" #c3 checked noink="true" (change)="checkboxchange(3, c3.checked)">Ver incidentes en
+              espera
+            </paper-checkbox>
+            <paper-checkbox class="c4" #c4 checked noink="true" (change)="checkboxchange(4, c4.checked)">Ver incidentes
+              finalizados
+            </paper-checkbox>
+
+            <div
+              style=" box-sizing: border-box; background-color: #999999; height: 1px; width: auto; margin-top: 18px; margin-bottom: 18px"></div>
+
+
+            <paper-checkbox class="baja" #c5 checked noink="true" (change)="checkboxchange(5, c5.checked)">Ver incidentes de
+              prioridad baja
+            </paper-checkbox>
+            <paper-checkbox class="media" #c6 checked noink="true" (change)="checkboxchange(6, c6.checked)">Ver incidentes
+              de prioridad media
+            </paper-checkbox>
+            <paper-checkbox class="alta" #c7 checked noink="true" (change)="checkboxchange(7, c7.checked)">Ver incidentes de
+              prioridad alta
+            </paper-checkbox>
+          </div>
+        </app-drawer>
+    -->
+
+  </app-drawer-layout>
+</app-header-layout>
+
+<paper-dialog #dialogCrearIncidente id="dialogCrearIncidente" with-backdrop
+              entry-animation="datepicker-slide-from-bottom-animation"
+              exit-animation="datepicker-slide-from-top-animation" modal>
+  <app-toolbar id="toolbar_crear_incidente">
+    <div main-title>Agregar nuevo Incidente</div>
+    <paper-icon-button icon="clear" onclick="dialogCrearIncidente.close()"></paper-icon-button>
+  </app-toolbar>
+
+  <div style="display: flex; position: relative; box-sizing: border-box" *ngIf="dialogCrearIncidente.opened">
+    <div style="width: 50%; align-items: center">
+      <div style="box-sizing: border-box; padding-right: 24px;">
+        <div class="labelBold" style="text-align: center">DATOS DEL CLIENTE</div>
+
+        <paper-input label="Código:" id="inputCodigo" #inputCodigo
+                     (value-changed)="codigoSeleccionado(inputCodigo.value, inputNombre, inputDependencia, inputUbicacion, inputTelefono, inputCor)">
+          <paper-icon-button slot="prefix" icon="communication:dialpad"></paper-icon-button>
+        </paper-input>
+
+        <div class="autocomplete-wrapper" style="position: relative">
+          <paper-input #inputNombre id="inputNombre" label="Nombre:" #inputNombre style="margin-bottom: 0">
+            <paper-icon-button slot="prefix" icon="social:person"></paper-icon-button>
+          </paper-input>
+
+          <paper-autocomplete-suggestions #auto_nombres id.auto_nombres for="inputNombre" [source]="listaNombres"
+                                          (selected-option-changed)="nombreSeleccionado(auto_nombres.selectedOption, inputCodigo, inputDependencia, inputUbicacion, inputTelefono, inputCor)"></paper-autocomplete-suggestions>
+        </div>
+
+        <div class="autocomplete-wrapper" style="position: relative">
+          <paper-input label="Dependencia:" id="inputDependencia" #inputDependencia style="margin-bottom: 0">
+            <paper-icon-button slot="prefix" icon="communication:business"></paper-icon-button>
+          </paper-input>
+
+          <paper-autocomplete-suggestions for="inputDependencia"
+                                          [source]="listaDependencias"></paper-autocomplete-suggestions>
+        </div>
+
+        <div class="autocomplete-wrapper" style="position: relative">
+          <paper-input label="Ubicación:" id="inputUbicacion" #inputUbicacion style="margin-bottom: 0">
+            <paper-icon-button slot="prefix" icon="communication:location-on"></paper-icon-button>
+          </paper-input>
+
+          <paper-autocomplete-suggestions for="inputUbicacion"
+                                          [source]="listaUbicaciones"></paper-autocomplete-suggestions>
+        </div>
+
+        <div class="autocomplete-wrapper" style="position: relative">
+          <paper-input label="Teléfono:" id="inputTelefono" #inputTelefono style="margin-bottom: 0">
+            <paper-icon-button slot="prefix" icon="communication:call"></paper-icon-button>
+          </paper-input>
+
+          <paper-autocomplete-suggestions for="inputTelefono"
+                                          [source]="listaTelefonos"></paper-autocomplete-suggestions>
+        </div>
+
+        <div class="autocomplete-wrapper" style="position: relative; margin-bottom: 16px">
+          <paper-input label="Correo:" id="inputCor" #inputCor style="margin-bottom: 0">
+            <paper-icon-button slot="prefix" icon="communication:email"></paper-icon-button>
+          </paper-input>
+          <paper-autocomplete-suggestions for="inputCor" [source]="listaCorreos"></paper-autocomplete-suggestions>
+        </div>
+
+      </div>
+    </div>
+
+    <div style="width: 50%; align-items: center;  position: relative">
+      <div style="box-sizing: border-box; padding-left: 24px;">
+        <div class="labelBold" style="text-align: center">DATOS DEL INCIDENTE</div>
+
+        <paper-input-container always-float-label #inputTipoIncidente (click)="dialogTipoIncidente.open()">
+          <label slot="label">Tipo de incidente:</label>
+          <iron-input slot="input">
+            <div #labelTipoIncidente
+                 [ngStyle]="{'color': textoTipoIncidente === 'Selecciona el tipo de incidente'  && inputTipoIncidente.invalid ? 'red' : 'white'}">
+              {{textoTipoIncidente}}
+            </div>
+          </iron-input>
+          <paper-icon-button slot="prefix" icon="icons:assignment"></paper-icon-button>
+        </paper-input-container>
+
+        <paper-input-container always-float-label>
+          <label slot="label">Prioridad:</label>
+          <iron-input slot="input">
+            <div style="box-sizing: border-box;">
+              <paper-checkbox id="prioridadBaja" #prioridadBaja checked class="prioridadBaja"
+                              (checked-changed)="cambiarPrioridad(prioridadBaja)">Prioridad Baja
+              </paper-checkbox>
+              <paper-checkbox id="prioridadMedia" #prioridadMedia class="prioridadMedia"
+                              (checked-changed)="cambiarPrioridad(prioridadMedia)">Prioridad Media
+              </paper-checkbox>
+              <paper-checkbox id="prioridadAlta" #prioridadAlta class="prioridadAlta"
+                              (checked-changed)="cambiarPrioridad(prioridadAlta)">Prioridad Alta
+              </paper-checkbox>
+            </div>
+          </iron-input>
+          <paper-icon-button slot="prefix" icon="icons:assignment-late"></paper-icon-button>
+        </paper-input-container>
+
+
+        <paper-input label="Descripción del incidente:" id="inputDescripcion" #inputDescripcion>
+          <paper-icon-button slot="prefix" icon="communication:comment"></paper-icon-button>
+        </paper-input>
+
+        <paper-button style="position: absolute; bottom: 0; right: 0;" #botonRegistrar id="botonRegistrar"
+                      (click)="validarFormulario(inputCodigo, inputNombre, inputDependencia, inputUbicacion, inputTelefono, inputCor, labelTipoIncidente, inputDescripcion, inputTipoIncidente, dialogCrearIncidente, toastBienvenido, botonRegistrar)">
+          REGISTRAR INCIDENTE
+        </paper-button>
+      </div>
+    </div>
+
+    <div #preteccionFormulario id="preteccionFormulario" style="position: absolute; top: 0; bottom: 0; left: 0; right: 0; margin-top: -24px; margin-bottom: -24px; background: rgba(0,0,0,0.14)" *ngIf="proteccion"></div>
+  </div>
+
+</paper-dialog>
+
+<paper-dialog #dialogTipoIncidente id="dialogTipoIncidente" with-backdrop
+              entry-animation="datepicker-slide-from-bottom-animation"
+              exit-animation="datepicker-slide-from-top-animation">
+  <app-toolbar id="toolbar_crear_incidente">
+    <div main-title>Tipo de Incidente</div>
+    <paper-button onclick="dialogTipoIncidente.close()" style="margin-left: -16px">ACEPTAR</paper-button>
+  </app-toolbar>
+
+  <div *ngIf="dialogCrearIncidente.opened">
+    <div style="margin-bottom: 16px">
+      <div style="display: flex; align-items: center;">
+        <img src="/assets/imagenes/ic_taller.png" style="height: 24px; margin-left: 8px;">
+        <div style="padding-left: 16px">
+          Taller de computo
+        </div>
+      </div>
+
+      <div style="display: flex; margin-top: 8px">
+        <paper-checkbox id="t1" #t1 class="tipoIncidente"
+                        (checked-changed)="cambiarTipoIncidente(t1)">Mantenimiento correctivo
+        </paper-checkbox>
+        <paper-checkbox id="t2" #t2 class="tipoIncidente"
+                        (checked-changed)="cambiarTipoIncidente(t2)">Impresora
+        </paper-checkbox>
+        <paper-checkbox id="t3" #t3 class="tipoIncidente"
+                        (checked-changed)="cambiarTipoIncidente(t3)">Software
+        </paper-checkbox>
+        <paper-checkbox id="t4" #t4 class="tipoIncidente"
+                        (checked-changed)="cambiarTipoIncidente(t4)">Hardware
+        </paper-checkbox>
+      </div>
+
+      <div style="display: flex;">
+        <paper-checkbox id="t5" #t5 class="tipoIncidente"
+                        (checked-changed)="cambiarTipoIncidente(t5)">Correo electrónico
+        </paper-checkbox>
+        <paper-checkbox id="t6" #t6 class="tipoIncidente"
+                        (checked-changed)="cambiarTipoIncidente(t6)">Servidores
+        </paper-checkbox>
+        <paper-checkbox id="t7" #t7 class="tipoIncidente"
+                        (checked-changed)="cambiarTipoIncidente(t7)">Otro
+        </paper-checkbox>
+        <div style="width: 25%; margin: 12px 16px;"></div>
+      </div>
+    </div>
+
+    <div style="background-color: #999999; height: 1px; width: 100%"></div>
+
+    <div style="margin-top: 24px">
+      <div style="display: flex; align-items: center;">
+        <img src="/assets/imagenes/ic_redes.svg" style="height: 24px; margin-left: 12px;">
+        <div style="padding-left: 16px">
+          Redes y telefonía
+        </div>
+      </div>
+
+      <div style="display: flex; margin-top: 16px">
+        <paper-checkbox id="t9" #t8 class="tipoIncidente"
+                        (checked-changed)="cambiarTipoIncidente(t8)">Teléfono
+        </paper-checkbox>
+        <paper-checkbox id="t9" #t9 class="tipoIncidente"
+                        (checked-changed)="cambiarTipoIncidente(t9)">Internet
+        </paper-checkbox>
+        <paper-checkbox id="t10" #t10 class="tipoIncidente"
+                        (checked-changed)="cambiarTipoIncidente(t10)">WIFI
+        </paper-checkbox>
+        <paper-checkbox id="t11" #t11 class="tipoIncidente"
+                        (checked-changed)="cambiarTipoIncidente(t11)">Mantenimiento correctivo
+        </paper-checkbox>
+      </div>
+
+      <div style="display: flex;">
+        <paper-checkbox id="t12" #t12 class="tipoIncidente"
+                        (checked-changed)="cambiarTipoIncidente(t12)">Otro
+        </paper-checkbox>
+      </div>
+    </div>
+
+    <div style="background-color: #999999; height: 1px; width: 100%; margin-top: 8px"></div>
+
+    <div style="margin-top: 24px">
+      <div style="display: flex; align-items: center;">
+        <iron-icon icon="icons:important-devices" style="margin-left: 13px"></iron-icon>
+        <div style="padding-left: 16px">
+          Multimedia
+        </div>
+      </div>
+
+      <div style="display: flex; margin-top: 16px">
+        <paper-checkbox id="t13" #t13 class="tipoIncidente"
+                        (checked-changed)="cambiarTipoIncidente(t13)">Grabación de eventos
+          académicos
+        </paper-checkbox>
+        <paper-checkbox id="t14" #t14 class="tipoIncidente"
+                        (checked-changed)="cambiarTipoIncidente(t14)">Producción de videos
+        </paper-checkbox>
+        <paper-checkbox id="t15" #t15 class="tipoIncidente"
+                        (checked-changed)="cambiarTipoIncidente(t15)">Fotografia de eventos
+          académicos
+        </paper-checkbox>
+        <paper-checkbox id="t16" #t16 class="tipoIncidente"
+                        (checked-changed)="cambiarTipoIncidente(t16)">Página web
+        </paper-checkbox>
+      </div>
+
+      <div style="display: flex;">
+        <paper-checkbox id="t17" #t17 class="tipoIncidente"
+                        (checked-changed)="cambiarTipoIncidente(t17)">Diseño
+        </paper-checkbox>
+        <paper-checkbox id="t18" #t18 class="tipoIncidente"
+                        (checked-changed)="cambiarTipoIncidente(t18)">Videoconferencia
+        </paper-checkbox>
+        <paper-checkbox id="t19" #t19 class="tipoIncidente"
+                        (checked-changed)="cambiarTipoIncidente(t19)">Streaming
+        </paper-checkbox>
+        <paper-checkbox id="t20" #t20 class="tipoIncidente"
+                        (checked-changed)="cambiarTipoIncidente(t20)">Aplicaciones Web y moviles
+        </paper-checkbox>
+      </div>
+
+      <div style="display: flex;">
+        <paper-checkbox id="t21" #t21 class="tipoIncidente"
+                        (checked-changed)="cambiarTipoIncidente(t21)">Auditorios
+        </paper-checkbox>
+        <paper-checkbox id="t22" #t22 class="tipoIncidente"
+                        (checked-changed)="cambiarTipoIncidente(t22)">Otro
+        </paper-checkbox>
+        <div style="width: 25%; margin: 12px 16px;"></div>
+        <div style="width: 25%; margin: 12px 16px;"></div>
+      </div>
+
+    </div>
+
+    <div style="background-color: #999999; height: 1px; width: 100%; margin-top: 8px"></div>
+
+    <div style="margin-top: 24px">
+      <div style="display: flex; align-items: center;">
+        <iron-icon icon="social:people" style="margin-left: 13px"></iron-icon>
+        <div style="padding-left: 16px">
+          Administrativo
+        </div>
+      </div>
+
+      <div style="display: flex; margin-top: 16px">
+        <paper-checkbox id="t23" #t23 class="tipoIncidente"
+                        (checked-changed)="cambiarTipoIncidente(t23)">Héctor Aceves Shimizu y López
+        </paper-checkbox>
+        <paper-checkbox id="t24" #t24 class="tipoIncidente"
+                        (checked-changed)="cambiarTipoIncidente(t24)">Idania Gómez Cosio
+        </paper-checkbox>
+        <paper-checkbox id="t25" #t25 class="tipoIncidente"
+                        (checked-changed)="cambiarTipoIncidente(t25)">Eduardo Solano Guzmán
+        </paper-checkbox>
+        <div style="width: 25%; margin: 12px 16px;"></div>
+      </div>
+
+    </div>
+
+    <div style="background-color: #999999; height: 1px; width: 100%; margin-top: 8px"></div>
+
+    <div style="margin-top: 24px">
+      <div style="display: flex; align-items: center;">
+        <img src="/assets/imagenes/ic_aviso.png" style="height: 24px; margin-left: 8px;">
+        <div style="padding-left: 16px">
+          Avisos
+        </div>
+      </div>
+
+      <div style="display: flex; margin-top: 16px">
+        <paper-checkbox id="t26" #t26 class="tipoIncidente"
+                        (checked-changed)="cambiarTipoIncidente(t26)">Taller de computo
+        </paper-checkbox>
+        <paper-checkbox id="t27" #t27 class="tipoIncidente"
+                        (checked-changed)="cambiarTipoIncidente(t27)">Redes
+        </paper-checkbox>
+        <paper-checkbox id="t28" #t28 class="tipoIncidente"
+                        (checked-changed)="cambiarTipoIncidente(t28)">Multimedia
+        </paper-checkbox>
+        <paper-checkbox id="t29" #t29 class="tipoIncidente"
+                        (checked-changed)="cambiarTipoIncidente(t29)">Redes y Taller de computo
+        </paper-checkbox>
+      </div>
+
+      <div style="display: flex;">
+        <paper-checkbox id="t30" #t30 class="tipoIncidente"
+                        (checked-changed)="cambiarTipoIncidente(t30)">Redes y Multimedia
+        </paper-checkbox>
+        <paper-checkbox id="t31" #t31 class="tipoIncidente"
+                        (checked-changed)="cambiarTipoIncidente(t31)">Taller de computo y Multimedia
+        </paper-checkbox>
+        <paper-checkbox id="t32" #t32 class="tipoIncidente"
+                        (checked-changed)="cambiarTipoIncidente(t32)">Belenes
+        </paper-checkbox>
+        <paper-checkbox id="t33" #t33 class="tipoIncidente"
+                        (checked-changed)="cambiarTipoIncidente(t33)">Aviso General
+        </paper-checkbox>
+      </div>
+    </div>
+
+  </div>
+</paper-dialog>
+
+<paper-dialog id="dialogIniciarSesion" with-backdrop #loginDialog>
+
+
+  <div style="height: 6px; width: 100%; background: #e66100; margin: 0; padding: 0;"></div>
+
+  <div style="display: flex; margin: 0; padding: 0;">
+    <div style="width: 50%;  background-image: url('/assets/imagenes/img_login.jpg');
+    background-position: center; display: flex; align-items: center; justify-items: center">
+
+      <div style="width: 100%;">
+        <img src="/assets/imagenes/cta_letras.png" style="width: 50%; margin-left: auto; display: block;
+    margin-right: auto;">
+        <div style="height: 2px; margin-top: 8px; width: 50%; background: #e66100; margin-left: auto; display: block;
+    margin-right: auto;"></div>
+      </div>
+
+
+    </div>
+    <div style="width: 50%; align-items: center">
+
+      <div *ngIf="loginDialog.opened"
+           style="box-sizing: border-box; padding-left: 56px; padding-right: 56px; padding-top: 32px; padding-bottom: 24px;">
+
+        <img src="/assets/imagenes/logo_service_desk_blanco.png" style="height: 50px; margin-left: auto; display: block;
+    margin-right: auto;">
+        <div class="labelBold" style="text-align: center; font-size: x-large; margin-top: 12px; margin-bottom: 32px">
+          Service Desk CUCSH
+        </div>
+
+        <div class="autocomplete-wrapper" style="position: relative; margin-bottom: 32px; box-sizing: border-box">
+          <paper-input #inputCorreo id="inputCorreo" label="Correo electrónico:" class="correo" type="email" required
+                       autocomplete
+                       error-message="La dirección de correo electrónico esta mal escrita" style="margin-bottom: 0">
+            <paper-icon-button slot="prefix" icon="icons:mail"></paper-icon-button>
+          </paper-input>
+
+          <paper-autocomplete-suggestions for="inputCorreo" [source]="correos"></paper-autocomplete-suggestions>
+        </div>
+
+        <paper-input #inputContrasena label="Contraseña:" id="inputContrasena" type="password" required
+                     error-message="Para continuar, introduce tu contraseña" (keyup.enter)="bt_login.click()">
+          <paper-icon-button slot="prefix" icon="icons:lock"></paper-icon-button>
+          <paper-icon-button slot="suffix" icon="icons:visibility" onmousedown="inputContrasena.type = 'normal'"
+                             onmouseup="inputContrasena.type = 'password'"
+                             onmouseleave="inputContrasena.type = 'password'"></paper-icon-button>
+        </paper-input>
+
+        <div style="margin-top: 40px;"></div>
+
+        <div id="bt_login" (click)="login(inputCorreo, inputContrasena, loginDialog, toastBienvenido)"></div>
+
+        <paper-button #bt_login raised style="width: 93%; font-weight: bold; margin: 16px; box-sizing: border-box"
+                      onclick="
+                      if (inputCorreo.validate() && inputContrasena.validate()) {
+                        bt_login.click()
+                      }">INICIAR SESIÓN
+        </paper-button>
+
+        <div style="margin-top: 48px; text-align: center; font-size: x-small; line-height: normal">Introduce tu correo
+          electrónico y
+          contraseña para poder realizar cambios en los incidentes.
+        </div>
+        <div style="text-align: center; font-size: x-small; line-height: normal">No olvides cerrar la sesión al
+          finalizar.
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</paper-dialog>
+
+<paper-toast #toastBienvenido text="Hello world!" style="margin-left: calc(50vw - 150px);">
+</paper-toast>
+
+<paper-toast #toastSesionCerrada text="Sesión cerrada correctamente" style="margin-left: calc(50vw - 150px);">
+</paper-toast>
+
+<paper-dialog class="tooltip" #logout_dialog id="logout_dialog" no-overlap horizontal-align="center"
+              vertical-align="auto" horizontal-offset="-110">
+  <div style="margin: 0; padding: 0; display: flex; box-sizing: border-box; color: #fff;">
+    <div style="margin: 20px">
+      <div [ngSwitch]="(user | async)?.email">
+        <div *ngSwitchCase="'oscar.mendez@csh.udg.mx'" style="width: 90px; height: 90px; overflow: hidden; border-radius: 50%; background-size: cover;
+    background-position: center; background-image: url('/assets/imagenes/oscar.jpg')"
+             (click)="logoutDialog(avatar, logout_dialog)">
+        </div>
+        <div *ngSwitchCase="'idania.gomez@csh.udg.mx'" style="width: 90px; height: 90px; overflow: hidden; border-radius: 50%; background-size: cover;
+    background-position: center; background-image: url('/assets/imagenes/idania.png')"
+             (click)="logoutDialog(avatar, logout_dialog)">
+        </div>
+        <div *ngSwitchCase="'juan.mancilla@csh.udg.mx'" style="width: 90px; height: 90px; overflow: hidden; border-radius: 50%; background-size: cover;
+    background-position: center; background-image: url('/assets/imagenes/juan.png')"
+             (click)="logoutDialog(avatar, logout_dialog)">
+        </div>
+        <div *ngSwitchCase="'hiram.franco@csh.udg.mx'" style="width: 90px; height: 90px; overflow: hidden; border-radius: 50%; background-size: cover;
+    background-position: center; background-image: url('/assets/imagenes/hiram.jpg')"
+             (click)="logoutDialog(avatar, logout_dialog)">
+        </div>
+        <div *ngSwitchCase="'ricardo.cortes@csh.udg.mx'" style="width: 90px; height: 90px; overflow: hidden; border-radius: 50%; background-size: cover;
+    background-position: center; background-image: url('/assets/imagenes/ricardo.png')"
+             (click)="logoutDialog(avatar, logout_dialog)">
+        </div>
+        <div *ngSwitchCase="'teresa.dlsantos@csh.udg.mx'" style="width: 90px; height: 90px; overflow: hidden; border-radius: 50%; background-size: cover;
+    background-position: center; background-image: url('/assets/imagenes/tere.png')"
+             (click)="logoutDialog(avatar, logout_dialog)">
+        </div>
+        <div *ngSwitchCase="'deleon.jonathan@csh.udg.mx'" style="width: 90px; height: 90px; overflow: hidden; border-radius: 50%; background-size: cover;
+    background-position: center; background-image: url('/assets/imagenes/jona.png')"
+             (click)="logoutDialog(avatar, logout_dialog)">
+        </div>
+        <div *ngSwitchCase="'jose.carrillom@csh.udg.mx'" style="width: 90px; height: 90px; overflow: hidden; border-radius: 50%; background-size: cover;
+    background-position: center; background-image: url('/assets/imagenes/gera.png')"
+             (click)="logoutDialog(avatar, logout_dialog)">
+        </div>
+        <div *ngSwitchCase="'eduardo.solano@redudg.udg.mx'" style="width: 90px; height: 90px; overflow: hidden; border-radius: 50%; background-size: cover;
+    background-position: center; background-image: url('/assets/imagenes/solano.png')"
+             (click)="logoutDialog(avatar, logout_dialog)">
+        </div>
+        <div *ngSwitchCase="'octavio.cortazar@csh.udg.mx'" style="width: 90px; height: 90px; overflow: hidden; border-radius: 50%; background-size: cover;
+    background-position: center; background-image: url('/assets/imagenes/octavio.png')"
+             (click)="logoutDialog(avatar, logout_dialog)">
+        </div>
+        <div *ngSwitchCase="'oswaldo.mendoza@csh.udg.mx'" style="width: 90px; height: 90px; overflow: hidden; border-radius: 50%; background-size: cover;
+    background-position: center; background-image: url('/assets/imagenes/oswaldo.png')"
+             (click)="logoutDialog(avatar, logout_dialog)">
+        </div>
+        <div *ngSwitchCase="'elba.moralesg@csh.udg.mx'" style="width: 90px; height: 90px; overflow: hidden; border-radius: 50%; background-size: cover;
+    background-position: center; background-image: url('/assets/imagenes/elba.png')"
+             (click)="logoutDialog(avatar, logout_dialog)">
+        </div>
+        <div *ngSwitchCase="'hector.shimizu@csh.udg.mx'" style="width: 90px; height: 90px; overflow: hidden; border-radius: 50%; background-size: cover;
+    background-position: center; background-image: url('/assets/imagenes/hector.png')"
+             (click)="logoutDialog(avatar, logout_dialog)">
+        </div>
+        <div *ngSwitchCase="'eduardo.salazar@csh.udg.mx'" style="width: 90px; height: 90px; overflow: hidden; border-radius: 50%; background-size: cover;
+    background-position: center; background-image: url('/assets/imagenes/lalo.png')"
+             (click)="logoutDialog(avatar, logout_dialog)">
+        </div>
+        <div *ngSwitchCase="'enrique.vega@csh.udg.mx'" style="width: 90px; height: 90px; overflow: hidden; border-radius: 50%; background-size: cover;
+    background-position: center; background-image: url('/assets/imagenes/enrique.png')"
+             (click)="logoutDialog(avatar, logout_dialog)">
+        </div>
+        <div *ngSwitchCase="'emmanuelchacon_1@csh.udg.mx'" style="width: 90px; height: 90px; overflow: hidden; border-radius: 50%; background-size: cover;
+    background-position: center; background-image: url('/assets/imagenes/manny.png')"
+             (click)="logoutDialog(avatar, logout_dialog)">
+        </div>
+        <div *ngSwitchCase="'omara@csh.udg.mx'" style="width: 90px; height: 90px; overflow: hidden; border-radius: 50%; background-size: cover;
+    background-position: center; background-image: url('/assets/imagenes/omar.png')"
+             (click)="logoutDialog(avatar, logout_dialog)">
+        </div>
+        <div *ngSwitchCase="'zyanya.lopez@csh.udg.mx'" style="width: 90px; height: 90px; overflow: hidden; border-radius: 50%; background-size: cover;
+    background-position: center; background-image: url('/assets/imagenes/zyan.png')"
+             (click)="logoutDialog(avatar, logout_dialog)">
+        </div>
+        <div *ngSwitchCase="'nancy.verdin@csh.udg.mx'" style="width: 90px; height: 90px; overflow: hidden; border-radius: 50%; background-size: cover;
+    background-position: center; background-image: url('/assets/imagenes/nancy.png')"
+             (click)="logoutDialog(avatar, logout_dialog)">
+        </div>
+      </div>
+    </div>
+    <div style="margin-top: 40px; margin-bottom: 20px; margin-right: 80px;">
+      <div style="font-weight: bold; font-size: small; line-height: normal;">{{ (user | async)?.displayName }}</div>
+      <div style="font-size: smaller; line-height: normal;">{{ (user | async)?.email }}</div>
+      <paper-button class="indigo" style="margin-left: -4px;" (click)="logout(logout_dialog, toastSesionCerrada)">Cerrar
+        sesión
+      </paper-button>
+    </div>
+  </div>
+</paper-dialog>
+
+<paper-fab style="bottom: 16px; position: absolute; left: 284px; background: #e66100;" icon="add"
+           *ngIf="getNivel((user | async)?.email) == 2 || getNivel((user | async)?.email) == 3"
+           (click)="abrirDialogoCrearIncidente(dialogCrearIncidente)">
+</paper-fab>

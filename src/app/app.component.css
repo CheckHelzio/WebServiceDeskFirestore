@@ -1,0 +1,143 @@
+app-toolbar {
+  color: #fff;
+  background-image: url('../assets/imagenes/header-web.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+#toolbarIncidente {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  color: #fff;
+}
+
+#logo_cta {
+  height: 32px;
+  width: auto;
+  margin-right: 8px;
+}
+
+#ic_progress {
+  color: #fff;
+  height: 26px;
+  width: auto;
+}
+
+app-header-layout {
+  background-color: #424242;
+}
+
+.label {
+  font-size: 13px;
+  line-height: 18px;
+}
+
+.labelBold {
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: bold;
+}
+
+.labelChico {
+  font-size: 13px;
+  line-height: 18px;
+  text-align: right;
+}
+
+.circulo {
+  font-size: 22px;
+  line-height: 18px;
+  text-align: right;
+}
+
+paper-button {
+  color: #e66100;
+}
+
+#detalle{
+  margin-left: 100px;
+}
+
+div.active{
+  background-color: #797777 !important;
+  color: white;
+}
+
+#dialogCrearIncidente{
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  background-color: #424242;
+  width: 70%;
+  box-sizing: border-box;
+}
+
+#dialogTipoIncidente{
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  background-color: #424242;
+  width: 60%;
+  box-sizing: border-box;
+}
+
+#dialogIniciarSesion{
+  color: #fff;
+  margin: 0 !important;
+  padding: 0 !important;
+  background-color: #424242;
+  width: 80%;
+  box-sizing: border-box;
+}
+
+#dialogIniciarSesion.div{
+   margin: 0 !important;
+   padding: 0 !important;
+ }
+
+#toolbar_crear_incidente{
+  margin: 0 !important;
+}
+
+#inputPrioridad #input{
+  visibility: hidden;
+}
+
+.tooltip{
+  box-sizing: border-box;
+  background: #424242;
+  margin-top: 13px;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  position: relative;
+  width: 350px;
+  padding: 0;
+  border-radius: 4px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+}
+
+.tooltip:after {
+  content: ' ';
+  position: absolute;
+  bottom: 100%;
+  right: 58px;
+  margin-left: -7px;
+  border-width: 7px;
+  border-style: solid;
+  border-color: transparent transparent #424242 transparent;
+}
+
+#textarea_mensaje{
+  padding: 0 !important;
+}
+
+textarea#textarea{
+  padding: 0 !important;
+}
+
