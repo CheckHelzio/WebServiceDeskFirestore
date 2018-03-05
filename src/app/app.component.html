@@ -1,84 +1,100 @@
 <app-header-layout fullbleed>
   <app-header fixed shadow slot="header">
     <app-toolbar id="toolbar">
-      <img src="/assets/imagenes/cta.png" id="logo_cta">
+      <img src="assets/imagenes/cta.png" id="logo_cta">
       <div main-title>Service Desk CUCSH</div>
       <div *ngIf="afAuth.authState | async as user; else showLogin">
         <div [ngSwitch]="user.email">
           <div *ngSwitchCase="'oscar.mendez@csh.udg.mx'" #avatar id="avatar" style="width: 32px; height: 32px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('/assets/imagenes/oscar.jpg')"
+    background-position: center; background-image: url('assets/imagenes/oscar.jpg')"
                (click)="logoutDialog(avatar, logout_dialog)">
           </div>
           <div *ngSwitchCase="'idania.gomez@csh.udg.mx'" #avatar id="avatar" style="width: 32px; height: 32px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('/assets/imagenes/idania.png')"
+    background-position: center; background-image: url('assets/imagenes/idania.png')"
                (click)="logoutDialog(avatar, logout_dialog)">
           </div>
           <div *ngSwitchCase="'juan.mancilla@csh.udg.mx'" #avatar id="avatar" style="width: 32px; height: 32px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('/assets/imagenes/juan.png')"
+    background-position: center; background-image: url('assets/imagenes/juan.png')"
                (click)="logoutDialog(avatar, logout_dialog)">
           </div>
           <div *ngSwitchCase="'hiram.franco@csh.udg.mx'" #avatar id="avatar" style="width: 32px; height: 32px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('/assets/imagenes/hiram.jpg')"
+    background-position: center; background-image: url('assets/imagenes/hiram.jpg')"
                (click)="logoutDialog(avatar, logout_dialog)">
           </div>
           <div *ngSwitchCase="'ricardo.cortes@csh.udg.mx'" #avatar id="avatar" style="width: 32px; height: 32px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('/assets/imagenes/ricardo.png')"
+    background-position: center; background-image: url('assets/imagenes/ricardo.png')"
                (click)="logoutDialog(avatar, logout_dialog)">
           </div>
           <div *ngSwitchCase="'teresa.dlsantos@csh.udg.mx'" #avatar id="avatar" style="width: 32px; height: 32px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('/assets/imagenes/tere.png')"
+    background-position: center; background-image: url('assets/imagenes/tere.png')"
                (click)="logoutDialog(avatar, logout_dialog)">
           </div>
           <div *ngSwitchCase="'deleon.jonathan@csh.udg.mx'" #avatar id="avatar" style="width: 32px; height: 32px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('/assets/imagenes/jona.png')"
+    background-position: center; background-image: url('assets/imagenes/jona.png')"
                (click)="logoutDialog(avatar, logout_dialog)">
           </div>
           <div *ngSwitchCase="'jose.carrillom@csh.udg.mx'" #avatar id="avatar" style="width: 32px; height: 32px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('/assets/imagenes/gera.png')"
+    background-position: center; background-image: url('assets/imagenes/gera.png')"
                (click)="logoutDialog(avatar, logout_dialog)">
           </div>
           <div *ngSwitchCase="'eduardo.solano@redudg.udg.mx'" #avatar id="avatar" style="width: 32px; height: 32px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('/assets/imagenes/solano.png')"
+    background-position: center; background-image: url('assets/imagenes/solano.png')"
                (click)="logoutDialog(avatar, logout_dialog)">
           </div>
           <div *ngSwitchCase="'octavio.cortazar@csh.udg.mx'" #avatar id="avatar" style="width: 32px; height: 32px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('/assets/imagenes/octavio.png')"
+    background-position: center; background-image: url('assets/imagenes/octavio.png')"
                (click)="logoutDialog(avatar, logout_dialog)">
           </div>
           <div *ngSwitchCase="'oswaldo.mendoza@csh.udg.mx'" #avatar id="avatar" style="width: 32px; height: 32px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('/assets/imagenes/oswaldo.png')"
+    background-position: center; background-image: url('assets/imagenes/oswaldo.png')"
                (click)="logoutDialog(avatar, logout_dialog)">
           </div>
           <div *ngSwitchCase="'elba.moralesg@csh.udg.mx'" #avatar id="avatar" style="width: 32px; height: 32px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('/assets/imagenes/elba.png')"
+    background-position: center; background-image: url('assets/imagenes/elba.png')"
                (click)="logoutDialog(avatar, logout_dialog)">
           </div>
           <div *ngSwitchCase="'hector.shimizu@csh.udg.mx'" #avatar id="avatar" style="width: 32px; height: 32px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('/assets/imagenes/hector.png')"
+    background-position: center; background-image: url('assets/imagenes/hector.png')"
                (click)="logoutDialog(avatar, logout_dialog)">
           </div>
           <div *ngSwitchCase="'eduardo.salazar@csh.udg.mx'" #avatar id="avatar" style="width: 32px; height: 32px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('/assets/imagenes/lalo.png')"
+    background-position: center; background-image: url('assets/imagenes/lalo.png')"
                (click)="logoutDialog(avatar, logout_dialog)">
           </div>
           <div *ngSwitchCase="'enrique.vega@csh.udg.mx'" #avatar id="avatar" style="width: 32px; height: 32px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('/assets/imagenes/enrique.png')"
+    background-position: center; background-image: url('assets/imagenes/enrique.png')"
                (click)="logoutDialog(avatar, logout_dialog)">
           </div>
           <div *ngSwitchCase="'emmanuelchacon_1@csh.udg.mx'" #avatar id="avatar" style="width: 32px; height: 32px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('/assets/imagenes/manny.png')"
+    background-position: center; background-image: url('assets/imagenes/manny.jpg')"
                (click)="logoutDialog(avatar, logout_dialog)">
           </div>
           <div *ngSwitchCase="'omara@csh.udg.mx'" #avatar id="avatar" style="width: 32px; height: 32px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('/assets/imagenes/omar.png')"
+    background-position: center; background-image: url('assets/imagenes/omar.png')"
                (click)="logoutDialog(avatar, logout_dialog)">
           </div>
           <div *ngSwitchCase="'zyanya.lopez@csh.udg.mx'" #avatar id="avatar" style="width: 32px; height: 32px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('/assets/imagenes/zyan.png')"
+    background-position: center; background-image: url('assets/imagenes/zyan.png')"
                (click)="logoutDialog(avatar, logout_dialog)">
           </div>
-          <div *ngSwitchCase="'nancy.verdin@csh.udg.mx'" #avatar id="avatar" style="width: 32px; height: 32px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('/assets/imagenes/nancy.png')"
+          <div *ngSwitchCase="'alberto.franco@csh.udg.mx'" #avatar id="avatar" style="width: 32px; height: 32px; overflow: hidden; border-radius: 50%; background-size: cover;
+    background-position: center; background-image: url('assets/imagenes/mario.png')"
+               (click)="logoutDialog(avatar, logout_dialog)">
+          </div>
+          <div *ngSwitchCase="'jorge.plascencia@redudg.udg.mx'" #avatar id="avatar" style="width: 32px; height: 32px; overflow: hidden; border-radius: 50%; background-size: cover;
+    background-position: center; background-image: url('assets/imagenes/jorge.png')"
+               (click)="logoutDialog(avatar, logout_dialog)">
+          </div>
+          <div *ngSwitchCase="'pro1013b@yahoo.com'" #avatar id="avatar" style="width: 32px; height: 32px; overflow: hidden; border-radius: 50%; background-size: cover;
+    background-position: center; background-image: url('assets/imagenes/edgar.png')"
+               (click)="logoutDialog(avatar, logout_dialog)">
+          </div>
+          <div *ngSwitchCase="'roberto.villasenor@redudg.udg.mx'" #avatar id="avatar" style="width: 32px; height: 32px; overflow: hidden; border-radius: 50%; background-size: cover;
+    background-position: center; background-image: url('assets/imagenes/rober.png')"
+               (click)="logoutDialog(avatar, logout_dialog)">
+          </div>
+          <div *ngSwitchCase="'jose.crubio@csh.udg.mx'" #avatar id="avatar" style="width: 32px; height: 32px; overflow: hidden; border-radius: 50%; background-size: cover;
+    background-position: center; background-image: url('assets/imagenes/alberto.png')"
                (click)="logoutDialog(avatar, logout_dialog)">
           </div>
         </div>
@@ -94,21 +110,21 @@
 
     <app-drawer slot="drawer" persistent opened>
 
-      <paper-material elevation="4" style="flex: 0 1 auto;">
-        <paper-tabs #pager selected="0" (iron-select)="cambioPagina(pager.selected)">
-          <paper-tab>Todos</paper-tab>
-          <paper-tab>Redes</paper-tab>
-          <paper-tab>Taller</paper-tab>
-          <paper-tab>UMI</paper-tab>
-          <paper-tab>Belenes</paper-tab>
+      <paper-material elevation="4" style="flex: 0 1 auto;" *ngIf="nombreLogeo" >
+        <paper-tabs #pager (iron-select)="cambioPagina(pager.selected)" [selected]="paginaSeleccionada">
+          <paper-tab [disabled]="getNivel((user | async)?.email) != 2 && getNivel((user | async)?.email) != 3">Todos</paper-tab>
+          <paper-tab [disabled]="getNivel((user | async)?.email) != 2 && getNivel((user | async)?.email) != 3">Redes</paper-tab>
+          <paper-tab [disabled]="getNivel((user | async)?.email) != 2 && getNivel((user | async)?.email) != 3">Taller</paper-tab>
+          <paper-tab [disabled]="getNivel((user | async)?.email) != 2 && getNivel((user | async)?.email) != 3">UMI</paper-tab>
+          <paper-tab [disabled]="getNivel((user | async)?.email) != 2 && getNivel((user | async)?.email) != 3">Belenes</paper-tab>
         </paper-tabs>
       </paper-material>
 
-      <paper-material elevation="3" style="overflow: scroll; height:  calc(100vh - 48px - 48px);">
+      <paper-material elevation="3" style="overflow: scroll; height:  calc(100vh - 48px - 48px);" *ngIf="nombreLogeo">
         <div>
           <div *ngFor="let i of incidentes | async; let indice = index;">
-            <div style="position: relative" (click)="eventoPresionado(i, indice)"
-                 [class.active]="indice == selectedRow">
+            <div style="position: relative" (click)="eventoPresionado(i, indice);"
+                 [class.active]="indice == selectedRow" *ngIf="filtrarIncidente(i)">
               <div style="padding: 12px">
                 <div style="width: 100%; display: flex; align-items: center; box-sizing: border-box;">
 
@@ -147,12 +163,19 @@
 
                   <div style="width: 16%">
                     <div class="label">Técnico:</div>
-
                   </div>
 
-                  <div style="box-sizing: border-box; padding-left: 8px; padding-right: 8px; width: 55%;">
+                  <div style="box-sizing: border-box; padding-left: 8px; padding-right: 8px; width: 55%;"
+                       *ngIf="!i.tecnicos">
                     <div class="labelBold" style=" overflow: hidden; white-space: nowrap; text-overflow:ellipsis;">
                       {{i.tecnico}}
+                    </div>
+                  </div>
+
+                  <div style="box-sizing: border-box; padding-left: 8px; padding-right: 8px; width: 55%;"
+                       *ngIf="i.tecnicos">
+                    <div class="labelBold" style=" overflow: hidden; white-space: nowrap; text-overflow:ellipsis;">
+                      {{ sacarNombres(i.tecnicos) }}
                     </div>
                   </div>
 
@@ -174,6 +197,19 @@
                   </div>
 
                 </div>
+                <div style="width: 100%; display: flex; align-items: center; box-sizing: border-box;" *ngIf="i.dependenciaDelCliente">
+
+                  <div style="width: 16%">
+                    <div class="label">Depto:</div>
+                  </div>
+
+                  <div style="box-sizing: border-box; padding-left: 8px; padding-right: 8px; width: 84%;">
+                    <div class="labelBold" style=" overflow: hidden; white-space: nowrap; text-overflow:ellipsis;">
+                      {{i.dependenciaDelCliente + ' - ' + i.ubicacionDelCliente}}
+                    </div>
+                  </div>
+
+                </div>
 
               </div>
               <div style="background-color: #999999; height: 1px; width: 100%"></div>
@@ -185,31 +221,42 @@
     </app-drawer>
 
     <div id="detalle" style="box-sizing: border-box; height: calc(100vh - 64px); flex-direction: column; display: flex"
-         *ngIf="incidente_seleccionado">
-      <paper-material #header elevation="2" id="toolbarIncidente" style="height: 96px;"
+         class="z-depth-3" *ngIf="incidente_seleccionado">
+      <paper-material #header elevation="2" id="toolbarIncidente"
+                      style="height: 96px; position: absolute; left: 0; right: 0"
                       [style.background]="fondo[incidente_seleccionado.prioridad - 1]">
         <div>
           <div main-title style="font-weight: bold; font-size: large">{{'Folio ' +
             incidente_seleccionado.folio}}
           </div>
-          <div main-title style="font-weight: bold; font-size: medium">{{'Técnico: ' +
-            incidente_seleccionado.tecnico}}
+          <div main-title style="font-weight: bold; font-size: medium">{{
+            incidente_seleccionado.tecnicos ? (incidente_seleccionado.tecnicos.length > 1 ? 'Técnicos: ' : 'Técnico: ')
+            +
+            sacarNombres(incidente_seleccionado.tecnicos) : 'Técnico: ' + incidente_seleccionado.tecnico }}
           </div>
           <div main-title style="font-size: small">{{'Registrado por: ' +
             incidente_seleccionado.quienRegistro}}
           </div>
         </div>
         <paper-icon-button icon="icons:delete-forever" style="position: absolute; left: 122px; top: 8px"
-                           *ngIf="getNivel((user | async)?.email) == 4 || getNivel((user | async)?.email) == 4"></paper-icon-button>
+                           *ngIf="getNivel((user | async)?.email) == 2 || getNivel((user | async)?.email) == 3 || getNivel((user | async)?.email) == 2.5"
+                           (click)="dialogEliminarIncidente.open()"></paper-icon-button>
         <paper-icon-button icon="editor:mode-edit" style="position: absolute; right: 17px; top: 8px"
-                           *ngIf="getNivel((user | async)?.email) == 4 || getNivel((user | async)?.email) == 4"></paper-icon-button>
+                           *ngIf="getNivel((user | async)?.email) == 2 || getNivel((user | async)?.email) == 3 || getNivel((user | async)?.email) == 2.5"
+                           (click)="abrirDialogoEditarIncidente(dialogCrearIncidente)"></paper-icon-button>
       </paper-material>
 
       <paper-fab style="top: 96px; position: absolute; right: 16px; background: #e66100;" icon="social:person-add"
-                 *ngIf="getNivel((user | async)?.email) == 1 || getNivel((user | async)?.email) == 3">
+                 *ngIf="(getNivel((user | async)?.email) == 1 && !incidenteTomado((user | async)?.displayName)  || getNivel((user | async)?.email) == 2.5 && !incidenteTomado((user | async)?.displayName))"
+                 (click)="dialogTomarIncidente.open()">
       </paper-fab>
 
-      <div style="overflow: auto; flex-grow: 1; padding: 16px;" id="contenido">
+      <paper-fab style="top: 96px; position: absolute; right: 16px; background: #e66100;" icon="social:person-add"
+                 *ngIf="getNivel((user | async)?.email) == 3"
+                 (click)="dialogAsignarTecnicos.open()">
+      </paper-fab>
+
+      <div style="overflow: auto; margin-top: 128px; flex-grow: 1; padding: 16px; margin-bottom: 48px" id="contenido">
         <div style="width: 100%; box-sizing: border-box; padding: 16px; display: flex;">
 
           <div style="width: 33%; display: flex; align-items: center;">
@@ -327,6 +374,42 @@
         </div>
 
         <div
+          style=" box-sizing: border-box; background-color: #999999; height: 1px; width: auto; margin-left: 16px; margin-right: 16px"
+          *ngIf="incidente_seleccionado.tecnicos"></div>
+
+        <div style="width: 100%; box-sizing: border-box; padding: 16px;"
+             *ngIf="incidente_seleccionado.tecnicos">
+
+          <div style="width: 100%; display: flex;">
+
+            <iron-icon icon="social:people" style="float: left; height: 24px; width: 24px"></iron-icon>
+
+            <div style="width: 100%; margin-left: 16px">
+              <div style="padding-top: 2px">
+                Técnicos:
+              </div>
+              <div *ngFor="let i of incidente_seleccionado.tecnicos; let x = index" style="width: 100%;">
+                <div style="width: 96%">
+                  <div
+                    style="width: 100%; display: flex; align-items: center; box-sizing: border-box; padding-top: 8px; padding-bottom: 8px">
+                    <div style="width: 85%">
+                      {{i.nombre}}
+                    </div>
+                    <div style="width: 15%; display: block;">
+                      <div class="labelChico">{{i.time | date:'dd/MM/yy'}}</div>
+                      <div class="labelChico">{{i.time | date:'hh:mm a'}}</div>
+                    </div>
+                  </div>
+                  <div style="background-color: #999999; height: 1px; width: 100%"
+                       *ngIf="x !== incidente_seleccionado.tecnicos.length - 1"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div
           style=" box-sizing: border-box; background-color: #999999; height: 1px; width: auto; margin-left: 16px; margin-right: 16px"></div>
 
         <div style="width: 100%; box-sizing: border-box; padding: 16px; display: flex;">
@@ -350,71 +433,63 @@
         <div
           style=" box-sizing: border-box; background-color: #999999; height: 1px; width: auto; margin-left: 16px; margin-right: 16px"></div>
 
-        <div style="width: 100%; box-sizing: border-box; padding: 16px; display: flex;">
+        <div style="width: 100%; box-sizing: border-box; padding: 16px;">
 
-          <div style="width: 100%; display: flex;">
+          <div style="width: 100%; box-sizing: border-box; display: flex;">
 
-            <img src="/assets/imagenes/ic_progress.png" id="ic_progress">
+            <iron-icon icon="social:people" style="float: left; height: 24px; width: 24px"></iron-icon>
 
             <div style="width: 100%; margin-left: 16px">
               <div style="padding-top: 2px">
                 Progreso:
               </div>
               <div *ngFor="let i of progreso | async" style="width: 100%;">
-                <div style="position: relative">
-                  <div style="padding-top: 8px; padding-bottom: 8px">
-                    <div style="width: 100%; display: flex; align-items: center; box-sizing: border-box;">
-
-                      <div style="width: 16%">
-                        <div class="label">Estatus:</div>
-
+                <div style="width: 96%; margin-right: 24px; box-sizing: border-box;">
+                  <div style="padding-top: 8px; padding-bottom: 8px; width: 100%; box-sizing: border-box;">
+                    <div style="width: 100%; display: flex; align-items: center; box-sizing: border-box;"
+                         *ngIf="i.progreso > -1">
+                      <div style="width: 100%; display: flex; box-sizing: border-box;">
+                        <div class="label" style="width: 10ch">Estatus:</div>
+                        <div style="padding-left: 16px; padding-right: 16px; width: 100%" [style.color]="fondoEstatus[i.progreso]">
+                          <div class="labelBold">{{status[i.progreso]}}</div>
+                        </div>
+                        <div class="labelChico" style="width: 10ch">{{i.timestamp | date:'dd/MM/yy'}}</div>
                       </div>
-
-                      <div style="box-sizing: border-box; padding-left: 8px; padding-right: 8px; width: 55%"
-                           [style.color]="fondoEstatus[i.progreso]">
-                        <div class="labelBold">{{status[i.progreso]}}</div>
-                      </div>
-
-                      <div style="width: 25%">
-                        <div class="labelChico">{{i.timestamp | date:'dd/MM/yy'}}</div>
-                      </div>
-
                     </div>
+
                     <div style="width: 100%; display: flex; align-items: center; box-sizing: border-box;">
-
-                      <div style="width: 16%">
-                        <div class="label">Por quién:</div>
-
+                      <div style="width: 100%; display: flex; box-sizing: border-box;">
+                        <div class="label" style="width: 10ch">Por quién:</div>
+                        <div style="padding-left: 16px; padding-right: 16px; width: 100%">
+                          <div class="labelBold">{{i.nombre}}</div>
+                        </div>
+                        <div class="labelChico" style="width: 10ch">{{i.timestamp | date:'hh:mm a'}}</div>
                       </div>
-
-                      <div style="box-sizing: border-box; padding-left: 8px; padding-right: 8px; width: 55%">
-                        <div class="labelBold">{{i.nombre}}</div>
-                      </div>
-
-                      <div style="width: 25%">
-                        <div class="labelChico">{{i.timestamp | date:'hh:mm a'}}</div>
-                      </div>
-
                     </div>
+
+                    <div style="width: 100%; display: flex; align-items: center; box-sizing: border-box;"
+                         *ngIf="i.quienes">
+                      <div style="width: 100%; display: flex; box-sizing: border-box;">
+                        <div class="label" style="width: 10ch">A quién:</div>
+                        <div style="padding-left: 16px; padding-right: 16px; width: 100%">
+                          <div class="labelBold">{{i.quienes}}</div>
+                        </div>
+                        <div class="labelChico" style="width: 10ch"></div>
+                      </div>
+                    </div>
+
                     <div style="width: 100%; display: flex; align-items: center; box-sizing: border-box;"
                          *ngIf="i.mensaje">
-
-                      <div style="width: 16%">
-                        <div class="label">Mensaje:</div>
-
-                      </div>
-
-                      <div style="box-sizing: border-box; padding-left: 8px; padding-right: 8px; width: 55%;">
-                        <div class="labelBold" style=" overflow: hidden; white-space: nowrap; text-overflow:ellipsis;">
-                          {{i.mensaje}}
+                      <div style="width: 100%; display: flex; box-sizing: border-box;">
+                        <div class="label" style="width: 10ch">Mensaje:</div>
+                        <div style="padding-left: 16px; padding-right: 16px; width: 100%">
+                          <div class="labelBold" [ngStyle]="{'text-decoration': i.mensaje.includes('<tachado>') ? 'line-through' : 'none'}">{{reemplazarTexto(i.mensaje)}}</div>
                         </div>
+                        <div class="label" style="width: 10ch"></div>
                       </div>
-
                     </div>
-
                   </div>
                   <div style="background-color: #999999; height: 1px; width: 100%"></div>
-                  <paper-ripple></paper-ripple>
                 </div>
               </div>
             </div>
@@ -425,61 +500,111 @@
       </div>
 
       <div style="position: absolute; bottom: 0; background: #424242; margin: 0; right: 24px; left: 122px;"
-           *ngIf="getNivel((user | async)?.email) > 4">
+           *ngIf="getNivel((user | async)?.email) > 0">
 
         <div
           style="position: relative; display: flex; box-sizing: border-box; padding: 4px; margin-bottom: 16px; min-height: 48px; background: #fff; color: #424242; border-radius: 24px;">
-          <iron-autogrow-textarea class="textarea_mensaje" max-rows="4" placeholder="Escribir mensaje"
-                                  style="padding: 0 !important; align-self: center; line-height: 24px; margin-left: 16px; margin-right: 48px; width: 100%; border: transparent"></iron-autogrow-textarea>
-          <paper-icon-button icon="icons:send" style="position: absolute; bottom: 4px; right: 4px"></paper-icon-button>
+          <paper-menu-button #menuProgreso id="menuProgreso"
+                             style="position: absolute; bottom: 3px; left: 6px; padding: 0; align-self: center;"
+                             vertical-align="bottom"
+                             close-on-activate="true" no-overlap="true"
+                             [disabled]="(getNivel((user | async)?.email) == 1 && !incidenteTomado((user | async)?.displayName)) || (getNivel((user | async)?.email) == 2 && incidente_seleccionado.estatus != 4) || (getNivel((user | async)?.email) == 2.5 && incidente_seleccionado.areas.belenes != true)">
+            <paper-chip #chip label="Mensaje" class="custom-avatar-background" slot="dropdown-trigger">
+            <span class="chip-background" slot="avatar">
+              <span #spanChip>M</span>
+            </span>
+            </paper-chip>
+            <paper-listbox slot="dropdown-content" (click)="menuProgreso.close()">
+              <paper-item (click)="chip.label = 'En progreso'; spanChip.textContent = 'P'"
+                          *ngIf="getNivel((user | async)?.email) != 2">En progreso
+              </paper-item>
+              <paper-item (click)="chip.label = 'En espera'; spanChip.textContent = 'E'"
+                          *ngIf="getNivel((user | async)?.email) != 2"> En espera
+              </paper-item>
+              <paper-item (click)="chip.label = 'Finalizado'; spanChip.textContent = 'F'"
+                          *ngIf="getNivel((user | async)?.email) != 2"> Finalizado
+              </paper-item>
+              <paper-item (click)="chip.label = 'Reabierto'; spanChip.textContent = 'R'"
+                          *ngIf="(getNivel((user | async)?.email) == 2 && incidente_seleccionado.estatus == 4) || (getNivel((user | async)?.email) == 3 && incidente_seleccionado.estatus == 4) || (getNivel((user | async)?.email) == 2.5 && incidente_seleccionado.estatus == 4)">
+                Reabierto
+              </paper-item>
+              <paper-item id="lista_mensaje" #lista_mensaje
+                          (click)="chip.label = 'Mensaje'; spanChip.textContent = 'M'"> Mensaje
+              </paper-item>
+            </paper-listbox>
+          </paper-menu-button>
+
+          <paper-input #inputMensaje class="mensaje" label="Escribir mensaje" no-label-float
+                       style=" align-self: center; line-height: 24px; margin-left: 140px; margin-right: 48px; width: 100%;"></paper-input>
+          <paper-icon-button #botonEnviar icon="icons:send" style="position: absolute; bottom: 4px; right: 4px"
+                             (click)="enviarProgreso(inputMensaje, botonEnviar, spanChip, toastBienvenido, chip)"></paper-icon-button>
         </div>
 
       </div>
-
-      <!--<footer style="background-color: #424242">
-        <app-toolbar style="position: fixed; bottom: 0; right: 0;">
-          <paper-button class="botonera">Editar</paper-button>
-          <paper-button class="botonera">Cancelar</paper-button>
-          <paper-button class="botonera">Eliminar</paper-button>
-        </app-toolbar>
-      </footer>-->
     </div>
 
-    <!--
 
-        <app-drawer align="right" id="drawer" swipe-open>
-          <div style="position: relative" align="left">
-            <div style="margin-left: 16px; margin-right: 16px; margin-top: 24px; margin-bottom: 8px"><b>Filtros:</b></div>
+    <app-drawer align="right" id="drawer" swipe-open>
+      <div style="position: relative" align="left">
+        <div style="margin-left: 16px; margin-right: 16px; margin-top: 24px; margin-bottom: 8px"><b>Filtros:</b></div>
 
-            <paper-checkbox class="c1" #c1 checked noink="true" (change)="checkboxchange(1, c1.checked)">Ver incidentes
-              asignados
-            </paper-checkbox>
-            <paper-checkbox class="c2" #c2 checked noink="true" (change)="checkboxchange(2, c2.checked)">Ver incidentes en
-              progreso
-            </paper-checkbox>
-            <paper-checkbox class="c3" #c3 checked noink="true" (change)="checkboxchange(3, c3.checked)">Ver incidentes en
-              espera
-            </paper-checkbox>
-            <paper-checkbox class="c4" #c4 checked noink="true" (change)="checkboxchange(4, c4.checked)">Ver incidentes
-              finalizados
-            </paper-checkbox>
+        <paper-checkbox class="c0" #c0 checked noink="true"
+                        (checked-changed)="filtro_registrado = !filtro_registrado; cambioPagina(pager.selected)">
+          Ver incidentes
+          registrados
+        </paper-checkbox>
+        <paper-checkbox class="c1" #c1 checked noink="true"
+                        (checked-changed)="filtro_tomados = !filtro_tomados; cambioPagina(pager.selected)">Ver
+          incidentes en
+          tomados
+        </paper-checkbox>
+        <paper-checkbox class="c2" #c2 checked noink="true"
+                        (checked-changed)="filtro_en_progreso = !filtro_en_progreso; cambioPagina(paginaSeleccionada)">
+          Ver incidentes en
+          progreso
+        </paper-checkbox>
+        <paper-checkbox class="c3" #c3 checked noink="true"
+                        (checked-changed)="filtro_en_espera = !filtro_en_espera; cambioPagina(pager.selected)">Ver
+          incidentes en
+          espera
+        </paper-checkbox>
+        <paper-checkbox class="c4" #c4 noink="true"
+                        (checked-changed)="filtro_finalizados = !filtro_finalizados; cambioPagina(pager.selected)">Ver
+          incidentes
+          finalizados
+        </paper-checkbox>
+        <paper-checkbox class="c5" #c5 checked noink="true"
+                        (checked-changed)="filtro_reabiertos = !filtro_reabiertos; cambioPagina(pager.selected)">
+          Ver incidentes
+          reabiertos
+        </paper-checkbox>
+        <paper-checkbox class="c6" #c6 checked noink="true"
+                        (checked-changed)="filtro_asignados = !filtro_asignados; cambioPagina(pager.selected)">Ver
+          incidentes
+          asignados
+        </paper-checkbox>
 
-            <div
-              style=" box-sizing: border-box; background-color: #999999; height: 1px; width: auto; margin-top: 18px; margin-bottom: 18px"></div>
+        <div
+          style=" box-sizing: border-box; background-color: #999999; height: 1px; width: auto; margin-top: 18px; margin-bottom: 18px"></div>
 
 
-            <paper-checkbox class="baja" #c5 checked noink="true" (change)="checkboxchange(5, c5.checked)">Ver incidentes de
-              prioridad baja
-            </paper-checkbox>
-            <paper-checkbox class="media" #c6 checked noink="true" (change)="checkboxchange(6, c6.checked)">Ver incidentes
-              de prioridad media
-            </paper-checkbox>
-            <paper-checkbox class="alta" #c7 checked noink="true" (change)="checkboxchange(7, c7.checked)">Ver incidentes de
-              prioridad alta
-            </paper-checkbox>
-          </div>
-        </app-drawer>
-    -->
+        <paper-checkbox class="baja" #c5 checked noink="true"
+                        (checked-changed)="filtro_prioridad_baja = !filtro_prioridad_baja; cambioPagina(pager.selected)">
+          Ver incidentes de
+          prioridad baja
+        </paper-checkbox>
+        <paper-checkbox class="media" #c6 checked noink="true"
+                        (checked-changed)="filtro_prioridad_media = !filtro_prioridad_media; cambioPagina(pager.selected)">
+          Ver incidentes
+          de prioridad media
+        </paper-checkbox>
+        <paper-checkbox class="alta" #c7 checked noink="true"
+                        (checked-changed)="filtro_prioridad_alta = !filtro_prioridad_alta; cambioPagina(pager.selected)">
+          Ver incidentes de
+          prioridad alta
+        </paper-checkbox>
+      </div>
+    </app-drawer>
 
   </app-drawer-layout>
 </app-header-layout>
@@ -498,7 +623,8 @@
         <div class="labelBold" style="text-align: center">DATOS DEL CLIENTE</div>
 
         <paper-input label="Código:" id="inputCodigo" #inputCodigo
-                     (value-changed)="codigoSeleccionado(inputCodigo.value, inputNombre, inputDependencia, inputUbicacion, inputTelefono, inputCor)">
+                     (value-changed)="codigoSeleccionado(inputCodigo.value, inputNombre, inputDependencia, inputUbicacion, inputTelefono, inputCor)"
+                     [value]="editando ? incidente_seleccionado.codigoCliente : ''">
           <paper-icon-button slot="prefix" icon="communication:dialpad"></paper-icon-button>
         </paper-input>
 
@@ -556,8 +682,8 @@
           <label slot="label">Tipo de incidente:</label>
           <iron-input slot="input">
             <div #labelTipoIncidente
-                 [ngStyle]="{'color': textoTipoIncidente === 'Selecciona el tipo de incidente'  && inputTipoIncidente.invalid ? 'red' : 'white'}">
-              {{textoTipoIncidente}}
+                 [ngStyle]="{'color': textoTipoIncidenteReal === 'Selecciona el tipo de incidente'  && inputTipoIncidente.invalid ? 'red' : 'white'}">
+              {{textoTipoIncidenteReal}}
             </div>
           </iron-input>
           <paper-icon-button slot="prefix" icon="icons:assignment"></paper-icon-button>
@@ -567,14 +693,18 @@
           <label slot="label">Prioridad:</label>
           <iron-input slot="input">
             <div style="box-sizing: border-box;">
-              <paper-checkbox id="prioridadBaja" #prioridadBaja checked class="prioridadBaja"
-                              (checked-changed)="cambiarPrioridad(prioridadBaja)">Prioridad Baja
+              <paper-checkbox id="prioridadBaja" #prioridadBaja class="prioridadBaja"
+                              (checked-changed)="cambiarPrioridad(prioridadBaja)"
+                              [checked]="editando && incidente_seleccionado.prioridad == 1 ? true : !editando">Prioridad
+                Baja
               </paper-checkbox>
               <paper-checkbox id="prioridadMedia" #prioridadMedia class="prioridadMedia"
-                              (checked-changed)="cambiarPrioridad(prioridadMedia)">Prioridad Media
+                              (checked-changed)="cambiarPrioridad(prioridadMedia)"
+                              [checked]="editando && incidente_seleccionado.prioridad == 2">Prioridad Media
               </paper-checkbox>
               <paper-checkbox id="prioridadAlta" #prioridadAlta class="prioridadAlta"
-                              (checked-changed)="cambiarPrioridad(prioridadAlta)">Prioridad Alta
+                              (checked-changed)="cambiarPrioridad(prioridadAlta)"
+                              [checked]="editando && incidente_seleccionado.prioridad == 3">Prioridad Alta
               </paper-checkbox>
             </div>
           </iron-input>
@@ -593,7 +723,9 @@
       </div>
     </div>
 
-    <div #preteccionFormulario id="preteccionFormulario" style="position: absolute; top: 0; bottom: 0; left: 0; right: 0; margin-top: -24px; margin-bottom: -24px; background: rgba(0,0,0,0.14)" *ngIf="proteccion"></div>
+    <div #preteccionFormulario id="preteccionFormulario"
+         style="position: absolute; top: 0; bottom: 0; left: 0; right: 0; margin-top: -24px; margin-bottom: -24px; background: rgba(0,0,0,0.14)"
+         *ngIf="proteccion"></div>
   </div>
 
 </paper-dialog>
@@ -602,202 +734,395 @@
               entry-animation="datepicker-slide-from-bottom-animation"
               exit-animation="datepicker-slide-from-top-animation">
   <app-toolbar id="toolbar_crear_incidente">
-    <div main-title>Tipo de Incidente</div>
+    <div main-title>Selecciona el tipo de incidente</div>
+
     <paper-button onclick="dialogTipoIncidente.close()" style="margin-left: -16px">ACEPTAR</paper-button>
   </app-toolbar>
 
-  <div *ngIf="dialogCrearIncidente.opened">
-    <div style="margin-bottom: 16px">
-      <div style="display: flex; align-items: center;">
-        <img src="/assets/imagenes/ic_taller.png" style="height: 24px; margin-left: 8px;">
-        <div style="padding-left: 16px">
-          Taller de computo
-        </div>
+  <div style="margin-top: 16px" *ngIf="puedeResgistrarEnBelenes((user | async)?.email) && dialogCrearIncidente.opened">
+    <div style="display: flex; align-items: center;">
+      <iron-icon icon="social:domain" style="margin-left: 13px"></iron-icon>
+      <div style="padding-left: 16px">
+        Belenes
       </div>
+    </div>
 
-      <div style="display: flex; margin-top: 8px">
-        <paper-checkbox id="t1" #t1 class="tipoIncidente"
-                        (checked-changed)="cambiarTipoIncidente(t1)">Mantenimiento correctivo
-        </paper-checkbox>
-        <paper-checkbox id="t2" #t2 class="tipoIncidente"
-                        (checked-changed)="cambiarTipoIncidente(t2)">Impresora
-        </paper-checkbox>
-        <paper-checkbox id="t3" #t3 class="tipoIncidente"
-                        (checked-changed)="cambiarTipoIncidente(t3)">Software
-        </paper-checkbox>
-        <paper-checkbox id="t4" #t4 class="tipoIncidente"
-                        (checked-changed)="cambiarTipoIncidente(t4)">Hardware
-        </paper-checkbox>
-      </div>
-
-      <div style="display: flex;">
-        <paper-checkbox id="t5" #t5 class="tipoIncidente"
-                        (checked-changed)="cambiarTipoIncidente(t5)">Correo electrónico
-        </paper-checkbox>
-        <paper-checkbox id="t6" #t6 class="tipoIncidente"
-                        (checked-changed)="cambiarTipoIncidente(t6)">Servidores
-        </paper-checkbox>
-        <paper-checkbox id="t7" #t7 class="tipoIncidente"
-                        (checked-changed)="cambiarTipoIncidente(t7)">Otro
-        </paper-checkbox>
-        <div style="width: 25%; margin: 12px 16px;"></div>
-      </div>
+    <div style="display: flex; margin-top: 8px">
+      <paper-checkbox id="t_belenes" #t_belenes class="tipoIncidente"
+                      [checked]="checked_belenes((user | async)?.displayName)"
+                      (checked-changed)="cambiarIncidenteEnBelenes(t_belenes)">El incidente es en Belenes
+      </paper-checkbox>
     </div>
 
     <div style="background-color: #999999; height: 1px; width: 100%"></div>
-
-    <div style="margin-top: 24px">
-      <div style="display: flex; align-items: center;">
-        <img src="/assets/imagenes/ic_redes.svg" style="height: 24px; margin-left: 12px;">
-        <div style="padding-left: 16px">
-          Redes y telefonía
-        </div>
-      </div>
-
-      <div style="display: flex; margin-top: 16px">
-        <paper-checkbox id="t9" #t8 class="tipoIncidente"
-                        (checked-changed)="cambiarTipoIncidente(t8)">Teléfono
-        </paper-checkbox>
-        <paper-checkbox id="t9" #t9 class="tipoIncidente"
-                        (checked-changed)="cambiarTipoIncidente(t9)">Internet
-        </paper-checkbox>
-        <paper-checkbox id="t10" #t10 class="tipoIncidente"
-                        (checked-changed)="cambiarTipoIncidente(t10)">WIFI
-        </paper-checkbox>
-        <paper-checkbox id="t11" #t11 class="tipoIncidente"
-                        (checked-changed)="cambiarTipoIncidente(t11)">Mantenimiento correctivo
-        </paper-checkbox>
-      </div>
-
-      <div style="display: flex;">
-        <paper-checkbox id="t12" #t12 class="tipoIncidente"
-                        (checked-changed)="cambiarTipoIncidente(t12)">Otro
-        </paper-checkbox>
-      </div>
-    </div>
-
-    <div style="background-color: #999999; height: 1px; width: 100%; margin-top: 8px"></div>
-
-    <div style="margin-top: 24px">
-      <div style="display: flex; align-items: center;">
-        <iron-icon icon="icons:important-devices" style="margin-left: 13px"></iron-icon>
-        <div style="padding-left: 16px">
-          Multimedia
-        </div>
-      </div>
-
-      <div style="display: flex; margin-top: 16px">
-        <paper-checkbox id="t13" #t13 class="tipoIncidente"
-                        (checked-changed)="cambiarTipoIncidente(t13)">Grabación de eventos
-          académicos
-        </paper-checkbox>
-        <paper-checkbox id="t14" #t14 class="tipoIncidente"
-                        (checked-changed)="cambiarTipoIncidente(t14)">Producción de videos
-        </paper-checkbox>
-        <paper-checkbox id="t15" #t15 class="tipoIncidente"
-                        (checked-changed)="cambiarTipoIncidente(t15)">Fotografia de eventos
-          académicos
-        </paper-checkbox>
-        <paper-checkbox id="t16" #t16 class="tipoIncidente"
-                        (checked-changed)="cambiarTipoIncidente(t16)">Página web
-        </paper-checkbox>
-      </div>
-
-      <div style="display: flex;">
-        <paper-checkbox id="t17" #t17 class="tipoIncidente"
-                        (checked-changed)="cambiarTipoIncidente(t17)">Diseño
-        </paper-checkbox>
-        <paper-checkbox id="t18" #t18 class="tipoIncidente"
-                        (checked-changed)="cambiarTipoIncidente(t18)">Videoconferencia
-        </paper-checkbox>
-        <paper-checkbox id="t19" #t19 class="tipoIncidente"
-                        (checked-changed)="cambiarTipoIncidente(t19)">Streaming
-        </paper-checkbox>
-        <paper-checkbox id="t20" #t20 class="tipoIncidente"
-                        (checked-changed)="cambiarTipoIncidente(t20)">Aplicaciones Web y moviles
-        </paper-checkbox>
-      </div>
-
-      <div style="display: flex;">
-        <paper-checkbox id="t21" #t21 class="tipoIncidente"
-                        (checked-changed)="cambiarTipoIncidente(t21)">Auditorios
-        </paper-checkbox>
-        <paper-checkbox id="t22" #t22 class="tipoIncidente"
-                        (checked-changed)="cambiarTipoIncidente(t22)">Otro
-        </paper-checkbox>
-        <div style="width: 25%; margin: 12px 16px;"></div>
-        <div style="width: 25%; margin: 12px 16px;"></div>
-      </div>
-
-    </div>
-
-    <div style="background-color: #999999; height: 1px; width: 100%; margin-top: 8px"></div>
-
-    <div style="margin-top: 24px">
-      <div style="display: flex; align-items: center;">
-        <iron-icon icon="social:people" style="margin-left: 13px"></iron-icon>
-        <div style="padding-left: 16px">
-          Administrativo
-        </div>
-      </div>
-
-      <div style="display: flex; margin-top: 16px">
-        <paper-checkbox id="t23" #t23 class="tipoIncidente"
-                        (checked-changed)="cambiarTipoIncidente(t23)">Héctor Aceves Shimizu y López
-        </paper-checkbox>
-        <paper-checkbox id="t24" #t24 class="tipoIncidente"
-                        (checked-changed)="cambiarTipoIncidente(t24)">Idania Gómez Cosio
-        </paper-checkbox>
-        <paper-checkbox id="t25" #t25 class="tipoIncidente"
-                        (checked-changed)="cambiarTipoIncidente(t25)">Eduardo Solano Guzmán
-        </paper-checkbox>
-        <div style="width: 25%; margin: 12px 16px;"></div>
-      </div>
-
-    </div>
-
-    <div style="background-color: #999999; height: 1px; width: 100%; margin-top: 8px"></div>
-
-    <div style="margin-top: 24px">
-      <div style="display: flex; align-items: center;">
-        <img src="/assets/imagenes/ic_aviso.png" style="height: 24px; margin-left: 8px;">
-        <div style="padding-left: 16px">
-          Avisos
-        </div>
-      </div>
-
-      <div style="display: flex; margin-top: 16px">
-        <paper-checkbox id="t26" #t26 class="tipoIncidente"
-                        (checked-changed)="cambiarTipoIncidente(t26)">Taller de computo
-        </paper-checkbox>
-        <paper-checkbox id="t27" #t27 class="tipoIncidente"
-                        (checked-changed)="cambiarTipoIncidente(t27)">Redes
-        </paper-checkbox>
-        <paper-checkbox id="t28" #t28 class="tipoIncidente"
-                        (checked-changed)="cambiarTipoIncidente(t28)">Multimedia
-        </paper-checkbox>
-        <paper-checkbox id="t29" #t29 class="tipoIncidente"
-                        (checked-changed)="cambiarTipoIncidente(t29)">Redes y Taller de computo
-        </paper-checkbox>
-      </div>
-
-      <div style="display: flex;">
-        <paper-checkbox id="t30" #t30 class="tipoIncidente"
-                        (checked-changed)="cambiarTipoIncidente(t30)">Redes y Multimedia
-        </paper-checkbox>
-        <paper-checkbox id="t31" #t31 class="tipoIncidente"
-                        (checked-changed)="cambiarTipoIncidente(t31)">Taller de computo y Multimedia
-        </paper-checkbox>
-        <paper-checkbox id="t32" #t32 class="tipoIncidente"
-                        (checked-changed)="cambiarTipoIncidente(t32)">Belenes
-        </paper-checkbox>
-        <paper-checkbox id="t33" #t33 class="tipoIncidente"
-                        (checked-changed)="cambiarTipoIncidente(t33)">Aviso General
-        </paper-checkbox>
-      </div>
-    </div>
-
   </div>
+
+  <paper-dialog-scrollable style="margin: 0">
+    <div *ngIf="dialogCrearIncidente.opened" style="margin-top: 16px; margin-bottom: 16px">
+      <div style="margin-bottom: 16px">
+        <div style="display: flex; align-items: center;">
+          <img src="assets/imagenes/ic_taller.png" style="height: 24px; margin-left: 8px;">
+          <div style="padding-left: 16px">
+            Taller de computo
+          </div>
+        </div>
+
+        <div style="display: flex; margin-top: 8px">
+          <paper-checkbox id="t1" #t1 class="tipoIncidente"
+                          (checked-changed)="cambiarTipoIncidente(t1)">Mantenimiento correctivo
+          </paper-checkbox>
+          <paper-checkbox id="t2" #t2 class="tipoIncidente"
+                          (checked-changed)="cambiarTipoIncidente(t2)">Impresora
+          </paper-checkbox>
+          <paper-checkbox id="t3" #t3 class="tipoIncidente"
+                          (checked-changed)="cambiarTipoIncidente(t3)">Software
+          </paper-checkbox>
+          <paper-checkbox id="t4" #t4 class="tipoIncidente"
+                          (checked-changed)="cambiarTipoIncidente(t4)">Hardware
+          </paper-checkbox>
+        </div>
+
+        <div style="display: flex;">
+          <paper-checkbox id="t5" #t5 class="tipoIncidente"
+                          (checked-changed)="cambiarTipoIncidente(t5)">Correo electrónico
+          </paper-checkbox>
+          <paper-checkbox id="t6" #t6 class="tipoIncidente"
+                          (checked-changed)="cambiarTipoIncidente(t6)">Servidores
+          </paper-checkbox>
+          <paper-checkbox id="t7" #t7 class="tipoIncidente"
+                          (checked-changed)="cambiarTipoIncidente(t7)">Otro
+          </paper-checkbox>
+          <div style="width: 25%; margin: 12px 16px;"></div>
+        </div>
+      </div>
+
+
+      <div style="margin-top: 24px">
+        <div style="display: flex; align-items: center;">
+          <img src="assets/imagenes/ic_redes.svg" style="height: 24px; margin-left: 12px;">
+          <div style="padding-left: 16px">
+            Redes y telefonía
+          </div>
+        </div>
+
+        <div style="display: flex; margin-top: 16px">
+          <paper-checkbox id="t9" #t8 class="tipoIncidente"
+                          (checked-changed)="cambiarTipoIncidente(t8)">Teléfono
+          </paper-checkbox>
+          <paper-checkbox id="t9" #t9 class="tipoIncidente"
+                          (checked-changed)="cambiarTipoIncidente(t9)">Internet
+          </paper-checkbox>
+          <paper-checkbox id="t10" #t10 class="tipoIncidente"
+                          (checked-changed)="cambiarTipoIncidente(t10)">WIFI
+          </paper-checkbox>
+          <paper-checkbox id="t11" #t11 class="tipoIncidente"
+                          (checked-changed)="cambiarTipoIncidente(t11)">Mantenimiento correctivo
+          </paper-checkbox>
+        </div>
+
+        <div style="display: flex;">
+          <paper-checkbox id="t12" #t12 class="tipoIncidente"
+                          (checked-changed)="cambiarTipoIncidente(t12)">Otro
+          </paper-checkbox>
+        </div>
+      </div>
+
+      <div style="background-color: #999999; height: 1px; width: 100%; margin-top: 8px"></div>
+
+      <div style="margin-top: 24px">
+        <div style="display: flex; align-items: center;">
+          <iron-icon icon="icons:important-devices" style="margin-left: 13px"></iron-icon>
+          <div style="padding-left: 16px">
+            Multimedia
+          </div>
+        </div>
+
+        <div style="display: flex; margin-top: 16px">
+          <paper-checkbox id="t13" #t13 class="tipoIncidente"
+                          (checked-changed)="cambiarTipoIncidente(t13)">Grabación de eventos
+            académicos
+          </paper-checkbox>
+          <paper-checkbox id="t14" #t14 class="tipoIncidente"
+                          (checked-changed)="cambiarTipoIncidente(t14)">Producción de videos
+          </paper-checkbox>
+          <paper-checkbox id="t15" #t15 class="tipoIncidente"
+                          (checked-changed)="cambiarTipoIncidente(t15)">Fotografia de eventos
+            académicos
+          </paper-checkbox>
+          <paper-checkbox id="t16" #t16 class="tipoIncidente"
+                          (checked-changed)="cambiarTipoIncidente(t16)">Página web
+          </paper-checkbox>
+        </div>
+
+        <div style="display: flex;">
+          <paper-checkbox id="t17" #t17 class="tipoIncidente"
+                          (checked-changed)="cambiarTipoIncidente(t17)">Diseño
+          </paper-checkbox>
+          <paper-checkbox id="t18" #t18 class="tipoIncidente"
+                          (checked-changed)="cambiarTipoIncidente(t18)">Videoconferencia
+          </paper-checkbox>
+          <paper-checkbox id="t19" #t19 class="tipoIncidente"
+                          (checked-changed)="cambiarTipoIncidente(t19)">Streaming
+          </paper-checkbox>
+          <paper-checkbox id="t20" #t20 class="tipoIncidente"
+                          (checked-changed)="cambiarTipoIncidente(t20)">Aplicaciones Web y moviles
+          </paper-checkbox>
+        </div>
+
+        <div style="display: flex;">
+          <paper-checkbox id="t21" #t21 class="tipoIncidente"
+                          (checked-changed)="cambiarTipoIncidente(t21)">Auditorios
+          </paper-checkbox>
+          <paper-checkbox id="t22" #t22 class="tipoIncidente"
+                          (checked-changed)="cambiarTipoIncidente(t22)">Otro
+          </paper-checkbox>
+          <div style="width: 25%; margin: 12px 16px;"></div>
+          <div style="width: 25%; margin: 12px 16px;"></div>
+        </div>
+
+      </div>
+
+      <div style="background-color: #999999; height: 1px; width: 100%; margin-top: 8px"></div>
+
+      <div style="margin-top: 24px">
+        <div style="display: flex; align-items: center;">
+          <iron-icon icon="social:people" style="margin-left: 13px"></iron-icon>
+          <div style="padding-left: 16px">
+            Administrativo
+          </div>
+        </div>
+
+        <div style="display: flex; margin-top: 16px">
+          <paper-checkbox id="t23" #t23 class="tipoIncidente"
+                          (checked-changed)="cambiarTipoIncidente(t23)">Héctor Aceves Shimizu y López
+          </paper-checkbox>
+          <paper-checkbox id="t24" #t24 class="tipoIncidente"
+                          (checked-changed)="cambiarTipoIncidente(t24)">Idania Gómez Cosio
+          </paper-checkbox>
+          <paper-checkbox id="t25" #t25 class="tipoIncidente"
+                          (checked-changed)="cambiarTipoIncidente(t25)">Eduardo Solano Guzmán
+          </paper-checkbox>
+          <div style="width: 25%; margin: 12px 16px;"></div>
+        </div>
+
+      </div>
+
+      <!--AVISOS-->
+      <!--<div style="background-color: #999999; height: 1px; width: 100%; margin-top: 8px"></div>
+
+      <div style="margin-top: 24px">
+        <div style="display: flex; align-items: center;">
+          <img src="assets/imagenes/ic_aviso.png" style="height: 24px; margin-left: 8px;">
+          <div style="padding-left: 16px">
+            Avisos
+          </div>
+        </div>
+
+        <div style="display: flex; margin-top: 16px">
+          <paper-checkbox id="t26" #t26 class="tipoIncidente"
+                          (checked-changed)="cambiarTipoIncidente(t26)">Taller de computo
+          </paper-checkbox>
+          <paper-checkbox id="t27" #t27 class="tipoIncidente"
+                          (checked-changed)="cambiarTipoIncidente(t27)">Redes
+          </paper-checkbox>
+          <paper-checkbox id="t28" #t28 class="tipoIncidente"
+                          (checked-changed)="cambiarTipoIncidente(t28)">Multimedia
+          </paper-checkbox>
+          <paper-checkbox id="t29" #t29 class="tipoIncidente"
+                          (checked-changed)="cambiarTipoIncidente(t29)">Redes y Taller de computo
+          </paper-checkbox>
+        </div>
+
+        <div style="display: flex;">
+          <paper-checkbox id="t30" #t30 class="tipoIncidente"
+                          (checked-changed)="cambiarTipoIncidente(t30)">Redes y Multimedia
+          </paper-checkbox>
+          <paper-checkbox id="t31" #t31 class="tipoIncidente"
+                          (checked-changed)="cambiarTipoIncidente(t31)">Taller de computo y Multimedia
+          </paper-checkbox>
+          <paper-checkbox id="t32" #t32 class="tipoIncidente"
+                          (checked-changed)="cambiarTipoIncidente(t32)">Belenes
+          </paper-checkbox>
+          <paper-checkbox id="t33" #t33 class="tipoIncidente"
+                          (checked-changed)="cambiarTipoIncidente(t33)">Aviso General
+          </paper-checkbox>
+        </div>
+      </div>-->
+
+    </div>
+  </paper-dialog-scrollable>
+</paper-dialog>
+
+<paper-dialog #dialogAsignarTecnicos id="dialogAsignarTecnicos" with-backdrop
+              entry-animation="datepicker-slide-from-bottom-animation"
+              exit-animation="datepicker-slide-from-top-animation">
+  <app-toolbar id="toolbar_crear_incidente">
+    <div main-title>Asignar técnicos</div>
+    <paper-button #asignar (click)="asignarTecnicos(dialogAsignarTecnicos, toastBienvenido, asignar)"
+                  style="margin-left: -16px">ACEPTAR
+    </paper-button>
+  </app-toolbar>
+
+  <paper-dialog-scrollable style="margin: 0" *ngIf="dialogAsignarTecnicos.opened">
+    <div style="margin-top: 16px; margin-bottom: 16px">
+
+      <div style="margin-top: 24px">
+        <div style="display: flex; align-items: center;">
+          <iron-icon icon="social:people" style="margin-left: 13px"></iron-icon>
+          <div style="padding-left: 16px">
+            Administrativo
+          </div>
+        </div>
+
+        <div style="display: flex; margin-top: 16px; margin-bottom: 16px">
+          <paper-checkbox id="hector" #hector class="tipoIncidente" (checked-changed)="cambiarAsignado(hector)"
+                          [checked]="incidenteTomado('Héctor')" [disabled]="incidenteTomado('Héctor')">Héctor Aceves
+            Shimizu y López
+          </paper-checkbox>
+          <paper-checkbox id="idania" #idania class="tipoIncidente" (checked-changed)="cambiarAsignado(idania)"
+                          [checked]="incidenteTomado('Idania')" [disabled]="incidenteTomado('Idania')">Idania Gómez
+            Cosio
+          </paper-checkbox>
+          <paper-checkbox id="solano" #solano class="tipoIncidente" (checked-changed)="cambiarAsignado(solano)"
+                          [checked]="incidenteTomado('Solano')" [disabled]="incidenteTomado('Solano')">Eduardo Solano
+            Guzmán
+          </paper-checkbox>
+          <div style="width: 25%; margin: 12px 16px;"></div>
+        </div>
+
+      </div>
+
+      <div style="background-color: #999999; height: 1px; width: 100%"></div>
+
+      <div style="margin-top: 24px">
+        <div style="display: flex; align-items: center;">
+          <img src="assets/imagenes/ic_taller.png" style="height: 24px; margin-left: 8px;">
+          <div style="padding-left: 16px">
+            Taller de computo
+          </div>
+        </div>
+
+        <div style="display: flex; margin-top: 16px; margin-bottom: 16px">
+          <paper-checkbox id="quique" #quique class="tipoIncidente" (checked-changed)="cambiarAsignado(quique)"
+                          [checked]="incidenteTomado('Enrique')" [disabled]="incidenteTomado('Enrique')">Jesus Enrique
+            Vega Coronel
+          </paper-checkbox>
+          <paper-checkbox id="juanito" #juanito class="tipoIncidente" (checked-changed)="cambiarAsignado(juanito)"
+                          [checked]="incidenteTomado('Juan')" [disabled]="incidenteTomado('Juan')">Juan Estrada Mancilla
+          </paper-checkbox>
+          <paper-checkbox id="richi" #richi class="tipoIncidente" (checked-changed)="cambiarAsignado(richi)"
+                          [checked]="incidenteTomado('Ricardo')" [disabled]="incidenteTomado('Ricardo')">Ricardo Cortes
+          </paper-checkbox>
+          <paper-checkbox id="jose" #jose class="tipoIncidente" (checked-changed)="cambiarAsignado(jose)"
+                          [checked]="incidenteTomado('Jose')" [disabled]="incidenteTomado('Jose')">Jose Alberto Cárdenas
+            Rubio
+          </paper-checkbox>
+        </div>
+
+        <div style="display: flex; margin-top: 16px; margin-bottom: 16px">
+          <paper-checkbox id="roberto" #roberto class="tipoIncidente" (checked-changed)="cambiarAsignado(roberto)"
+                          [checked]="incidenteTomado('Roberto')" [disabled]="incidenteTomado('Roberto')">Roberto Carlos
+            Villaseñor Rodriguez
+          </paper-checkbox>
+        </div>
+      </div>
+
+      <div style="background-color: #999999; height: 1px; width: 100%"></div>
+
+      <div style="margin-top: 24px">
+        <div style="display: flex; align-items: center;">
+          <img src="assets/imagenes/ic_redes.svg" style="height: 24px; margin-left: 12px;">
+          <div style="padding-left: 16px">
+            Redes y telefonía
+          </div>
+        </div>
+
+        <div style="display: flex; margin-top: 16px; margin-bottom: 16px">
+          <paper-checkbox id="octavio" #octavio class="tipoIncidente" (checked-changed)="cambiarAsignado(octavio)"
+                          [checked]="incidenteTomado('Octavio')" [disabled]="incidenteTomado('Octavio')">Octavio
+            Cortazar Rodríguez
+          </paper-checkbox>
+          <!--<paper-checkbox id="roberto" #roberto class="tipoIncidente" (checked-changed)="cambiarAsignado(roberto)" [checked]="incidenteTomado('Roberto')" [disabled]="incidenteTomado('Roberto')">Roberto Carlos Villaseñor Rodriguez
+          </paper-checkbox>-->
+          <paper-checkbox id="gera" #gera class="tipoIncidente" (checked-changed)="cambiarAsignado(gera)"
+                          [checked]="incidenteTomado('Gerardo')" [disabled]="incidenteTomado('Gerardo')">Jose Gerardo
+            Carrillo Manriquez
+          </paper-checkbox>
+          <paper-checkbox id="edgar" #edgar class="tipoIncidente" (checked-changed)="cambiarAsignado(edgar)"
+                          [checked]="incidenteTomado('Edgar')" [disabled]="incidenteTomado('Edgar')">Edgar Orozco
+            Castillo
+          </paper-checkbox>
+          <div style="width: 25%; margin: 12px 16px;"></div>
+        </div>
+      </div>
+
+      <div style="background-color: #999999; height: 1px; width: 100%; margin-top: 8px"></div>
+
+      <div style="margin-top: 24px">
+        <div style="display: flex; align-items: center;">
+          <iron-icon icon="icons:important-devices" style="margin-left: 13px"></iron-icon>
+          <div style="padding-left: 16px">
+            Multimedia
+          </div>
+        </div>
+
+        <div style="display: flex; margin-top: 16px">
+          <paper-checkbox id="zyan" #zyan class="tipoIncidente" (checked-changed)="cambiarAsignado(zyan)"
+                          [checked]="incidenteTomado('Zyanya')" [disabled]="incidenteTomado('Zyanya')">Zyanya López Díaz
+          </paper-checkbox>
+          <paper-checkbox id="hiram" #hiram class="tipoIncidente" (checked-changed)="cambiarAsignado(hiram)"
+                          [checked]="incidenteTomado('Hiram')" [disabled]="incidenteTomado('Hiram')">Hiram Alejandro
+            Peña Franco
+          </paper-checkbox>
+          <paper-checkbox id="lalo" #lalo class="tipoIncidente" (checked-changed)="cambiarAsignado(lalo)"
+                          [checked]="incidenteTomado('Eduardo García')" [disabled]="incidenteTomado('Eduardo García')">
+            Eduardo García Salazar
+          </paper-checkbox>
+          <paper-checkbox id="emanuel" #emanuel class="tipoIncidente" (checked-changed)="cambiarAsignado(emanuel)"
+                          [checked]="incidenteTomado('Emmanuel')" [disabled]="incidenteTomado('Emmanuel')">Emmanuel
+            Chacon Vera
+          </paper-checkbox>
+        </div>
+
+        <div style="display: flex;">
+          <paper-checkbox id="oscar" #oscar class="tipoIncidente" (checked-changed)="cambiarAsignado(oscar)"
+                          [checked]="incidenteTomado('Oscar')" [disabled]="incidenteTomado('Oscar')">Oscar Méndez
+          </paper-checkbox>
+          <paper-checkbox id="omar" #omar class="tipoIncidente" (checked-changed)="cambiarAsignado(omar)"
+                          [checked]="incidenteTomado('Omar')" [disabled]="incidenteTomado('Omar')">Omar Alberto Andrade
+            Muñoz
+          </paper-checkbox>
+          <div style="width: 25%; margin: 12px 16px;"></div>
+          <div style="width: 25%; margin: 12px 16px;"></div>
+        </div>
+
+      </div>
+
+      <div style="background-color: #999999; height: 1px; width: 100%; margin-top: 8px"></div>
+
+      <div style="margin-top: 24px">
+        <div style="display: flex; align-items: center;">
+          <iron-icon icon="social:domain" style="margin-left: 13px"></iron-icon>
+          <div style="padding-left: 16px">
+            Belenes
+          </div>
+        </div>
+
+        <div style="display: flex; margin-top: 16px; margin-bottom: 16px">
+          <paper-checkbox id="jorge" #jorge class="tipoIncidente" (checked-changed)="cambiarAsignado(jorge)"
+                          [checked]="incidenteTomado('jorge')" [disabled]="incidenteTomado('jorge')">Jorge Plascencia
+            Pérez
+          </paper-checkbox>
+          <paper-checkbox id="mario" #mario class="tipoIncidente" (checked-changed)="cambiarAsignado(mario)"
+                          [checked]="incidenteTomado('mario')" [disabled]="incidenteTomado('mario')">Mario Franco López
+          </paper-checkbox>
+          <div style="width: 25%; margin: 12px 16px;"></div>
+          <div style="width: 25%; margin: 12px 16px;"></div>
+        </div>
+      </div>
+
+    </div>
+  </paper-dialog-scrollable>
 </paper-dialog>
 
 <paper-dialog id="dialogIniciarSesion" with-backdrop #loginDialog>
@@ -806,11 +1131,11 @@
   <div style="height: 6px; width: 100%; background: #e66100; margin: 0; padding: 0;"></div>
 
   <div style="display: flex; margin: 0; padding: 0;">
-    <div style="width: 50%;  background-image: url('/assets/imagenes/img_login.jpg');
+    <div style="width: 50%;  background-image: url('assets/imagenes/img_login.jpg');
     background-position: center; display: flex; align-items: center; justify-items: center">
 
       <div style="width: 100%;">
-        <img src="/assets/imagenes/cta_letras.png" style="width: 50%; margin-left: auto; display: block;
+        <img src="assets/imagenes/cta_letras.png" style="width: 50%; margin-left: auto; display: block;
     margin-right: auto;">
         <div style="height: 2px; margin-top: 8px; width: 50%; background: #e66100; margin-left: auto; display: block;
     margin-right: auto;"></div>
@@ -823,7 +1148,7 @@
       <div *ngIf="loginDialog.opened"
            style="box-sizing: border-box; padding-left: 56px; padding-right: 56px; padding-top: 32px; padding-bottom: 24px;">
 
-        <img src="/assets/imagenes/logo_service_desk_blanco.png" style="height: 50px; margin-left: auto; display: block;
+        <img src="assets/imagenes/logo_service_desk_blanco.png" style="height: 50px; margin-left: auto; display: block;
     margin-right: auto;">
         <div class="labelBold" style="text-align: center; font-size: x-large; margin-top: 12px; margin-bottom: 32px">
           Service Desk CUCSH
@@ -884,79 +1209,99 @@
     <div style="margin: 20px">
       <div [ngSwitch]="(user | async)?.email">
         <div *ngSwitchCase="'oscar.mendez@csh.udg.mx'" style="width: 90px; height: 90px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('/assets/imagenes/oscar.jpg')"
+    background-position: center; background-image: url('assets/imagenes/oscar.jpg')"
              (click)="logoutDialog(avatar, logout_dialog)">
         </div>
         <div *ngSwitchCase="'idania.gomez@csh.udg.mx'" style="width: 90px; height: 90px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('/assets/imagenes/idania.png')"
+    background-position: center; background-image: url('assets/imagenes/idania.png')"
              (click)="logoutDialog(avatar, logout_dialog)">
         </div>
         <div *ngSwitchCase="'juan.mancilla@csh.udg.mx'" style="width: 90px; height: 90px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('/assets/imagenes/juan.png')"
+    background-position: center; background-image: url('assets/imagenes/juan.png')"
              (click)="logoutDialog(avatar, logout_dialog)">
         </div>
         <div *ngSwitchCase="'hiram.franco@csh.udg.mx'" style="width: 90px; height: 90px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('/assets/imagenes/hiram.jpg')"
+    background-position: center; background-image: url('assets/imagenes/hiram.jpg')"
              (click)="logoutDialog(avatar, logout_dialog)">
         </div>
         <div *ngSwitchCase="'ricardo.cortes@csh.udg.mx'" style="width: 90px; height: 90px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('/assets/imagenes/ricardo.png')"
+    background-position: center; background-image: url('assets/imagenes/ricardo.png')"
              (click)="logoutDialog(avatar, logout_dialog)">
         </div>
         <div *ngSwitchCase="'teresa.dlsantos@csh.udg.mx'" style="width: 90px; height: 90px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('/assets/imagenes/tere.png')"
+    background-position: center; background-image: url('assets/imagenes/tere.png')"
              (click)="logoutDialog(avatar, logout_dialog)">
         </div>
         <div *ngSwitchCase="'deleon.jonathan@csh.udg.mx'" style="width: 90px; height: 90px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('/assets/imagenes/jona.png')"
+    background-position: center; background-image: url('assets/imagenes/jona.png')"
              (click)="logoutDialog(avatar, logout_dialog)">
         </div>
         <div *ngSwitchCase="'jose.carrillom@csh.udg.mx'" style="width: 90px; height: 90px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('/assets/imagenes/gera.png')"
+    background-position: center; background-image: url('assets/imagenes/gera.png')"
              (click)="logoutDialog(avatar, logout_dialog)">
         </div>
         <div *ngSwitchCase="'eduardo.solano@redudg.udg.mx'" style="width: 90px; height: 90px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('/assets/imagenes/solano.png')"
+    background-position: center; background-image: url('assets/imagenes/solano.png')"
              (click)="logoutDialog(avatar, logout_dialog)">
         </div>
         <div *ngSwitchCase="'octavio.cortazar@csh.udg.mx'" style="width: 90px; height: 90px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('/assets/imagenes/octavio.png')"
+    background-position: center; background-image: url('assets/imagenes/octavio.png')"
              (click)="logoutDialog(avatar, logout_dialog)">
         </div>
         <div *ngSwitchCase="'oswaldo.mendoza@csh.udg.mx'" style="width: 90px; height: 90px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('/assets/imagenes/oswaldo.png')"
+    background-position: center; background-image: url('assets/imagenes/oswaldo.png')"
              (click)="logoutDialog(avatar, logout_dialog)">
         </div>
         <div *ngSwitchCase="'elba.moralesg@csh.udg.mx'" style="width: 90px; height: 90px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('/assets/imagenes/elba.png')"
+    background-position: center; background-image: url('assets/imagenes/elba.png')"
              (click)="logoutDialog(avatar, logout_dialog)">
         </div>
         <div *ngSwitchCase="'hector.shimizu@csh.udg.mx'" style="width: 90px; height: 90px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('/assets/imagenes/hector.png')"
+    background-position: center; background-image: url('assets/imagenes/hector.png')"
              (click)="logoutDialog(avatar, logout_dialog)">
         </div>
         <div *ngSwitchCase="'eduardo.salazar@csh.udg.mx'" style="width: 90px; height: 90px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('/assets/imagenes/lalo.png')"
+    background-position: center; background-image: url('assets/imagenes/lalo.png')"
              (click)="logoutDialog(avatar, logout_dialog)">
         </div>
         <div *ngSwitchCase="'enrique.vega@csh.udg.mx'" style="width: 90px; height: 90px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('/assets/imagenes/enrique.png')"
+    background-position: center; background-image: url('assets/imagenes/enrique.png')"
              (click)="logoutDialog(avatar, logout_dialog)">
         </div>
         <div *ngSwitchCase="'emmanuelchacon_1@csh.udg.mx'" style="width: 90px; height: 90px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('/assets/imagenes/manny.png')"
+    background-position: center; background-image: url('assets/imagenes/manny.jpg')"
              (click)="logoutDialog(avatar, logout_dialog)">
         </div>
         <div *ngSwitchCase="'omara@csh.udg.mx'" style="width: 90px; height: 90px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('/assets/imagenes/omar.png')"
+    background-position: center; background-image: url('assets/imagenes/omar.png')"
              (click)="logoutDialog(avatar, logout_dialog)">
         </div>
         <div *ngSwitchCase="'zyanya.lopez@csh.udg.mx'" style="width: 90px; height: 90px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('/assets/imagenes/zyan.png')"
+    background-position: center; background-image: url('assets/imagenes/zyan.png')"
              (click)="logoutDialog(avatar, logout_dialog)">
         </div>
-        <div *ngSwitchCase="'nancy.verdin@csh.udg.mx'" style="width: 90px; height: 90px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('/assets/imagenes/nancy.png')"
+        <div *ngSwitchCase="'alberto.franco@csh.udg.mx'" style="width: 90px; height: 90px; overflow: hidden; border-radius: 50%; background-size: cover;
+    background-position: center; background-image: url('assets/imagenes/mario.png')"
+             (click)="logoutDialog(avatar, logout_dialog)">
+        </div>
+        <div *ngSwitchCase="'jorge.plascencia@redudg.udg.mx'" style="width: 90px; height: 90px; overflow: hidden; border-radius: 50%; background-size: cover;
+    background-position: center; background-image: url('assets/imagenes/jorge.png')"
+             (click)="logoutDialog(avatar, logout_dialog)">
+        </div>
+        <div *ngSwitchCase="'pro1013b@yahoo.com'" style="width: 90px; height: 90px; overflow: hidden; border-radius: 50%; background-size: cover;
+    background-position: center; background-image: url('assets/imagenes/edgar.png')"
+             (click)="logoutDialog(avatar, logout_dialog)">
+        </div>
+        <div *ngSwitchCase="'kenya.andrade@csh.udg.mx'" style="width: 90px; height: 90px; overflow: hidden; border-radius: 50%; background-size: cover;
+    background-position: center; background-image: url('assets/imagenes/kenia.png')"
+             (click)="logoutDialog(avatar, logout_dialog)">
+        </div>
+        <div *ngSwitchCase="'roberto.villasenor@redudg.udg.mx'" style="width: 90px; height: 90px; overflow: hidden; border-radius: 50%; background-size: cover;
+    background-position: center; background-image: url('assets/imagenes/rober.png')"
+             (click)="logoutDialog(avatar, logout_dialog)">
+        </div>
+        <div *ngSwitchCase="'jose.crubio@csh.udg.mx'" style="width: 90px; height: 90px; overflow: hidden; border-radius: 50%; background-size: cover;
+    background-position: center; background-image: url('assets/imagenes/alberto.png')"
              (click)="logoutDialog(avatar, logout_dialog)">
         </div>
       </div>
@@ -964,14 +1309,47 @@
     <div style="margin-top: 40px; margin-bottom: 20px; margin-right: 80px;">
       <div style="font-weight: bold; font-size: small; line-height: normal;">{{ (user | async)?.displayName }}</div>
       <div style="font-size: smaller; line-height: normal;">{{ (user | async)?.email }}</div>
-      <paper-button class="indigo" style="margin-left: -4px;" (click)="logout(logout_dialog, toastSesionCerrada)">Cerrar
+      <paper-button class="indigo" style="margin-left: -4px;" (click)="logout(logout_dialog, toastSesionCerrada, loginDialog)">Cerrar
         sesión
       </paper-button>
     </div>
   </div>
 </paper-dialog>
 
+<paper-dialog #dialogEliminarIncidente id="dialogEliminarIncidente" with-backdrop modal>
+  <div style="font-size: large; margin-top: 32px">
+    ¿Deseas eliminar este incidente?
+  </div>
+
+  <div style="display: flex; margin: 0; padding: 0;">
+    <paper-button #aceptar style="position: absolute; right: 16px; bottom: 16px;"
+                  (click)="borrarIncidente(toastBienvenido, dialogEliminarIncidente, aceptar, cancelar)">Aceptar
+    </paper-button>
+    <paper-button #cancelar style="position: absolute; right: 100px; bottom: 16px;"
+                  (click)="dialogEliminarIncidente.close()">Cancelar
+    </paper-button>
+
+  </div>
+</paper-dialog>
+
+<paper-dialog #dialogTomarIncidente id="dialogTomarIncidente" with-backdrop modal>
+  <div style="font-size: large; margin-top: 32px">
+    ¿Deseas encargarte de la solución de este incidente?
+  </div>
+
+  <div style="display: flex; margin: 0; padding: 0;">
+    <paper-button #dialogTomarIncidente_aceptar style="position: absolute; right: 16px; bottom: 16px;"
+                  (click)="tomarIncidente(toastBienvenido, dialogTomarIncidente, dialogTomarIncidente_aceptar, dialogTomarIncidente_cancelar)">
+      Aceptar
+    </paper-button>
+    <paper-button #dialogTomarIncidente_cancelar style="position: absolute; right: 100px; bottom: 16px;"
+                  (click)="dialogTomarIncidente.close()">Cancelar
+    </paper-button>
+
+  </div>
+</paper-dialog>
+
 <paper-fab style="bottom: 16px; position: absolute; left: 284px; background: #e66100;" icon="add"
-           *ngIf="getNivel((user | async)?.email) == 2 || getNivel((user | async)?.email) == 3"
+           *ngIf="getNivel((user | async)?.email) == 2 || getNivel((user | async)?.email) == 3 || getNivel((user | async)?.email) == 2.5"
            (click)="abrirDialogoCrearIncidente(dialogCrearIncidente)">
 </paper-fab>

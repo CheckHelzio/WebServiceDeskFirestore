@@ -9,6 +9,7 @@ import {FirebaseConfig} from '../environments/firebase.config';
 import {AngularFirestoreModule} from 'angularfire2/firestore';
 import {AngularFireAuthModule} from 'angularfire2/auth';
 import {AngularFireDatabaseModule} from 'angularfire2/database';
+import {MessagingService} from './messaging.service';
 
 
 @NgModule({
@@ -23,7 +24,7 @@ import {AngularFireDatabaseModule} from 'angularfire2/database';
     AngularFireAuthModule,
     AngularFireDatabaseModule
   ],
-  providers: [],
+  providers: [MessagingService],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
