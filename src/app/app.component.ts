@@ -15,16 +15,17 @@ import {MessagingService} from './messaging.service';
 
 export class AppComponent implements OnInit {
   editando = false;
-  status = ['Registrado', 'Tomado', 'En progreso', 'En espera', 'Finalizado', 'Reabierto', 'Asignado', 'Editado'];
+  status = ['Registrado', 'Tomado', 'En progreso', 'En espera', 'Finalizado', 'Reabierto', 'Asignado', 'Editado', 'Compartido'];
   fondo = ['#006A3D', '#DB963F', '#8E171A'];
-  fondoEstatus = ['#e66100', '#8E171A', '#DB963F', '#e66100', '#006A3D', '#e66100', '#02a9e6'];
+  fondoEstatus = ['#e66100', '#8E171A', '#DB963F', '#e66100', '#006A3D', '#e66100', '#02a9e6', '#6d0085', '#6d0085'];
   correos = ['idania.gomez@csh.udg.mx', 'juan.mancilla@csh.udg.mx', 'hiram.franco@csh.udg.mx', 'ricardo.cortes@csh.udg.mx',
     'oscar.mendez@csh.udg.mx', 'teresa.dlsantos@csh.udg.mx', 'deleon.jonathan@csh.udg.mx', 'jose.carrillom@csh.udg.mx',
     'eduardo.solano@redudg.udg.mx', 'octavio.cortazar@csh.udg.mx', 'oswaldo.mendoza@csh.udg.mx', 'elba.moralesg@csh.udg.mx',
     'eduardo.salazar@csh.udg.mx', 'emmanuelchacon_1@csh.udg.mx', 'zyanya.lopez@csh.udg.mx', 'kenya.andrade@csh.udg.mx',
-    'roberto.villasenor@redudg.udg.mx', 'jose.crubio@csh.udg.mx', 'pro1013b@yahoo.com', 'alberto.franco@csh.udg.mx',
+    'roberto.villasenor@redudg.udg.mx', 'jose.crubio@csh.udg.mx', 'edgar.orozco@csh.udg.mx', 'alberto.franco@csh.udg.mx',
     'checkhelzio@gmail.com',
-    'jorge.plascencia@redudg.udg.mx'];
+    'jorge.plascencia@redudg.udg.mx',
+    'invitado@gmail.com'];
   incidente_seleccionado;
   incidentes: Observable<any[]>;
   clientes: Observable<any[]>;
@@ -40,6 +41,7 @@ export class AppComponent implements OnInit {
   nivel = 0;
   int_prioridad = 1;
   check_prioridad_id;
+  presionado = false;
   checkeado_por_otro = false;
   private _messaging: firebase.messaging.Messaging;
   check_prioridad;
@@ -63,9 +65,12 @@ export class AppComponent implements OnInit {
   filtro_prioridad_alta = true;
   textoBelenes = '';
   nombreLogeo;
+  encontrado = true;
   @ViewChild('lista_mensaje') lista_mensaje: any;
   @ViewChild('pager') pager: any;
   @ViewChild('loginDialog') dialogIniciarSesion: any;
+  busqueda = '';
+
 
   constructor(private readonly db: AngularFirestore, public afAuth: AngularFireAuth, public msg: MessagingService) {
     this._messaging = firebase.messaging();
@@ -73,41 +78,60 @@ export class AppComponent implements OnInit {
 
   filtrarIncidente(incidente) {
 
-    if (this.paginaSeleccionada === 1 || this.paginaSeleccionada === 2 || this.paginaSeleccionada === 3) {
+    /*if (this.paginaSeleccionada === 1 || this.paginaSeleccionada === 2 || this.paginaSeleccionada === 3) {
       if (incidente.tipoDeIncidente.includes('Belenes')) {
         return false;
       }
     }
-
+*/
     if (this.filtro_registrado && incidente.estatus === 0 && this.filtrarPrioridad(incidente)) {
-      return true;
+      return this.comprobarBusqueda(incidente);
     }
 
     if (this.filtro_tomados && incidente.estatus === 1 && this.filtrarPrioridad(incidente)) {
-      return true;
+      return this.comprobarBusqueda(incidente);
     }
 
     if (this.filtro_en_progreso && incidente.estatus === 2 && this.filtrarPrioridad(incidente)) {
-      return true;
+      return this.comprobarBusqueda(incidente);
     }
 
     if (this.filtro_en_espera && incidente.estatus === 3 && this.filtrarPrioridad(incidente)) {
-      return true;
+      return this.comprobarBusqueda(incidente);
     }
 
     if (this.filtro_finalizados && incidente.estatus === 4 && this.filtrarPrioridad(incidente)) {
-      return true;
+      return this.comprobarBusqueda(incidente);
     }
 
     if (this.filtro_reabiertos && incidente.estatus === 5 && this.filtrarPrioridad(incidente)) {
-      return true;
+      return this.comprobarBusqueda(incidente);
     }
 
     if (this.filtro_asignados && incidente.estatus === 6 && this.filtrarPrioridad(incidente)) {
-      return true;
+      return this.comprobarBusqueda(incidente);
+    }
+
+    if (incidente.estatus === 8) {
+      return this.comprobarBusqueda(incidente);
     }
 
     return false;
+  }
+
+  comprobarBusqueda(incidente) {
+    if (this.busqueda !== '') {
+      return (('' + incidente.codigoCliente).toLowerCase().includes(this.busqueda) ||
+        ('' + incidente.dependenciaDelCliente).toLowerCase().includes(this.busqueda) ||
+        ('' + incidente.descripcionDelReporte).toLowerCase().includes(this.busqueda) ||
+        ('' + incidente.folio).toLowerCase().includes(this.busqueda) ||
+        ('' + incidente.quienRegistro).toLowerCase().includes(this.busqueda) ||
+        ('' + incidente.tipoDeIncidente).toLowerCase().includes(this.busqueda) ||
+        ('' + incidente.ubicacionDelCliente).toLowerCase().includes(this.busqueda)
+      );
+    } else {
+      return true;
+    }
   }
 
   private filtrarPrioridad(incidente: any) {
@@ -128,15 +152,21 @@ export class AppComponent implements OnInit {
 
   cambiarIncidenteEnBelenes(v) {
     if (v.checked === true) {
-      if (this.textoTipoIncidenteReal !== 'Selecciona el tipo de incidente') {
-        this.textoBelenes = 'Belenes - ';
-      } else {
-        this.textoBelenes = '';
-      }
+      this.textoBelenes = 'Belenes - ';
     } else {
       this.textoBelenes = '';
     }
-    this.textoTipoIncidenteReal = this.textoBelenes + this.textoTipoIncidente;
+    if (this.textoTipoIncidenteReal !== 'Selecciona el tipo de incidente') {
+      this.textoTipoIncidenteReal = this.textoBelenes + this.textoTipoIncidente;
+    } else {
+      this.textoTipoIncidenteReal = 'Selecciona el tipo de incidente';
+    }
+  }
+
+  desctivarCambio() {
+    if (this.tipoIncidenteSeleccionado !== undefined) {
+      this.tipoIncidenteSeleccionado.checked = false;
+    }
   }
 
   cambiarTipoIncidente(v) {
@@ -332,26 +362,10 @@ export class AppComponent implements OnInit {
         // Poner la informacion del incidente
         const incidenteData = {
           areas: {
-            taller: (tipo_incidente.textContent.includes('Taller de computo -')
-              || tipo_incidente.textContent.includes('Aviso - Taller de computo')
-              || tipo_incidente.textContent.includes('Aviso - Aviso general')
-              || tipo_incidente.textContent.includes('Aviso - Redes y Taller')
-              || tipo_incidente.textContent.includes('Aviso - Taller y Multimedia')),
-
-            redes: (tipo_incidente.textContent.includes('Redes y telefonía -')
-              || tipo_incidente.textContent.includes('Aviso - Redes y telefonía')
-              || tipo_incidente.textContent.includes('Aviso - Aviso general')
-              || tipo_incidente.textContent.includes('Aviso - Redes y Taller')
-              || tipo_incidente.textContent.includes('Aviso - Aviso - Redes y Multimedia')),
-
-            multimedia: (tipo_incidente.textContent.includes('Multimedia - ')
-              || tipo_incidente.textContent.includes('Aviso - Multimedia')
-              || tipo_incidente.textContent.includes('Aviso - Aviso general')
-              || tipo_incidente.textContent.includes('Aviso - Taller y Multimedia')
-              || tipo_incidente.textContent.includes('Aviso - Aviso - Redes y Multimedia')),
-
-            belenes: tipo_incidente.textContent.includes('Aviso - Aviso general')
-            || tipo_incidente.textContent.includes('Belenes')
+            taller: (tipo_incidente.textContent.includes('Taller de computo -') && !tipo_incidente.textContent.includes('Belenes')),
+            redes: (tipo_incidente.textContent.includes('Redes y telefonía -') && !tipo_incidente.textContent.includes('Belenes')),
+            multimedia: (tipo_incidente.textContent.includes('Multimedia - ') && !tipo_incidente.textContent.includes('Belenes')),
+            belenes: tipo_incidente.textContent.includes('Belenes')
           },
           codigoCliente: codigo.value === undefined ? 'No proporcionado' : codigo.value,
           descripcionDelReporte: edit === true ? i_seleccionado.descripcionDelReporte : descripcion.value,
@@ -379,7 +393,7 @@ export class AppComponent implements OnInit {
 
         // Poner la informacion del cliente
         let clienteRef;
-        if (codigo.value === undefined) {
+        if (codigo.value !== undefined) {
           clienteRef = dbf.firestore.collection('clientes')
             .doc(codigo.value === undefined ? 'no_proporcionado' : 'cliente' + codigo.value);
         }
@@ -404,25 +418,25 @@ export class AppComponent implements OnInit {
 
         // Poner la informacion del incidente anidado al cliente
         let clienteIncRef;
-        if (codigo.value === undefined) {
+        if (codigo.value !== undefined) {
           clienteIncRef = dbf.firestore.collection('clientes')
             .doc(('cliente' + '/incidentes/incidente' + int_ultimo_id));
         }
 
         if (edit === true) {
-          if (codigo.value === undefined) {
+          if (codigo.value !== undefined) {
             batch.set(clienteRef, clienteData);
           }
-          if (codigo.value === undefined) {
+          if (codigo.value !== undefined) {
             batch.set(clienteIncRef, incidenteData);
           }
           batch.update(incRef, incidenteData);
           batch.set(progresoRef, progresoData);
         } else {
-          if (codigo.value === undefined) {
+          if (codigo.value !== undefined) {
             batch.set(clienteRef, clienteData);
           }
-          if (codigo.value === undefined) {
+          if (codigo.value !== undefined) {
             batch.set(clienteIncRef, incidenteData);
           }
           batch.set(incRef, incidenteData);
@@ -435,13 +449,11 @@ export class AppComponent implements OnInit {
           toast.open();
         }).catch(function (error) {
           toast.text = 'A ocurrido un problema. Intentalo nuevamente';
-          console.log('Error batch: ' + error);
           toast.open();
         });
 
       }).catch(function (error) {
         toast.text = 'A ocurrido un problema. Intentalo nuevamente';
-        console.log('Error transaction: ' + error);
         toast.open();
       });
     } else {
@@ -519,12 +531,14 @@ export class AppComponent implements OnInit {
     switch (mail) {
       case 'idania.gomez@csh.udg.mx':
         return 0;
+      case 'invitado@gmail.com':
+        return 0;
       case 'eduardo.solano@redudg.udg.mx':
         return 0;
       case 'checkhelzio@gmail.com':
         return 0;
       case 'oscar.mendez@csh.udg.mx':
-        return 0;
+        return 3;
       case 'hiram.franco@csh.udg.mx':
         return 3;
       case 'roberto_028@outlook.com':
@@ -545,7 +559,7 @@ export class AppComponent implements OnInit {
         return 0;
       case 'zyanya.lopez@csh.udg.mx':
         return 3;
-      case 'pro1013b@yahoo.com':
+      case 'edgar.orozco@csh.udg.mx':
         return 1;
       case 'emmanuelchacon_1@csh.udg.mx':
         return 3;
@@ -566,14 +580,16 @@ export class AppComponent implements OnInit {
 
   eventoPresionado(i, index) {
     this.editando = false;
+    this.encontrado = true;
+    this.presionado = false;
     try {
       this.lista_mensaje.nativeElement.click();
     } catch (e) {
-      console.log(e);
     }
 
     this.selectedRow = index;
     this.incidente_seleccionado = i;
+
     if (i !== null) {
       this.cliente = this.db.collection('clientes', ref => ref.where('codigoDelCliente', '==',
         this.incidente_seleccionado.codigoCliente).limit(1)).valueChanges().flatMap(result => result);
@@ -596,6 +612,8 @@ export class AppComponent implements OnInit {
     switch (mail) {
       case 'idania.gomez@csh.udg.mx':
         return 3;
+      case 'invitado@gmail.com':
+        return -1;
       case 'eduardo.solano@redudg.udg.mx':
         return 3;
       case 'checkhelzio@gmail.com':
@@ -624,7 +642,7 @@ export class AppComponent implements OnInit {
         return 2;
       case 'zyanya.lopez@csh.udg.mx':
         return 1;
-      case 'pro1013b@yahoo.com':
+      case 'edgar.orozco@csh.udg.mx':
         return 1;
       case 'emmanuelchacon_1@csh.udg.mx':
         return 1;
@@ -663,16 +681,14 @@ export class AppComponent implements OnInit {
       case 0: {
         this.incidentes = this.db.collection('incidentes', ref => ref.orderBy('folio', 'desc')).snapshotChanges().map(actions => {
           let x = 0;
-          this.eventoPresionado(null, 0);
           return actions.map(a => {
-            if (x === 0) {
-              if (this.filtrarIncidente(a.payload.doc.data())) {
-                x++;
-                this.eventoPresionado(a.payload.doc.data(), a.payload.newIndex);
-              }
-            } else if (a.payload.type === 'modified') {
-              if (this.filtrarIncidente(a.payload.doc.data())) {
-                this.eventoPresionado(a.payload.doc.data(), a.payload.newIndex);
+            if (a.payload.doc.metadata.fromCache) {
+              if (x === 0 && this.presionado) {
+                if (this.filtrarIncidente(a.payload.doc.data())) {
+                  x++;
+                  this.presionado = false;
+                  this.eventoPresionado(a.payload.doc.data(), a.payload.newIndex);
+                }
               }
             }
             return a.payload.doc.data();
@@ -684,16 +700,14 @@ export class AppComponent implements OnInit {
         this.incidentes = this.db.collection('incidentes', ref => ref.where('areas.redes', '==', true)
           .orderBy('folio', 'desc')).snapshotChanges().map(actions => {
           let x = 0;
-          this.eventoPresionado(null, 0);
           return actions.map(a => {
-            if (x === 0) {
-              if (this.filtrarIncidente(a.payload.doc.data())) {
-                x++;
-                this.eventoPresionado(a.payload.doc.data(), a.payload.newIndex);
-              }
-            } else if (a.payload.type === 'modified') {
-              if (this.filtrarIncidente(a.payload.doc.data())) {
-                this.eventoPresionado(a.payload.doc.data(), a.payload.newIndex);
+            if (a.payload.doc.metadata.fromCache) {
+              if (x === 0 && this.presionado) {
+                if (this.filtrarIncidente(a.payload.doc.data())) {
+                  x++;
+                  this.presionado = false;
+                  this.eventoPresionado(a.payload.doc.data(), a.payload.newIndex);
+                }
               }
             }
             return a.payload.doc.data();
@@ -705,16 +719,14 @@ export class AppComponent implements OnInit {
         this.incidentes = this.db.collection('incidentes', ref => ref.where('areas.taller', '==', true)
           .orderBy('folio', 'desc')).snapshotChanges().map(actions => {
           let x = 0;
-          this.eventoPresionado(null, 0);
           return actions.map(a => {
-            if (x === 0) {
-              if (this.filtrarIncidente(a.payload.doc.data())) {
-                x++;
-                this.eventoPresionado(a.payload.doc.data(), a.payload.newIndex);
-              }
-            } else if (a.payload.type === 'modified') {
-              if (this.filtrarIncidente(a.payload.doc.data())) {
-                this.eventoPresionado(a.payload.doc.data(), a.payload.newIndex);
+            if (a.payload.doc.metadata.fromCache) {
+              if (x === 0 && this.presionado) {
+                if (this.filtrarIncidente(a.payload.doc.data())) {
+                  x++;
+                  this.presionado = false;
+                  this.eventoPresionado(a.payload.doc.data(), a.payload.newIndex);
+                }
               }
             }
             return a.payload.doc.data();
@@ -726,14 +738,21 @@ export class AppComponent implements OnInit {
         this.incidentes = this.db.collection('incidentes', ref => ref.where('areas.multimedia', '==', true)
           .orderBy('folio', 'desc')).snapshotChanges().map(actions => {
           let x = 0;
-          this.eventoPresionado(null, 0);
+          if (this.incidente_seleccionado !== undefined) {
+            this.encontrado = false;
+          }
           return actions.map(a => {
-            if (x === 0) {
-              if (this.filtrarIncidente(a.payload.doc.data())) {
-                x++;
-                this.eventoPresionado(a.payload.doc.data(), a.payload.newIndex);
-              } else if (a.payload.type === 'modified') {
+            if (this.incidente_seleccionado !== undefined) {
+              if (a.payload.doc.data().folio === this.incidente_seleccionado.folio) {
+                this.encontrado = true;
+              }
+            }
+
+            if (a.payload.doc.metadata.fromCache) {
+              if (x === 0 && this.presionado) {
                 if (this.filtrarIncidente(a.payload.doc.data())) {
+                  x++;
+                  this.presionado = false;
                   this.eventoPresionado(a.payload.doc.data(), a.payload.newIndex);
                 }
               }
@@ -747,16 +766,14 @@ export class AppComponent implements OnInit {
         this.incidentes = this.db.collection('incidentes', ref => ref.where('areas.belenes', '==', true)
           .orderBy('folio', 'desc')).snapshotChanges().map(actions => {
           let x = 0;
-          this.eventoPresionado(null, 0);
           return actions.map(a => {
-            if (x === 0) {
-              if (this.filtrarIncidente(a.payload.doc.data())) {
-                x++;
-                this.eventoPresionado(a.payload.doc.data(), a.payload.newIndex);
-              }
-            } else if (a.payload.type === 'modified') {
-              if (this.filtrarIncidente(a.payload.doc.data())) {
-                this.eventoPresionado(a.payload.doc.data(), a.payload.newIndex);
+            if (a.payload.doc.metadata.fromCache) {
+              if (x === 0 && this.presionado) {
+                if (this.filtrarIncidente(a.payload.doc.data())) {
+                  x++;
+                  this.presionado = false;
+                  this.eventoPresionado(a.payload.doc.data(), a.payload.newIndex);
+                }
               }
             }
             return a.payload.doc.data();
@@ -764,26 +781,6 @@ export class AppComponent implements OnInit {
         });
         break;
       }
-      default:
-        this.incidentes = this.db.collection('incidentes', ref => ref.orderBy('folio', 'desc')).snapshotChanges().map(actions => {
-          let x = 0;
-          this.eventoPresionado(null, 0);
-
-          return actions.map(a => {
-            if (x === 0) {
-              if (this.filtrarIncidente(a.payload.doc.data())) {
-                x++;
-                this.eventoPresionado(a.payload.doc.data(), a.payload.newIndex);
-              }
-            } else if (a.payload.type === 'modified') {
-              if (this.filtrarIncidente(a.payload.doc.data())) {
-                this.eventoPresionado(a.payload.doc.data(), a.payload.newIndex);
-              }
-            }
-            return a.payload.doc.data();
-          });
-        });
-        break;
     }
   }
 
@@ -1037,8 +1034,16 @@ export class AppComponent implements OnInit {
 
   }
 
-  enviarProgreso(input, botonEnviar, chip, toast, chip_label) {
+  presionarBoton(botonEnviar) {
+    if (botonEnviar.disabled === true) {
+      return;
+    } else {
+      botonEnviar.click();
+    }
+  }
 
+  enviarProgreso(input, botonEnviar, chip, toast, chip_label) {
+    console.log('Enviar progreso');
     botonEnviar.disabled = true;
     if (input.value === undefined) {
       input.invalid = true;
@@ -1062,6 +1067,7 @@ export class AppComponent implements OnInit {
       let mProgreso;
       switch (chip.textContent) {
         case 'M':
+          console.log('Mensajesssss');
           tipo_progreso = -1;
           break;
         case 'P':
@@ -1122,10 +1128,14 @@ export class AppComponent implements OnInit {
         timestamp: new Date().getTime()
       };
 
+      console.log(progresoData);
+
       const incidenteData = {
         'estatus': tipo_progreso === -1 ? this.incidente_seleccionado.estatus : tipo_progreso,
         'progreso': tipo_progreso === -1 ? this.incidente_seleccionado.progreso : mProgreso,
       };
+
+      console.log(incidenteData);
 
       batch.set(progresoRef, progresoData);
       batch.update(incRef, incidenteData);
@@ -1165,6 +1175,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.presionado = false;
     this.msg.getPermission();
     this.user = this.afAuth.authState;
     this.user.subscribe(auth => {
@@ -1200,7 +1211,7 @@ export class AppComponent implements OnInit {
 
   puedeResgistrarEnBelenes(mail) {
     return mail === 'eduardo.solano@redudg.udg.mx' || mail === 'idania.gomez@csh.udg.mx' || mail === 'elba.moralesg@csh.udg.mx' ||
-      mail === 'alberto.franco@csh.udg.mx' || mail === 'jorge.plascencia@redudg.udg.mx';
+      mail === 'alberto.franco@csh.udg.mx' || mail === 'jorge.plascencia@redudg.udg.mx' || mail === 'jose.crubio@csh.udg.mx';
   }
 
   checked_belenes(nombre) {
@@ -1213,5 +1224,175 @@ export class AppComponent implements OnInit {
 
   reemplazarTexto(mensaje) {
     return mensaje.replace('<tachado>', '');
+  }
+
+  buscarIndice(i) {
+    if (i.folio === this.incidente_seleccionado.folio) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  buscarEvento(busqueda) {
+    console.log(busqueda);
+    if (busqueda !== undefined) {
+      if (busqueda.toString().trim() !== '') {
+        this.busqueda = busqueda.toLowerCase().trim();
+      }
+    }
+    console.log(this.busqueda);
+  }
+
+  limpiarBusqueda() {
+    this.busqueda = '';
+  }
+
+  compartir(inputCompartir, botonEnviar, toastBienvenido, dialogCompartirIncidente) {
+
+    console.log('Enviar progreso');
+    botonEnviar.disabled = true;
+
+    let tip_incidente;
+    if (!this.textoTipoIncidenteReal.includes('Selecciona el tipo de incidente')) {
+
+      let s_areas2;
+      if (this.incidente_seleccionado.tipoDeIncidente.includes('|')) {
+        s_areas2 = this.incidente_seleccionado.tipoDeIncidente.split(' | ');
+        for (const s of s_areas2) {
+          if (s.trim() === this.textoTipoIncidenteReal.trim()) {
+            tip_incidente = this.incidente_seleccionado.tipoDeIncidente;
+            toastBienvenido.text =
+              'El incidente ya fue compartido con el área seleccionada... Selecciona un área valida para compartir el incidente';
+            toastBienvenido.open();
+            botonEnviar.disabled = false;
+            return;
+          }
+        }
+        tip_incidente = this.incidente_seleccionado.tipoDeIncidente + ' | ' + this.textoTipoIncidenteReal;
+      } else {
+        if (this.incidente_seleccionado.tipoDeIncidente.trim() === this.textoTipoIncidenteReal.trim()) {
+          tip_incidente = this.incidente_seleccionado.tipoDeIncidente;
+          toastBienvenido.text =
+            'El incidente ya fue compartido con el área seleccionada... Selecciona un área valida para compartir el incidente';
+          toastBienvenido.open();
+          botonEnviar.disabled = false;
+          return;
+        } else {
+          tip_incidente = this.incidente_seleccionado.tipoDeIncidente + ' | ' + this.textoTipoIncidenteReal;
+        }
+      }
+    } else {
+      toastBienvenido.text = 'Selecciona un área para compartir el incidente';
+      toastBienvenido.open();
+      botonEnviar.disabled = false;
+      return;
+    }
+
+
+    if (tip_incidente.includes('|') && tip_incidente !== this.incidente_seleccionado.tipoDeIncidente) {
+      let b_taller = false;
+      let b_redes = false;
+      let b_multimedia = false;
+      let b_belenes = false;
+      const s_areas = tip_incidente.split(' | ');
+
+      for (const s of s_areas) {
+        if (s.includes('Taller de computo -') && !s.includes('Belenes')) {
+          b_taller = true;
+        }
+        if (s.includes('Redes y telefonía -') && !s.includes('Belenes')) {
+          b_redes = true;
+        }
+        if (s.includes('Multimedia - ') && !s.includes('Belenes')) {
+          b_multimedia = true;
+        }
+        if (s.includes('Belenes')) {
+          b_belenes = true;
+        }
+      }
+
+      const areas = {
+        taller: b_taller,
+        redes: b_redes,
+        multimedia: b_multimedia,
+        belenes: b_belenes
+      };
+
+      if (inputCompartir.value === undefined) {
+        inputCompartir
+          .invalid = true;
+        botonEnviar
+          .disabled = false;
+      } else if (inputCompartir.value.trim() === '') {
+        inputCompartir.invalid = true;
+        botonEnviar.disabled = false;
+      } else {
+
+        // CAMBIO DE PROGRESO CORRECTO
+        inputCompartir.invalid = false;
+
+        // REFERENCIA A BASE DE DATOS Y CREACION DEL BATCH
+        const batch = this.db.firestore.batch();
+
+        const folio = this.incidente_seleccionado.folio;
+        const progresoRef = this.db.firestore.collection('incidentes').doc('incidente' + folio).collection('progreso').doc();
+        const incRef = this.db.firestore.collection('incidentes').doc('incidente' + folio);
+
+        const tipo_progreso = 8;
+        const mProgreso = {
+          0: false,
+          1: false,
+          2: false,
+          3: false,
+          4: false,
+          5: false,
+          6: false,
+          7: false,
+          8: true
+        };
+
+        const nueva_area = this.textoTipoIncidenteReal;
+
+        // Poner la informacion del progreso
+        const progresoData = {
+          mensaje: inputCompartir.value,
+          nombre: this.afAuth.auth.currentUser.displayName,
+          progreso: tipo_progreso,
+          timestamp: new Date().getTime(),
+          area: nueva_area
+        };
+
+        console.log(progresoData);
+
+        const incidenteData = {
+          'estatus': tipo_progreso,
+          'progreso': mProgreso,
+          'tipoDeIncidente': tip_incidente,
+          'areas': areas
+        };
+
+        batch.set(progresoRef, progresoData);
+        batch.update(incRef, incidenteData);
+
+        batch.commit().then(function () {
+          inputCompartir.value = '';
+          toastBienvenido.text = 'El incidente ha sido compartido correctamente.';
+          dialogCompartirIncidente.close();
+          toastBienvenido.open();
+          botonEnviar.disabled = false;
+        }).catch(function (error) {
+          toastBienvenido.text = 'Ha ocurrido un problema... intentalo nuevamente';
+          dialogCompartirIncidente.close();
+          toastBienvenido.open();
+          botonEnviar.disabled = false;
+        });
+      }
+    } else {
+      toastBienvenido.text = 'Selecciona un área valida para compartir el incidente';
+      toastBienvenido.open();
+      botonEnviar.disabled = false;
+      return;
+    }
   }
 }

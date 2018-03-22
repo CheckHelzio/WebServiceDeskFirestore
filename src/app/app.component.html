@@ -1,100 +1,104 @@
 <app-header-layout fullbleed>
   <app-header fixed shadow slot="header">
     <app-toolbar id="toolbar">
-      <img src="assets/imagenes/cta.png" id="logo_cta">
+      <img src="../../aplicacion/servicedesk/assets/imagenes/cta.png" id="logo_cta">
       <div main-title>Service Desk CUCSH</div>
       <div *ngIf="afAuth.authState | async as user; else showLogin">
         <div [ngSwitch]="user.email">
           <div *ngSwitchCase="'oscar.mendez@csh.udg.mx'" #avatar id="avatar" style="width: 32px; height: 32px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('assets/imagenes/oscar.jpg')"
+    background-position: center; background-image: url('../../aplicacion/servicedesk/assets/imagenes/oscar.jpg')"
+               (click)="logoutDialog(avatar, logout_dialog)">
+          </div>
+          <div *ngSwitchCase="'invitado@gmail.com'" #avatar id="avatar" style="width: 32px; height: 32px; overflow: hidden; border-radius: 50%; background-size: cover;
+    background-position: center; background-image: url('../../aplicacion/servicedesk/assets/imagenes/man.png')"
                (click)="logoutDialog(avatar, logout_dialog)">
           </div>
           <div *ngSwitchCase="'idania.gomez@csh.udg.mx'" #avatar id="avatar" style="width: 32px; height: 32px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('assets/imagenes/idania.png')"
+    background-position: center; background-image: url('../../aplicacion/servicedesk/assets/imagenes/idania.png')"
                (click)="logoutDialog(avatar, logout_dialog)">
           </div>
           <div *ngSwitchCase="'juan.mancilla@csh.udg.mx'" #avatar id="avatar" style="width: 32px; height: 32px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('assets/imagenes/juan.png')"
+    background-position: center; background-image: url('../../aplicacion/servicedesk/assets/imagenes/juan.png')"
                (click)="logoutDialog(avatar, logout_dialog)">
           </div>
           <div *ngSwitchCase="'hiram.franco@csh.udg.mx'" #avatar id="avatar" style="width: 32px; height: 32px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('assets/imagenes/hiram.jpg')"
+    background-position: center; background-image: url('../../aplicacion/servicedesk/assets/imagenes/hiram.jpg')"
                (click)="logoutDialog(avatar, logout_dialog)">
           </div>
           <div *ngSwitchCase="'ricardo.cortes@csh.udg.mx'" #avatar id="avatar" style="width: 32px; height: 32px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('assets/imagenes/ricardo.png')"
+    background-position: center; background-image: url('../../aplicacion/servicedesk/assets/imagenes/ricardo.png')"
                (click)="logoutDialog(avatar, logout_dialog)">
           </div>
           <div *ngSwitchCase="'teresa.dlsantos@csh.udg.mx'" #avatar id="avatar" style="width: 32px; height: 32px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('assets/imagenes/tere.png')"
+    background-position: center; background-image: url('../../aplicacion/servicedesk/assets/imagenes/tere.png')"
                (click)="logoutDialog(avatar, logout_dialog)">
           </div>
           <div *ngSwitchCase="'deleon.jonathan@csh.udg.mx'" #avatar id="avatar" style="width: 32px; height: 32px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('assets/imagenes/jona.png')"
+    background-position: center; background-image: url('../../aplicacion/servicedesk/assets/imagenes/jona.png')"
                (click)="logoutDialog(avatar, logout_dialog)">
           </div>
           <div *ngSwitchCase="'jose.carrillom@csh.udg.mx'" #avatar id="avatar" style="width: 32px; height: 32px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('assets/imagenes/gera.png')"
+    background-position: center; background-image: url('../../aplicacion/servicedesk/assets/imagenes/gera.png')"
                (click)="logoutDialog(avatar, logout_dialog)">
           </div>
           <div *ngSwitchCase="'eduardo.solano@redudg.udg.mx'" #avatar id="avatar" style="width: 32px; height: 32px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('assets/imagenes/solano.png')"
+    background-position: center; background-image: url('../../aplicacion/servicedesk/assets/imagenes/solano.png')"
                (click)="logoutDialog(avatar, logout_dialog)">
           </div>
           <div *ngSwitchCase="'octavio.cortazar@csh.udg.mx'" #avatar id="avatar" style="width: 32px; height: 32px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('assets/imagenes/octavio.png')"
+    background-position: center; background-image: url('../../aplicacion/servicedesk/assets/imagenes/octavio.png')"
                (click)="logoutDialog(avatar, logout_dialog)">
           </div>
           <div *ngSwitchCase="'oswaldo.mendoza@csh.udg.mx'" #avatar id="avatar" style="width: 32px; height: 32px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('assets/imagenes/oswaldo.png')"
+    background-position: center; background-image: url('../../aplicacion/servicedesk/assets/imagenes/oswaldo.png')"
                (click)="logoutDialog(avatar, logout_dialog)">
           </div>
           <div *ngSwitchCase="'elba.moralesg@csh.udg.mx'" #avatar id="avatar" style="width: 32px; height: 32px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('assets/imagenes/elba.png')"
+    background-position: center; background-image: url('../../aplicacion/servicedesk/assets/imagenes/elba.png')"
                (click)="logoutDialog(avatar, logout_dialog)">
           </div>
           <div *ngSwitchCase="'hector.shimizu@csh.udg.mx'" #avatar id="avatar" style="width: 32px; height: 32px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('assets/imagenes/hector.png')"
+    background-position: center; background-image: url('../../aplicacion/servicedesk/assets/imagenes/hector.png')"
                (click)="logoutDialog(avatar, logout_dialog)">
           </div>
           <div *ngSwitchCase="'eduardo.salazar@csh.udg.mx'" #avatar id="avatar" style="width: 32px; height: 32px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('assets/imagenes/lalo.png')"
+    background-position: center; background-image: url('../../aplicacion/servicedesk/assets/imagenes/lalo.png')"
                (click)="logoutDialog(avatar, logout_dialog)">
           </div>
           <div *ngSwitchCase="'enrique.vega@csh.udg.mx'" #avatar id="avatar" style="width: 32px; height: 32px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('assets/imagenes/enrique.png')"
+    background-position: center; background-image: url('../../aplicacion/servicedesk/assets/imagenes/enrique.png')"
                (click)="logoutDialog(avatar, logout_dialog)">
           </div>
           <div *ngSwitchCase="'emmanuelchacon_1@csh.udg.mx'" #avatar id="avatar" style="width: 32px; height: 32px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('assets/imagenes/manny.jpg')"
+    background-position: center; background-image: url('../../aplicacion/servicedesk/assets/imagenes/manny.jpg')"
                (click)="logoutDialog(avatar, logout_dialog)">
           </div>
           <div *ngSwitchCase="'omara@csh.udg.mx'" #avatar id="avatar" style="width: 32px; height: 32px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('assets/imagenes/omar.png')"
+    background-position: center; background-image: url('../../aplicacion/servicedesk/assets/imagenes/omar.png')"
                (click)="logoutDialog(avatar, logout_dialog)">
           </div>
           <div *ngSwitchCase="'zyanya.lopez@csh.udg.mx'" #avatar id="avatar" style="width: 32px; height: 32px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('assets/imagenes/zyan.png')"
+    background-position: center; background-image: url('../../aplicacion/servicedesk/assets/imagenes/zyan.png')"
                (click)="logoutDialog(avatar, logout_dialog)">
           </div>
           <div *ngSwitchCase="'alberto.franco@csh.udg.mx'" #avatar id="avatar" style="width: 32px; height: 32px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('assets/imagenes/mario.png')"
+    background-position: center; background-image: url('../../aplicacion/servicedesk/assets/imagenes/mario.png')"
                (click)="logoutDialog(avatar, logout_dialog)">
           </div>
           <div *ngSwitchCase="'jorge.plascencia@redudg.udg.mx'" #avatar id="avatar" style="width: 32px; height: 32px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('assets/imagenes/jorge.png')"
+    background-position: center; background-image: url('../../aplicacion/servicedesk/assets/imagenes/jorge.png')"
                (click)="logoutDialog(avatar, logout_dialog)">
           </div>
-          <div *ngSwitchCase="'pro1013b@yahoo.com'" #avatar id="avatar" style="width: 32px; height: 32px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('assets/imagenes/edgar.png')"
+          <div *ngSwitchCase="'edgar.orozco@csh.udg.mx'" #avatar id="avatar" style="width: 32px; height: 32px; overflow: hidden; border-radius: 50%; background-size: cover;
+    background-position: center; background-image: url('../../aplicacion/servicedesk/assets/imagenes/edgar.png')"
                (click)="logoutDialog(avatar, logout_dialog)">
           </div>
           <div *ngSwitchCase="'roberto.villasenor@redudg.udg.mx'" #avatar id="avatar" style="width: 32px; height: 32px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('assets/imagenes/rober.png')"
+    background-position: center; background-image: url('../../aplicacion/servicedesk/assets/imagenes/rober.png')"
                (click)="logoutDialog(avatar, logout_dialog)">
           </div>
           <div *ngSwitchCase="'jose.crubio@csh.udg.mx'" #avatar id="avatar" style="width: 32px; height: 32px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('assets/imagenes/alberto.png')"
+    background-position: center; background-image: url('../../aplicacion/servicedesk/assets/imagenes/alberto.png')"
                (click)="logoutDialog(avatar, logout_dialog)">
           </div>
         </div>
@@ -102,112 +106,124 @@
       <ng-template #showLogin>
         <paper-icon-button icon="social:person-add" onclick="dialogIniciarSesion.open();"></paper-icon-button>
       </ng-template>
-      <paper-icon-button icon="menu" onclick="drawer.toggle()"></paper-icon-button>
+      <paper-icon-button icon="menu" onclick="drawer.toggle()" style="margin-right: 6px"></paper-icon-button>
     </app-toolbar>
   </app-header>
 
   <app-drawer-layout>
 
-    <app-drawer slot="drawer" persistent opened>
+    <app-drawer slot="drawer" persistent opened style="z-index: 0">
 
-      <paper-material elevation="4" style="flex: 0 1 auto;" *ngIf="nombreLogeo" >
-        <paper-tabs #pager (iron-select)="cambioPagina(pager.selected)" [selected]="paginaSeleccionada">
-          <paper-tab [disabled]="getNivel((user | async)?.email) != 2 && getNivel((user | async)?.email) != 3">Todos</paper-tab>
-          <paper-tab [disabled]="getNivel((user | async)?.email) != 2 && getNivel((user | async)?.email) != 3">Redes</paper-tab>
-          <paper-tab [disabled]="getNivel((user | async)?.email) != 2 && getNivel((user | async)?.email) != 3">Taller</paper-tab>
-          <paper-tab [disabled]="getNivel((user | async)?.email) != 2 && getNivel((user | async)?.email) != 3">UMI</paper-tab>
-          <paper-tab [disabled]="getNivel((user | async)?.email) != 2 && getNivel((user | async)?.email) != 3">Belenes</paper-tab>
+      <paper-material elevation="4" style="flex: 0 1 auto;" *ngIf="nombreLogeo">
+        <paper-tabs #pager
+                    (iron-select)="incidente_seleccionado = undefined; presionado = true; cambioPagina(pager.selected)"
+                    [selected]="paginaSeleccionada">
+          <paper-tab [disabled]="getNivel((user | async)?.email) != 2 && getNivel((user | async)?.email) != 3">Todos
+          </paper-tab>
+          <paper-tab [disabled]="getNivel((user | async)?.email) != 2 && getNivel((user | async)?.email) != 3">Redes
+          </paper-tab>
+          <paper-tab [disabled]="getNivel((user | async)?.email) != 2 && getNivel((user | async)?.email) != 3">Taller
+          </paper-tab>
+          <paper-tab [disabled]="getNivel((user | async)?.email) != 2 && getNivel((user | async)?.email) != 3">UMI
+          </paper-tab>
+          <paper-tab [disabled]="getNivel((user | async)?.email) != 2 && getNivel((user | async)?.email) != 3">Belenes
+          </paper-tab>
         </paper-tabs>
       </paper-material>
 
+      <div style="display: flex; align-items: center; width: 100%;" *ngIf="nombreLogeo">
+        <paper-input label="Buscar incidente:" id="inputBuscar" #inputBuscar
+                     style="width: 100%; margin: 0; align-items: center;" no-label-float class="buscar" (keyup.enter)="buscarEvento(inputBuscar.value);">
+          <paper-icon-button *ngIf="busqueda == ''" slot="suffix" icon="search" style="margin-bottom: 8px" (click)="buscarEvento(inputBuscar.value);"></paper-icon-button>
+          <paper-icon-button *ngIf="busqueda != ''" slot="suffix" icon="icons:clear" style="margin-bottom: 8px" (click)="limpiarBusqueda(); inputBuscar.value = ''"></paper-icon-button>
+        </paper-input>
+      </div>
+
       <paper-material elevation="3" style="overflow: scroll; height:  calc(100vh - 48px - 48px);" *ngIf="nombreLogeo">
-        <div>
-          <div *ngFor="let i of incidentes | async; let indice = index;">
-            <div style="position: relative" (click)="eventoPresionado(i, indice);"
-                 [class.active]="indice == selectedRow" *ngIf="filtrarIncidente(i)">
-              <div style="padding: 12px">
+        <div style="width: 100%; box-sizing: border-box">
+          <div *ngFor="let i of incidentes | async" style="width: 100%; box-sizing: border-box">
+            <div style="position: relative; width: 100%; box-sizing: border-box" (click)="eventoPresionado(i, indice);"
+                 [class.active]="buscarIndice(i)" *ngIf="filtrarIncidente(i)">
+              <div style="padding: 12px; width: 100%; box-sizing: border-box">
                 <div style="width: 100%; display: flex; align-items: center; box-sizing: border-box;">
 
-                  <div style="width: 16%">
-                    <div class="label">Folio:</div>
-
+                  <div>
+                    <div class="label" style="width: 8ch">Folio:</div>
                   </div>
 
-                  <div style="box-sizing: border-box; padding-left: 8px; padding-right: 8px; width: 55%">
-                    <div class="labelBold">{{i.folio}}</div>
+                  <div class="labelBold"
+                       style="box-sizing: border-box; padding-left: 8px; padding-right: 8px; width: 100%">
+                    {{i.folio}}
                   </div>
 
-                  <div style="width: 25%">
-                    <div class="labelChico">{{i.fecha | date:'dd/MM/yy'}}</div>
+                  <div>
+                    <div class="labelChico" style="width: 8ch">{{i.fecha | date:'dd/MM/yy'}}</div>
                   </div>
 
                 </div>
                 <div style="width: 100%; display: flex; align-items: center; box-sizing: border-box;">
 
-                  <div style="width: 16%">
-                    <div class="label">Estatus:</div>
-
+                  <div>
+                    <div class="label" style="width: 8ch">Estatus:</div>
                   </div>
 
-                  <div style="box-sizing: border-box; padding-left: 8px; padding-right: 8px; width: 55%"
+                  <div class="labelBold"
+                       style="box-sizing: border-box; padding-left: 8px; padding-right: 8px; width: 100%"
                        [style.color]="fondoEstatus[i.estatus]">
-                    <div class="labelBold">{{status[i.estatus]}}</div>
+                    {{status[i.estatus]}}
                   </div>
 
-                  <div style="width: 25%">
-                    <div class="labelChico">{{i.fecha | date:'hh:mm a'}}</div>
+                  <div>
+                    <div class="labelChico" style="width: 8ch">{{i.fecha | date:'hh:mm a'}}</div>
                   </div>
 
                 </div>
                 <div style="width: 100%; display: flex; align-items: center; box-sizing: border-box;">
 
-                  <div style="width: 16%">
-                    <div class="label">Técnico:</div>
+                  <div>
+                    <div class="label" style="width: 8ch">Técnico:</div>
                   </div>
 
-                  <div style="box-sizing: border-box; padding-left: 8px; padding-right: 8px; width: 55%;"
+                  <div class="labelBold"
+                       style="box-sizing: border-box; padding-left: 8px; padding-right: 8px; width: 100%; overflow: hidden; white-space: nowrap; text-overflow:ellipsis;"
                        *ngIf="!i.tecnicos">
-                    <div class="labelBold" style=" overflow: hidden; white-space: nowrap; text-overflow:ellipsis;">
-                      {{i.tecnico}}
-                    </div>
+                    {{i.tecnico}}
                   </div>
 
-                  <div style="box-sizing: border-box; padding-left: 8px; padding-right: 8px; width: 55%;"
+                  <div class="labelBold"
+                       style="box-sizing: border-box; padding-left: 8px; padding-right: 8px; width: 100%; overflow: hidden; white-space: nowrap; text-overflow:ellipsis;"
                        *ngIf="i.tecnicos">
-                    <div class="labelBold" style=" overflow: hidden; white-space: nowrap; text-overflow:ellipsis;">
-                      {{ sacarNombres(i.tecnicos) }}
-                    </div>
+                    {{ sacarNombres(i.tecnicos) }}
                   </div>
 
-                  <div style="width: 25%" [style.color]="fondo[i.prioridad - 1]">
-                    <div class="circulo">&#x25CF;</div>
+                  <div [style.color]="fondo[i.prioridad - 1]" class="labelchico" >
+                    <div class="circulo" style="width: 4ch">&#x25CF;</div>
                   </div>
 
                 </div>
                 <div style="width: 100%; display: flex; align-items: center; box-sizing: border-box;">
 
-                  <div style="width: 16%">
-                    <div class="label">Tipo:</div>
+                  <div>
+                    <div class="label" style="width: 8ch">Tipo:</div>
                   </div>
 
-                  <div style="box-sizing: border-box; padding-left: 8px; padding-right: 8px; width: 84%;">
-                    <div class="labelBold" style=" overflow: hidden; white-space: nowrap; text-overflow:ellipsis;">
-                      {{i.tipoDeIncidente}}
-                    </div>
+                  <div class="labelBold" style="box-sizing: border-box; padding-left: 8px; padding-right: 8px; width: 100%; overflow: hidden; white-space: nowrap; text-overflow:ellipsis;">
+                    {{i.tipoDeIncidente}}
                   </div>
+
 
                 </div>
-                <div style="width: 100%; display: flex; align-items: center; box-sizing: border-box;" *ngIf="i.dependenciaDelCliente">
+                <div style="width: 100%; display: flex; align-items: center; box-sizing: border-box;"
+                     *ngIf="i.dependenciaDelCliente">
 
-                  <div style="width: 16%">
-                    <div class="label">Depto:</div>
+                  <div>
+                    <div class="label" style="width: 8ch">Depto:</div>
                   </div>
 
-                  <div style="box-sizing: border-box; padding-left: 8px; padding-right: 8px; width: 84%;">
-                    <div class="labelBold" style=" overflow: hidden; white-space: nowrap; text-overflow:ellipsis;">
-                      {{i.dependenciaDelCliente + ' - ' + i.ubicacionDelCliente}}
-                    </div>
+                  <div class="labelBold" style="overflow: hidden; white-space: nowrap; text-overflow:ellipsis; box-sizing: border-box; padding-left: 8px; padding-right: 8px; width: 100%;">
+                    {{i.dependenciaDelCliente + ' - ' + i.ubicacionDelCliente}}
                   </div>
+
 
                 </div>
 
@@ -220,8 +236,8 @@
       </paper-material>
     </app-drawer>
 
-    <div id="detalle" style="box-sizing: border-box; height: calc(100vh - 64px); flex-direction: column; display: flex"
-         class="z-depth-3" *ngIf="incidente_seleccionado">
+    <div id="detalle" style="position: absolute; left: 1px; right: 0; box-sizing: border-box; height: calc(100vh - 64px); flex-direction: column; display: flex"
+         class="z-depth-3" *ngIf="incidente_seleccionado && encontrado">
       <paper-material #header elevation="2" id="toolbarIncidente"
                       style="height: 96px; position: absolute; left: 0; right: 0"
                       [style.background]="fondo[incidente_seleccionado.prioridad - 1]">
@@ -238,10 +254,12 @@
             incidente_seleccionado.quienRegistro}}
           </div>
         </div>
-        <paper-icon-button icon="icons:delete-forever" style="position: absolute; left: 122px; top: 8px"
+        <paper-icon-button icon="icons:delete-forever" style="position: absolute; left: 24px; top: 8px"
                            *ngIf="getNivel((user | async)?.email) == 2 || getNivel((user | async)?.email) == 3 || getNivel((user | async)?.email) == 2.5"
                            (click)="dialogEliminarIncidente.open()"></paper-icon-button>
-        <paper-icon-button icon="editor:mode-edit" style="position: absolute; right: 17px; top: 8px"
+        <paper-icon-button icon="social:share" style="position: absolute; right: 24px; top: 8px"
+                           (click)="textoTipoIncidenteReal = 'Selecciona el tipo de incidente'; dialogCompartirIncidente.open()"></paper-icon-button>
+        <paper-icon-button icon="editor:mode-edit" style="position: absolute; left: 24px; top: 80px"
                            *ngIf="getNivel((user | async)?.email) == 2 || getNivel((user | async)?.email) == 3 || getNivel((user | async)?.email) == 2.5"
                            (click)="abrirDialogoEditarIncidente(dialogCrearIncidente)"></paper-icon-button>
       </paper-material>
@@ -450,7 +468,8 @@
                          *ngIf="i.progreso > -1">
                       <div style="width: 100%; display: flex; box-sizing: border-box;">
                         <div class="label" style="width: 10ch">Estatus:</div>
-                        <div style="padding-left: 16px; padding-right: 16px; width: 100%" [style.color]="fondoEstatus[i.progreso]">
+                        <div style="padding-left: 16px; padding-right: 16px; width: 100%"
+                             [style.color]="fondoEstatus[i.progreso]">
                           <div class="labelBold">{{status[i.progreso]}}</div>
                         </div>
                         <div class="labelChico" style="width: 10ch">{{i.timestamp | date:'dd/MM/yy'}}</div>
@@ -479,11 +498,25 @@
                     </div>
 
                     <div style="width: 100%; display: flex; align-items: center; box-sizing: border-box;"
+                         *ngIf="i.area">
+                      <div style="width: 100%; display: flex; box-sizing: border-box;">
+                        <div class="label" style="width: 10ch">Con quién:</div>
+                        <div style="padding-left: 16px; padding-right: 16px; width: 100%">
+                          <div class="labelBold">{{i.area}}</div>
+                        </div>
+                        <div class="labelChico" style="width: 10ch"></div>
+                      </div>
+                    </div>
+
+                    <div style="width: 100%; display: flex; align-items: center; box-sizing: border-box;"
                          *ngIf="i.mensaje">
                       <div style="width: 100%; display: flex; box-sizing: border-box;">
                         <div class="label" style="width: 10ch">Mensaje:</div>
                         <div style="padding-left: 16px; padding-right: 16px; width: 100%">
-                          <div class="labelBold" [ngStyle]="{'text-decoration': i.mensaje.includes('<tachado>') ? 'line-through' : 'none'}">{{reemplazarTexto(i.mensaje)}}</div>
+                          <div class="labelBold"
+                               [ngStyle]="{'text-decoration': i.mensaje.includes('<tachado>') ? 'line-through' : 'none'}">
+                            {{reemplazarTexto(i.mensaje)}}
+                          </div>
                         </div>
                         <div class="label" style="width: 10ch"></div>
                       </div>
@@ -499,7 +532,7 @@
 
       </div>
 
-      <div style="position: absolute; bottom: 0; background: #424242; margin: 0; right: 24px; left: 122px;"
+      <div style="position: absolute; bottom: 0; background: #424242; margin: 0; right: 24px; left: 24px;"
            *ngIf="getNivel((user | async)?.email) > 0">
 
         <div
@@ -516,13 +549,15 @@
             </paper-chip>
             <paper-listbox slot="dropdown-content" (click)="menuProgreso.close()">
               <paper-item (click)="chip.label = 'En progreso'; spanChip.textContent = 'P'"
-                          *ngIf="getNivel((user | async)?.email) != 2">En progreso
+                          *ngIf="getNivel((user | async)?.email) != 2 && incidente_seleccionado.estatus != 4">En
+                progreso
               </paper-item>
               <paper-item (click)="chip.label = 'En espera'; spanChip.textContent = 'E'"
-                          *ngIf="getNivel((user | async)?.email) != 2"> En espera
+                          *ngIf="getNivel((user | async)?.email) != 2 && incidente_seleccionado.estatus != 4"> En espera
               </paper-item>
               <paper-item (click)="chip.label = 'Finalizado'; spanChip.textContent = 'F'"
-                          *ngIf="getNivel((user | async)?.email) != 2"> Finalizado
+                          *ngIf="getNivel((user | async)?.email) != 2 &&  incidente_seleccionado.estatus != 4">
+                Finalizado
               </paper-item>
               <paper-item (click)="chip.label = 'Reabierto'; spanChip.textContent = 'R'"
                           *ngIf="(getNivel((user | async)?.email) == 2 && incidente_seleccionado.estatus == 4) || (getNivel((user | async)?.email) == 3 && incidente_seleccionado.estatus == 4) || (getNivel((user | async)?.email) == 2.5 && incidente_seleccionado.estatus == 4)">
@@ -534,12 +569,11 @@
             </paper-listbox>
           </paper-menu-button>
 
-          <paper-input #inputMensaje class="mensaje" label="Escribir mensaje" no-label-float
+          <paper-input #inputMensaje class="mensaje" label="Escribir mensaje" no-label-float (keyup.enter)="presionarBoton(botonEnviar); "
                        style=" align-self: center; line-height: 24px; margin-left: 140px; margin-right: 48px; width: 100%;"></paper-input>
           <paper-icon-button #botonEnviar icon="icons:send" style="position: absolute; bottom: 4px; right: 4px"
                              (click)="enviarProgreso(inputMensaje, botonEnviar, spanChip, toastBienvenido, chip)"></paper-icon-button>
         </div>
-
       </div>
     </div>
 
@@ -549,12 +583,12 @@
         <div style="margin-left: 16px; margin-right: 16px; margin-top: 24px; margin-bottom: 8px"><b>Filtros:</b></div>
 
         <paper-checkbox class="c0" #c0 checked noink="true"
-                        (checked-changed)="filtro_registrado = !filtro_registrado; cambioPagina(pager.selected)">
+                        (checked-changed)="filtro_registrado = !filtro_registrado; cambioPagina(paginaSeleccionada)">
           Ver incidentes
           registrados
         </paper-checkbox>
         <paper-checkbox class="c1" #c1 checked noink="true"
-                        (checked-changed)="filtro_tomados = !filtro_tomados; cambioPagina(pager.selected)">Ver
+                        (checked-changed)="filtro_tomados = !filtro_tomados; cambioPagina(paginaSeleccionada)">Ver
           incidentes en
           tomados
         </paper-checkbox>
@@ -564,22 +598,23 @@
           progreso
         </paper-checkbox>
         <paper-checkbox class="c3" #c3 checked noink="true"
-                        (checked-changed)="filtro_en_espera = !filtro_en_espera; cambioPagina(pager.selected)">Ver
+                        (checked-changed)="filtro_en_espera = !filtro_en_espera; cambioPagina(paginaSeleccionada)">Ver
           incidentes en
           espera
         </paper-checkbox>
         <paper-checkbox class="c4" #c4 noink="true"
-                        (checked-changed)="filtro_finalizados = !filtro_finalizados; cambioPagina(pager.selected)">Ver
+                        (checked-changed)="filtro_finalizados = !filtro_finalizados; cambioPagina(paginaSeleccionada)">
+          Ver
           incidentes
           finalizados
         </paper-checkbox>
         <paper-checkbox class="c5" #c5 checked noink="true"
-                        (checked-changed)="filtro_reabiertos = !filtro_reabiertos; cambioPagina(pager.selected)">
+                        (checked-changed)="filtro_reabiertos = !filtro_reabiertos; cambioPagina(paginaSeleccionada)">
           Ver incidentes
           reabiertos
         </paper-checkbox>
         <paper-checkbox class="c6" #c6 checked noink="true"
-                        (checked-changed)="filtro_asignados = !filtro_asignados; cambioPagina(pager.selected)">Ver
+                        (checked-changed)="filtro_asignados = !filtro_asignados; cambioPagina(paginaSeleccionada)">Ver
           incidentes
           asignados
         </paper-checkbox>
@@ -589,17 +624,17 @@
 
 
         <paper-checkbox class="baja" #c5 checked noink="true"
-                        (checked-changed)="filtro_prioridad_baja = !filtro_prioridad_baja; cambioPagina(pager.selected)">
+                        (checked-changed)="filtro_prioridad_baja = !filtro_prioridad_baja; cambioPagina(paginaSeleccionada)">
           Ver incidentes de
           prioridad baja
         </paper-checkbox>
         <paper-checkbox class="media" #c6 checked noink="true"
-                        (checked-changed)="filtro_prioridad_media = !filtro_prioridad_media; cambioPagina(pager.selected)">
+                        (checked-changed)="filtro_prioridad_media = !filtro_prioridad_media; cambioPagina(paginaSeleccionada)">
           Ver incidentes
           de prioridad media
         </paper-checkbox>
         <paper-checkbox class="alta" #c7 checked noink="true"
-                        (checked-changed)="filtro_prioridad_alta = !filtro_prioridad_alta; cambioPagina(pager.selected)">
+                        (checked-changed)="filtro_prioridad_alta = !filtro_prioridad_alta; cambioPagina(paginaSeleccionada)">
           Ver incidentes de
           prioridad alta
         </paper-checkbox>
@@ -761,7 +796,7 @@
     <div *ngIf="dialogCrearIncidente.opened" style="margin-top: 16px; margin-bottom: 16px">
       <div style="margin-bottom: 16px">
         <div style="display: flex; align-items: center;">
-          <img src="assets/imagenes/ic_taller.png" style="height: 24px; margin-left: 8px;">
+          <img src="../../aplicacion/servicedesk/assets/imagenes/ic_taller.png" style="height: 24px; margin-left: 8px;">
           <div style="padding-left: 16px">
             Taller de computo
           </div>
@@ -796,10 +831,11 @@
         </div>
       </div>
 
+      <div style="background-color: #999999; height: 1px; width: 100%; margin-top: 8px"></div>
 
       <div style="margin-top: 24px">
         <div style="display: flex; align-items: center;">
-          <img src="assets/imagenes/ic_redes.svg" style="height: 24px; margin-left: 12px;">
+          <img src="../../aplicacion/servicedesk/assets/imagenes/ic_redes.svg" style="height: 24px; margin-left: 12px;">
           <div style="padding-left: 16px">
             Redes y telefonía
           </div>
@@ -912,7 +948,7 @@
 
       <div style="margin-top: 24px">
         <div style="display: flex; align-items: center;">
-          <img src="assets/imagenes/ic_aviso.png" style="height: 24px; margin-left: 8px;">
+          <img src="../../aplicacion/servicedesk/assets/imagenes/ic_aviso.png" style="height: 24px; margin-left: 8px;">
           <div style="padding-left: 16px">
             Avisos
           </div>
@@ -951,6 +987,175 @@
 
     </div>
   </paper-dialog-scrollable>
+</paper-dialog>
+
+<paper-dialog #dialogCompartirIncidente id="dialogCompartirIncidente" with-backdrop modal
+              entry-animation="datepicker-slide-from-bottom-animation"
+              exit-animation="datepicker-slide-from-top-animation">
+  <app-toolbar id="toolbar_crear_incidente">
+    <div main-title>Selecciona el área con la que quieres compartir el incidente</div>
+
+    <paper-icon-button icon="clear"(click)="desctivarCambio(); t_belenes.checked = false; inputCompartir.value = ''; dialogCompartirIncidente.close()"></paper-icon-button>
+  </app-toolbar>
+
+  <div style="margin-top: 16px">
+    <div style="display: flex; align-items: center;">
+      <iron-icon icon="social:domain" style="margin-left: 13px"></iron-icon>
+      <div style="padding-left: 16px">
+        Belenes
+      </div>
+    </div>
+
+    <div style="display: flex; margin-top: 8px">
+      <paper-checkbox id="t_belenes" #t_belenes class="tipoIncidente"
+                      [checked]="checked_belenes((user | async)?.displayName)"
+                      (checked-changed)="cambiarIncidenteEnBelenes(t_belenes)">Compartir con Belenes
+      </paper-checkbox>
+    </div>
+
+    <div style="background-color: #999999; height: 1px; width: 100%"></div>
+  </div>
+
+  <paper-dialog-scrollable style="margin-top: 0; margin-bottom: 64px">
+    <div style="margin-top: 16px; margin-bottom: 16px">
+      <div style="margin-bottom: 16px">
+        <div style="display: flex; align-items: center;">
+          <img src="../../aplicacion/servicedesk/assets/imagenes/ic_taller.png" style="height: 24px; margin-left: 8px;">
+          <div style="padding-left: 16px">
+            Taller de computo
+          </div>
+        </div>
+
+        <div style="display: flex; margin-top: 8px">
+          <paper-checkbox id="t1" #t1 class="tipoIncidente"
+                          (checked-changed)="cambiarTipoIncidente(t1)">Mantenimiento correctivo
+          </paper-checkbox>
+          <paper-checkbox id="t2" #t2 class="tipoIncidente"
+                          (checked-changed)="cambiarTipoIncidente(t2)">Impresora
+          </paper-checkbox>
+          <paper-checkbox id="t3" #t3 class="tipoIncidente"
+                          (checked-changed)="cambiarTipoIncidente(t3)">Software
+          </paper-checkbox>
+          <paper-checkbox id="t4" #t4 class="tipoIncidente"
+                          (checked-changed)="cambiarTipoIncidente(t4)">Hardware
+          </paper-checkbox>
+        </div>
+
+        <div style="display: flex;">
+          <paper-checkbox id="t5" #t5 class="tipoIncidente"
+                          (checked-changed)="cambiarTipoIncidente(t5)">Correo electrónico
+          </paper-checkbox>
+          <paper-checkbox id="t6" #t6 class="tipoIncidente"
+                          (checked-changed)="cambiarTipoIncidente(t6)">Servidores
+          </paper-checkbox>
+          <paper-checkbox id="t7" #t7 class="tipoIncidente"
+                          (checked-changed)="cambiarTipoIncidente(t7)">Otro
+          </paper-checkbox>
+          <div style="width: 25%; margin: 12px 16px;"></div>
+        </div>
+      </div>
+
+      <div style="background-color: #999999; height: 1px; width: 100%; margin-top: 8px"></div>
+
+      <div style="margin-top: 24px">
+        <div style="display: flex; align-items: center;">
+          <img src="../../aplicacion/servicedesk/assets/imagenes/ic_redes.svg" style="height: 24px; margin-left: 12px;">
+          <div style="padding-left: 16px">
+            Redes y telefonía
+          </div>
+        </div>
+
+        <div style="display: flex; margin-top: 16px">
+          <paper-checkbox id="t9" #t8 class="tipoIncidente"
+                          (checked-changed)="cambiarTipoIncidente(t8)">Teléfono
+          </paper-checkbox>
+          <paper-checkbox id="t9" #t9 class="tipoIncidente"
+                          (checked-changed)="cambiarTipoIncidente(t9)">Internet
+          </paper-checkbox>
+          <paper-checkbox id="t10" #t10 class="tipoIncidente"
+                          (checked-changed)="cambiarTipoIncidente(t10)">WIFI
+          </paper-checkbox>
+          <paper-checkbox id="t11" #t11 class="tipoIncidente"
+                          (checked-changed)="cambiarTipoIncidente(t11)">Mantenimiento correctivo
+          </paper-checkbox>
+        </div>
+
+        <div style="display: flex;">
+          <paper-checkbox id="t12" #t12 class="tipoIncidente"
+                          (checked-changed)="cambiarTipoIncidente(t12)">Otro
+          </paper-checkbox>
+        </div>
+      </div>
+
+      <div style="background-color: #999999; height: 1px; width: 100%; margin-top: 8px"></div>
+
+      <div style="margin-top: 24px">
+        <div style="display: flex; align-items: center;">
+          <iron-icon icon="icons:important-devices" style="margin-left: 13px"></iron-icon>
+          <div style="padding-left: 16px">
+            Multimedia
+          </div>
+        </div>
+
+        <div style="display: flex; margin-top: 16px">
+          <paper-checkbox id="t13" #t13 class="tipoIncidente"
+                          (checked-changed)="cambiarTipoIncidente(t13)">Grabación de eventos
+            académicos
+          </paper-checkbox>
+          <paper-checkbox id="t14" #t14 class="tipoIncidente"
+                          (checked-changed)="cambiarTipoIncidente(t14)">Producción de videos
+          </paper-checkbox>
+          <paper-checkbox id="t15" #t15 class="tipoIncidente"
+                          (checked-changed)="cambiarTipoIncidente(t15)">Fotografia de eventos
+            académicos
+          </paper-checkbox>
+          <paper-checkbox id="t16" #t16 class="tipoIncidente"
+                          (checked-changed)="cambiarTipoIncidente(t16)">Página web
+          </paper-checkbox>
+        </div>
+
+        <div style="display: flex;">
+          <paper-checkbox id="t17" #t17 class="tipoIncidente"
+                          (checked-changed)="cambiarTipoIncidente(t17)">Diseño
+          </paper-checkbox>
+          <paper-checkbox id="t18" #t18 class="tipoIncidente"
+                          (checked-changed)="cambiarTipoIncidente(t18)">Videoconferencia
+          </paper-checkbox>
+          <paper-checkbox id="t19" #t19 class="tipoIncidente"
+                          (checked-changed)="cambiarTipoIncidente(t19)">Streaming
+          </paper-checkbox>
+          <paper-checkbox id="t20" #t20 class="tipoIncidente"
+                          (checked-changed)="cambiarTipoIncidente(t20)">Aplicaciones Web y moviles
+          </paper-checkbox>
+        </div>
+
+        <div style="display: flex;">
+          <paper-checkbox id="t21" #t21 class="tipoIncidente"
+                          (checked-changed)="cambiarTipoIncidente(t21)">Auditorios
+          </paper-checkbox>
+          <paper-checkbox id="t22" #t22 class="tipoIncidente"
+                          (checked-changed)="cambiarTipoIncidente(t22)">Otro
+          </paper-checkbox>
+          <div style="width: 25%; margin: 12px 16px;"></div>
+          <div style="width: 25%; margin: 12px 16px;"></div>
+        </div>
+
+      </div>
+
+    </div>
+  </paper-dialog-scrollable>
+
+  <div style="position: absolute; bottom: 0; background: #424242; margin: 0; right: 0; left: 0;">
+
+    <div
+      style="position: relative; display: flex; box-sizing: border-box; padding: 4px; margin-bottom: 16px; min-height: 48px; background: #fff; color: #424242; border-radius: 24px;">
+
+      <paper-input id="inputCompartir" #inputCompartir class="mensaje" label="Motivo por el que compartes el incidente" no-label-float (keyup.enter)="presionarBoton(botonCompartirEnviar); "
+                   style=" align-self: center; line-height: 24px; margin-left: 16px; margin-right: 48px; width: 100%;"></paper-input>
+      <paper-icon-button #botonCompartirEnviar icon="icons:send" style="position: absolute; bottom: 4px; right: 4px"
+                         (click)="compartir(inputCompartir, botonCompartirEnviar, toastBienvenido, dialogCompartirIncidente)"></paper-icon-button>
+    </div>
+  </div>
 </paper-dialog>
 
 <paper-dialog #dialogAsignarTecnicos id="dialogAsignarTecnicos" with-backdrop
@@ -996,7 +1201,7 @@
 
       <div style="margin-top: 24px">
         <div style="display: flex; align-items: center;">
-          <img src="assets/imagenes/ic_taller.png" style="height: 24px; margin-left: 8px;">
+          <img src="../../aplicacion/servicedesk/assets/imagenes/ic_taller.png" style="height: 24px; margin-left: 8px;">
           <div style="padding-left: 16px">
             Taller de computo
           </div>
@@ -1014,7 +1219,7 @@
                           [checked]="incidenteTomado('Ricardo')" [disabled]="incidenteTomado('Ricardo')">Ricardo Cortes
           </paper-checkbox>
           <paper-checkbox id="jose" #jose class="tipoIncidente" (checked-changed)="cambiarAsignado(jose)"
-                          [checked]="incidenteTomado('Jose')" [disabled]="incidenteTomado('Jose')">Jose Alberto Cárdenas
+                          [checked]="incidenteTomado('Rubio')" [disabled]="incidenteTomado('Rubio')">Jose Alberto Cárdenas
             Rubio
           </paper-checkbox>
         </div>
@@ -1024,6 +1229,12 @@
                           [checked]="incidenteTomado('Roberto')" [disabled]="incidenteTomado('Roberto')">Roberto Carlos
             Villaseñor Rodriguez
           </paper-checkbox>
+
+          <paper-checkbox id="mario" #mario class="tipoIncidente" (checked-changed)="cambiarAsignado(mario)"
+                          [checked]="incidenteTomado('Mario')" [disabled]="incidenteTomado('Mario')">Mario Franco López
+          </paper-checkbox>
+          <div style="width: 25%; margin: 12px 16px;"></div>
+          <div style="width: 25%; margin: 12px 16px;"></div>
         </div>
       </div>
 
@@ -1031,7 +1242,7 @@
 
       <div style="margin-top: 24px">
         <div style="display: flex; align-items: center;">
-          <img src="assets/imagenes/ic_redes.svg" style="height: 24px; margin-left: 12px;">
+          <img src="../../aplicacion/servicedesk/assets/imagenes/ic_redes.svg" style="height: 24px; margin-left: 12px;">
           <div style="padding-left: 16px">
             Redes y telefonía
           </div>
@@ -1114,9 +1325,13 @@
             Pérez
           </paper-checkbox>
           <paper-checkbox id="mario" #mario class="tipoIncidente" (checked-changed)="cambiarAsignado(mario)"
-                          [checked]="incidenteTomado('mario')" [disabled]="incidenteTomado('mario')">Mario Franco López
+                          [checked]="incidenteTomado('Mario')" [disabled]="incidenteTomado('Mario')">Mario Franco López
           </paper-checkbox>
-          <div style="width: 25%; margin: 12px 16px;"></div>
+
+          <paper-checkbox id="jose" #jose class="tipoIncidente" (checked-changed)="cambiarAsignado(jose)"
+                          [checked]="incidenteTomado('Rubio')" [disabled]="incidenteTomado('Rubio')">Jose Alberto Cárdenas
+            Rubio
+          </paper-checkbox>
           <div style="width: 25%; margin: 12px 16px;"></div>
         </div>
       </div>
@@ -1131,11 +1346,11 @@
   <div style="height: 6px; width: 100%; background: #e66100; margin: 0; padding: 0;"></div>
 
   <div style="display: flex; margin: 0; padding: 0;">
-    <div style="width: 50%;  background-image: url('assets/imagenes/img_login.jpg');
+    <div style="width: 50%;  background-image: url('../../aplicacion/servicedesk/assets/imagenes/img_login.jpg');
     background-position: center; display: flex; align-items: center; justify-items: center">
 
       <div style="width: 100%;">
-        <img src="assets/imagenes/cta_letras.png" style="width: 50%; margin-left: auto; display: block;
+        <img src="../../aplicacion/servicedesk/assets/imagenes/cta_letras.png" style="width: 50%; margin-left: auto; display: block;
     margin-right: auto;">
         <div style="height: 2px; margin-top: 8px; width: 50%; background: #e66100; margin-left: auto; display: block;
     margin-right: auto;"></div>
@@ -1148,7 +1363,7 @@
       <div *ngIf="loginDialog.opened"
            style="box-sizing: border-box; padding-left: 56px; padding-right: 56px; padding-top: 32px; padding-bottom: 24px;">
 
-        <img src="assets/imagenes/logo_service_desk_blanco.png" style="height: 50px; margin-left: auto; display: block;
+        <img src="../../aplicacion/servicedesk/assets/imagenes/logo_service_desk_blanco.png" style="height: 50px; margin-left: auto; display: block;
     margin-right: auto;">
         <div class="labelBold" style="text-align: center; font-size: x-large; margin-top: 12px; margin-bottom: 32px">
           Service Desk CUCSH
@@ -1209,99 +1424,103 @@
     <div style="margin: 20px">
       <div [ngSwitch]="(user | async)?.email">
         <div *ngSwitchCase="'oscar.mendez@csh.udg.mx'" style="width: 90px; height: 90px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('assets/imagenes/oscar.jpg')"
+    background-position: center; background-image: url('../../aplicacion/servicedesk/assets/imagenes/oscar.jpg')"
+             (click)="logoutDialog(avatar, logout_dialog)">
+        </div>
+        <div *ngSwitchCase="'invitado@gmail.com'" style="width: 90px; height: 90px; overflow: hidden; border-radius: 50%; background-size: cover;
+    background-position: center; background-image: url('../../aplicacion/servicedesk/assets/imagenes/man.png')"
              (click)="logoutDialog(avatar, logout_dialog)">
         </div>
         <div *ngSwitchCase="'idania.gomez@csh.udg.mx'" style="width: 90px; height: 90px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('assets/imagenes/idania.png')"
+    background-position: center; background-image: url('../../aplicacion/servicedesk/assets/imagenes/idania.png')"
              (click)="logoutDialog(avatar, logout_dialog)">
         </div>
         <div *ngSwitchCase="'juan.mancilla@csh.udg.mx'" style="width: 90px; height: 90px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('assets/imagenes/juan.png')"
+    background-position: center; background-image: url('../../aplicacion/servicedesk/assets/imagenes/juan.png')"
              (click)="logoutDialog(avatar, logout_dialog)">
         </div>
         <div *ngSwitchCase="'hiram.franco@csh.udg.mx'" style="width: 90px; height: 90px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('assets/imagenes/hiram.jpg')"
+    background-position: center; background-image: url('../../aplicacion/servicedesk/assets/imagenes/hiram.jpg')"
              (click)="logoutDialog(avatar, logout_dialog)">
         </div>
         <div *ngSwitchCase="'ricardo.cortes@csh.udg.mx'" style="width: 90px; height: 90px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('assets/imagenes/ricardo.png')"
+    background-position: center; background-image: url('../../aplicacion/servicedesk/assets/imagenes/ricardo.png')"
              (click)="logoutDialog(avatar, logout_dialog)">
         </div>
         <div *ngSwitchCase="'teresa.dlsantos@csh.udg.mx'" style="width: 90px; height: 90px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('assets/imagenes/tere.png')"
+    background-position: center; background-image: url('../../aplicacion/servicedesk/assets/imagenes/tere.png')"
              (click)="logoutDialog(avatar, logout_dialog)">
         </div>
         <div *ngSwitchCase="'deleon.jonathan@csh.udg.mx'" style="width: 90px; height: 90px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('assets/imagenes/jona.png')"
+    background-position: center; background-image: url('../../aplicacion/servicedesk/assets/imagenes/jona.png')"
              (click)="logoutDialog(avatar, logout_dialog)">
         </div>
         <div *ngSwitchCase="'jose.carrillom@csh.udg.mx'" style="width: 90px; height: 90px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('assets/imagenes/gera.png')"
+    background-position: center; background-image: url('../../aplicacion/servicedesk/assets/imagenes/gera.png')"
              (click)="logoutDialog(avatar, logout_dialog)">
         </div>
         <div *ngSwitchCase="'eduardo.solano@redudg.udg.mx'" style="width: 90px; height: 90px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('assets/imagenes/solano.png')"
+    background-position: center; background-image: url('../../aplicacion/servicedesk/assets/imagenes/solano.png')"
              (click)="logoutDialog(avatar, logout_dialog)">
         </div>
         <div *ngSwitchCase="'octavio.cortazar@csh.udg.mx'" style="width: 90px; height: 90px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('assets/imagenes/octavio.png')"
+    background-position: center; background-image: url('../../aplicacion/servicedesk/assets/imagenes/octavio.png')"
              (click)="logoutDialog(avatar, logout_dialog)">
         </div>
         <div *ngSwitchCase="'oswaldo.mendoza@csh.udg.mx'" style="width: 90px; height: 90px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('assets/imagenes/oswaldo.png')"
+    background-position: center; background-image: url('../../aplicacion/servicedesk/assets/imagenes/oswaldo.png')"
              (click)="logoutDialog(avatar, logout_dialog)">
         </div>
         <div *ngSwitchCase="'elba.moralesg@csh.udg.mx'" style="width: 90px; height: 90px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('assets/imagenes/elba.png')"
+    background-position: center; background-image: url('../../aplicacion/servicedesk/assets/imagenes/elba.png')"
              (click)="logoutDialog(avatar, logout_dialog)">
         </div>
         <div *ngSwitchCase="'hector.shimizu@csh.udg.mx'" style="width: 90px; height: 90px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('assets/imagenes/hector.png')"
+    background-position: center; background-image: url('../../aplicacion/servicedesk/assets/imagenes/hector.png')"
              (click)="logoutDialog(avatar, logout_dialog)">
         </div>
         <div *ngSwitchCase="'eduardo.salazar@csh.udg.mx'" style="width: 90px; height: 90px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('assets/imagenes/lalo.png')"
+    background-position: center; background-image: url('../../aplicacion/servicedesk/assets/imagenes/lalo.png')"
              (click)="logoutDialog(avatar, logout_dialog)">
         </div>
         <div *ngSwitchCase="'enrique.vega@csh.udg.mx'" style="width: 90px; height: 90px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('assets/imagenes/enrique.png')"
+    background-position: center; background-image: url('../../aplicacion/servicedesk/assets/imagenes/enrique.png')"
              (click)="logoutDialog(avatar, logout_dialog)">
         </div>
         <div *ngSwitchCase="'emmanuelchacon_1@csh.udg.mx'" style="width: 90px; height: 90px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('assets/imagenes/manny.jpg')"
+    background-position: center; background-image: url('../../aplicacion/servicedesk/assets/imagenes/manny.jpg')"
              (click)="logoutDialog(avatar, logout_dialog)">
         </div>
         <div *ngSwitchCase="'omara@csh.udg.mx'" style="width: 90px; height: 90px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('assets/imagenes/omar.png')"
+    background-position: center; background-image: url('../../aplicacion/servicedesk/assets/imagenes/omar.png')"
              (click)="logoutDialog(avatar, logout_dialog)">
         </div>
         <div *ngSwitchCase="'zyanya.lopez@csh.udg.mx'" style="width: 90px; height: 90px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('assets/imagenes/zyan.png')"
+    background-position: center; background-image: url('../../aplicacion/servicedesk/assets/imagenes/zyan.png')"
              (click)="logoutDialog(avatar, logout_dialog)">
         </div>
         <div *ngSwitchCase="'alberto.franco@csh.udg.mx'" style="width: 90px; height: 90px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('assets/imagenes/mario.png')"
+    background-position: center; background-image: url('../../aplicacion/servicedesk/assets/imagenes/mario.png')"
              (click)="logoutDialog(avatar, logout_dialog)">
         </div>
         <div *ngSwitchCase="'jorge.plascencia@redudg.udg.mx'" style="width: 90px; height: 90px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('assets/imagenes/jorge.png')"
+    background-position: center; background-image: url('../../aplicacion/servicedesk/assets/imagenes/jorge.png')"
              (click)="logoutDialog(avatar, logout_dialog)">
         </div>
-        <div *ngSwitchCase="'pro1013b@yahoo.com'" style="width: 90px; height: 90px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('assets/imagenes/edgar.png')"
+        <div *ngSwitchCase="'edgar.orozco@csh.udg.mx'" style="width: 90px; height: 90px; overflow: hidden; border-radius: 50%; background-size: cover;
+    background-position: center; background-image: url('../../aplicacion/servicedesk/assets/imagenes/edgar.png')"
              (click)="logoutDialog(avatar, logout_dialog)">
         </div>
         <div *ngSwitchCase="'kenya.andrade@csh.udg.mx'" style="width: 90px; height: 90px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('assets/imagenes/kenia.png')"
+    background-position: center; background-image: url('../../aplicacion/servicedesk/assets/imagenes/kenia.png')"
              (click)="logoutDialog(avatar, logout_dialog)">
         </div>
         <div *ngSwitchCase="'roberto.villasenor@redudg.udg.mx'" style="width: 90px; height: 90px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('assets/imagenes/rober.png')"
+    background-position: center; background-image: url('../../aplicacion/servicedesk/assets/imagenes/rober.png')"
              (click)="logoutDialog(avatar, logout_dialog)">
         </div>
         <div *ngSwitchCase="'jose.crubio@csh.udg.mx'" style="width: 90px; height: 90px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('assets/imagenes/alberto.png')"
+    background-position: center; background-image: url('../../aplicacion/servicedesk/assets/imagenes/alberto.png')"
              (click)="logoutDialog(avatar, logout_dialog)">
         </div>
       </div>
@@ -1309,7 +1528,8 @@
     <div style="margin-top: 40px; margin-bottom: 20px; margin-right: 80px;">
       <div style="font-weight: bold; font-size: small; line-height: normal;">{{ (user | async)?.displayName }}</div>
       <div style="font-size: smaller; line-height: normal;">{{ (user | async)?.email }}</div>
-      <paper-button class="indigo" style="margin-left: -4px;" (click)="logout(logout_dialog, toastSesionCerrada, loginDialog)">Cerrar
+      <paper-button class="indigo" style="margin-left: -4px;"
+                    (click)="logout(logout_dialog, toastSesionCerrada, loginDialog)">Cerrar
         sesión
       </paper-button>
     </div>

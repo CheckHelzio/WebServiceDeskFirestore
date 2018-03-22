@@ -83,6 +83,15 @@ div.active{
   box-sizing: border-box;
 }
 
+#dialogCompartirIncidente{
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  background-color: #424242;
+  width: 60%;
+  box-sizing: border-box;
+}
+
 #dialogAsignarTecnicos{
   color: #fff;
   margin: 0;

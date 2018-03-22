@@ -1,0 +1,1517 @@
+{
+  "schema_version": "1.0.0",
+  "elements": [
+    {
+      "description": "`text-input` is an element that can:\n* guarantee **live**-data to be valid\n* be styled easily\n\nExample:\n```html\n<text-input step=\"2\" min=\"-20\" max=\"140\" pad-length=\"2\"></text-input>\n```\n\nIt sizes automatically. Use `key-up` and `key-down` to increment the value. If `step` is given, the value is a **multiple** of `step`.\n\n### Styling\nCustom property                   | Description                                  | Default\n----------------------------------|----------------------------------------------|--------------------\n`--text-input`                    | style of the input                           | {}\n`--text-input-invalid`            | style of the input                           | {}\n`--text-input-focus`              | style of the focussed and hovered input      | {}\n`--text-input-placeholder`        | style of the placeholder                     | {}\n`--text-input-color`              | color of the input                           | inherit\n`--text-input-background`         | background of the input                      | inherit\n`--text-input-focus-color`        | color of the focussed and hovered input      | inherit\n`--text-input-focus-background`   | background of the focussed and hovered input | inherit\n`--text-input-disabled-color`     | color of the disabled input                  | inherit\n`--text-input-allign`             | allignment of the text of the input          | left\n\n```css\n:host {\n  --text-input-disabled-color: grey;\n  --text-input-focus-background: rgba(0,0,0,0.25);\n  --text-input-focus: {\n    font-weight: bold;\n  };\n  --text-input-placeholder: {\n    color: pink;\n  };\n}\n```",
+      "summary": "",
+      "path": "text-input.html",
+      "properties": [
+        {
+          "name": "autocomplete",
+          "type": "string",
+          "description": "autocomplete the input",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 99,
+              "column": 10
+            },
+            "end": {
+              "line": 101,
+              "column": 11
+            }
+          },
+          "metadata": {
+            "polymer": {}
+          },
+          "inheritedFrom": "TextInputMixin"
+        },
+        {
+          "name": "type",
+          "type": "string",
+          "description": "specify the type like 'password'",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 106,
+              "column": 10
+            },
+            "end": {
+              "line": 110,
+              "column": 11
+            }
+          },
+          "metadata": {
+            "polymer": {
+              "notify": true
+            }
+          },
+          "defaultValue": "\"text\"",
+          "inheritedFrom": "TextInputMixin"
+        },
+        {
+          "name": "placeholder",
+          "type": "string",
+          "description": "placeholder string",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 115,
+              "column": 10
+            },
+            "end": {
+              "line": 117,
+              "column": 11
+            }
+          },
+          "metadata": {
+            "polymer": {}
+          },
+          "inheritedFrom": "TextInputMixin"
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "description": "disables the input",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 123,
+              "column": 10
+            },
+            "end": {
+              "line": 126,
+              "column": 11
+            }
+          },
+          "metadata": {
+            "polymer": {}
+          },
+          "inheritedFrom": "TextInputMixin"
+        },
+        {
+          "name": "required",
+          "type": "boolean",
+          "description": "required attribute",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 132,
+              "column": 10
+            },
+            "end": {
+              "line": 135,
+              "column": 11
+            }
+          },
+          "metadata": {
+            "polymer": {}
+          },
+          "inheritedFrom": "TextInputMixin"
+        },
+        {
+          "name": "pattern",
+          "type": "string",
+          "description": "regular expression pattern of the input",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 141,
+              "column": 10
+            },
+            "end": {
+              "line": 145,
+              "column": 11
+            }
+          },
+          "metadata": {
+            "polymer": {
+              "notify": true,
+              "observer": "\"_patternChanged\""
+            }
+          },
+          "inheritedFrom": "TextInputMixin"
+        },
+        {
+          "name": "default",
+          "type": "string",
+          "description": "default value of the input",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 151,
+              "column": 10
+            },
+            "end": {
+              "line": 155,
+              "column": 11
+            }
+          },
+          "metadata": {
+            "polymer": {
+              "notify": true,
+              "observer": "\"_inputChanged\""
+            }
+          },
+          "inheritedFrom": "TextInputMixin"
+        },
+        {
+          "name": "input",
+          "type": "string",
+          "description": "value string of the input",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 161,
+              "column": 10
+            },
+            "end": {
+              "line": 165,
+              "column": 11
+            }
+          },
+          "metadata": {
+            "polymer": {
+              "notify": true,
+              "observer": "\"_inputChanged\""
+            }
+          },
+          "inheritedFrom": "TextInputMixin"
+        },
+        {
+          "name": "value",
+          "type": "string",
+          "description": "value string of the input",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 171,
+              "column": 10
+            },
+            "end": {
+              "line": 175,
+              "column": 11
+            }
+          },
+          "metadata": {
+            "polymer": {
+              "notify": true,
+              "observer": "\"_valueChanged\""
+            }
+          },
+          "inheritedFrom": "TextInputMixin"
+        },
+        {
+          "name": "minlength",
+          "type": "number",
+          "description": "minlength of the input",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 181,
+              "column": 10
+            },
+            "end": {
+              "line": 183,
+              "column": 11
+            }
+          },
+          "metadata": {
+            "polymer": {}
+          },
+          "inheritedFrom": "TextInputMixin"
+        },
+        {
+          "name": "maxlength",
+          "type": "number",
+          "description": "maxlength of the input",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 189,
+              "column": 10
+            },
+            "end": {
+              "line": 191,
+              "column": 11
+            }
+          },
+          "metadata": {
+            "polymer": {}
+          },
+          "inheritedFrom": "TextInputMixin"
+        },
+        {
+          "name": "size",
+          "type": "number",
+          "description": "size of the input",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 197,
+              "column": 10
+            },
+            "end": {
+              "line": 199,
+              "column": 11
+            }
+          },
+          "metadata": {
+            "polymer": {}
+          },
+          "inheritedFrom": "TextInputMixin"
+        },
+        {
+          "name": "noAutoSize",
+          "type": "number",
+          "description": "if true, the length of the value is not used for computing the size-attribute",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 205,
+              "column": 10
+            },
+            "end": {
+              "line": 207,
+              "column": 11
+            }
+          },
+          "metadata": {
+            "polymer": {}
+          },
+          "inheritedFrom": "TextInputMixin"
+        },
+        {
+          "name": "spellcheck",
+          "type": "number",
+          "description": "if true, the input will check the spelling",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 213,
+              "column": 10
+            },
+            "end": {
+              "line": 216,
+              "column": 11
+            }
+          },
+          "metadata": {
+            "polymer": {}
+          },
+          "defaultValue": "false",
+          "inheritedFrom": "TextInputMixin"
+        }
+      ],
+      "methods": [
+        {
+          "name": "connectedCallback",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 220,
+              "column": 6
+            },
+            "end": {
+              "line": 227,
+              "column": 7
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "inheritedFrom": "TextInputMixin"
+        },
+        {
+          "name": "disconnectedCallback",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 229,
+              "column": 6
+            },
+            "end": {
+              "line": 232,
+              "column": 7
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "inheritedFrom": "TextInputMixin"
+        },
+        {
+          "name": "_checkInput",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 234,
+              "column": 6
+            },
+            "end": {
+              "line": 240,
+              "column": 7
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "inheritedFrom": "TextInputMixin"
+        },
+        {
+          "name": "_patternChanged",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 242,
+              "column": 6
+            },
+            "end": {
+              "line": 249,
+              "column": 7
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "pattern"
+            }
+          ],
+          "inheritedFrom": "TextInputMixin"
+        },
+        {
+          "name": "_inputChanged",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 251,
+              "column": 6
+            },
+            "end": {
+              "line": 257,
+              "column": 7
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "input"
+            }
+          ],
+          "inheritedFrom": "TextInputMixin"
+        },
+        {
+          "name": "_valueChanged",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 259,
+              "column": 6
+            },
+            "end": {
+              "line": 270,
+              "column": 7
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "value"
+            },
+            {
+              "name": "oldValue"
+            }
+          ],
+          "inheritedFrom": "TextInputMixin"
+        },
+        {
+          "name": "_checkKeycode",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 272,
+              "column": 6
+            },
+            "end": {
+              "line": 290,
+              "column": 7
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "e"
+            }
+          ],
+          "inheritedFrom": "TextInputMixin"
+        },
+        {
+          "name": "_computeSpellcheckAttribute",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 292,
+              "column": 6
+            },
+            "end": {
+              "line": 294,
+              "column": 7
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "spellcheck"
+            }
+          ],
+          "inheritedFrom": "TextInputMixin"
+        },
+        {
+          "name": "focus",
+          "description": "focus the input",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 299,
+              "column": 6
+            },
+            "end": {
+              "line": 301,
+              "column": 7
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "inheritedFrom": "TextInputMixin"
+        },
+        {
+          "name": "blur",
+          "description": "focus the input",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 306,
+              "column": 6
+            },
+            "end": {
+              "line": 308,
+              "column": 7
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "inheritedFrom": "TextInputMixin"
+        }
+      ],
+      "staticMethods": [],
+      "demos": [
+        {
+          "url": "demo/index.html",
+          "description": ""
+        }
+      ],
+      "metadata": {},
+      "sourceRange": {
+        "start": {
+          "line": 360,
+          "column": 4
+        },
+        "end": {
+          "line": 365,
+          "column": 5
+        }
+      },
+      "privacy": "public",
+      "superclass": "HTMLElement",
+      "name": "TextInput",
+      "attributes": [
+        {
+          "name": "autocomplete",
+          "description": "autocomplete the input",
+          "sourceRange": {
+            "start": {
+              "line": 99,
+              "column": 10
+            },
+            "end": {
+              "line": 101,
+              "column": 11
+            }
+          },
+          "metadata": {},
+          "type": "string",
+          "inheritedFrom": "TextInputMixin"
+        },
+        {
+          "name": "type",
+          "description": "specify the type like 'password'",
+          "sourceRange": {
+            "start": {
+              "line": 106,
+              "column": 10
+            },
+            "end": {
+              "line": 110,
+              "column": 11
+            }
+          },
+          "metadata": {},
+          "type": "string",
+          "inheritedFrom": "TextInputMixin"
+        },
+        {
+          "name": "placeholder",
+          "description": "placeholder string",
+          "sourceRange": {
+            "start": {
+              "line": 115,
+              "column": 10
+            },
+            "end": {
+              "line": 117,
+              "column": 11
+            }
+          },
+          "metadata": {},
+          "type": "string",
+          "inheritedFrom": "TextInputMixin"
+        },
+        {
+          "name": "disabled",
+          "description": "disables the input",
+          "sourceRange": {
+            "start": {
+              "line": 123,
+              "column": 10
+            },
+            "end": {
+              "line": 126,
+              "column": 11
+            }
+          },
+          "metadata": {},
+          "type": "boolean",
+          "inheritedFrom": "TextInputMixin"
+        },
+        {
+          "name": "required",
+          "description": "required attribute",
+          "sourceRange": {
+            "start": {
+              "line": 132,
+              "column": 10
+            },
+            "end": {
+              "line": 135,
+              "column": 11
+            }
+          },
+          "metadata": {},
+          "type": "boolean",
+          "inheritedFrom": "TextInputMixin"
+        },
+        {
+          "name": "pattern",
+          "description": "regular expression pattern of the input",
+          "sourceRange": {
+            "start": {
+              "line": 141,
+              "column": 10
+            },
+            "end": {
+              "line": 145,
+              "column": 11
+            }
+          },
+          "metadata": {},
+          "type": "string",
+          "inheritedFrom": "TextInputMixin"
+        },
+        {
+          "name": "default",
+          "description": "default value of the input",
+          "sourceRange": {
+            "start": {
+              "line": 151,
+              "column": 10
+            },
+            "end": {
+              "line": 155,
+              "column": 11
+            }
+          },
+          "metadata": {},
+          "type": "string",
+          "inheritedFrom": "TextInputMixin"
+        },
+        {
+          "name": "input",
+          "description": "value string of the input",
+          "sourceRange": {
+            "start": {
+              "line": 161,
+              "column": 10
+            },
+            "end": {
+              "line": 165,
+              "column": 11
+            }
+          },
+          "metadata": {},
+          "type": "string",
+          "inheritedFrom": "TextInputMixin"
+        },
+        {
+          "name": "value",
+          "description": "value string of the input",
+          "sourceRange": {
+            "start": {
+              "line": 171,
+              "column": 10
+            },
+            "end": {
+              "line": 175,
+              "column": 11
+            }
+          },
+          "metadata": {},
+          "type": "string",
+          "inheritedFrom": "TextInputMixin"
+        },
+        {
+          "name": "minlength",
+          "description": "minlength of the input",
+          "sourceRange": {
+            "start": {
+              "line": 181,
+              "column": 10
+            },
+            "end": {
+              "line": 183,
+              "column": 11
+            }
+          },
+          "metadata": {},
+          "type": "number",
+          "inheritedFrom": "TextInputMixin"
+        },
+        {
+          "name": "maxlength",
+          "description": "maxlength of the input",
+          "sourceRange": {
+            "start": {
+              "line": 189,
+              "column": 10
+            },
+            "end": {
+              "line": 191,
+              "column": 11
+            }
+          },
+          "metadata": {},
+          "type": "number",
+          "inheritedFrom": "TextInputMixin"
+        },
+        {
+          "name": "size",
+          "description": "size of the input",
+          "sourceRange": {
+            "start": {
+              "line": 197,
+              "column": 10
+            },
+            "end": {
+              "line": 199,
+              "column": 11
+            }
+          },
+          "metadata": {},
+          "type": "number",
+          "inheritedFrom": "TextInputMixin"
+        },
+        {
+          "name": "no-auto-size",
+          "description": "if true, the length of the value is not used for computing the size-attribute",
+          "sourceRange": {
+            "start": {
+              "line": 205,
+              "column": 10
+            },
+            "end": {
+              "line": 207,
+              "column": 11
+            }
+          },
+          "metadata": {},
+          "type": "number",
+          "inheritedFrom": "TextInputMixin"
+        },
+        {
+          "name": "spellcheck",
+          "description": "if true, the input will check the spelling",
+          "sourceRange": {
+            "start": {
+              "line": 213,
+              "column": 10
+            },
+            "end": {
+              "line": 216,
+              "column": 11
+            }
+          },
+          "metadata": {},
+          "type": "number",
+          "inheritedFrom": "TextInputMixin"
+        }
+      ],
+      "events": [],
+      "styling": {
+        "cssVariables": [],
+        "selectors": []
+      },
+      "slots": [],
+      "tagname": "text-input",
+      "mixins": [
+        "TextInputMixin"
+      ]
+    }
+  ],
+  "mixins": [
+    {
+      "description": "mixin to create a text-input",
+      "summary": "",
+      "path": "text-input.html",
+      "properties": [
+        {
+          "name": "autocomplete",
+          "type": "string",
+          "description": "autocomplete the input",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 99,
+              "column": 10
+            },
+            "end": {
+              "line": 101,
+              "column": 11
+            }
+          },
+          "metadata": {
+            "polymer": {}
+          }
+        },
+        {
+          "name": "type",
+          "type": "string",
+          "description": "specify the type like 'password'",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 106,
+              "column": 10
+            },
+            "end": {
+              "line": 110,
+              "column": 11
+            }
+          },
+          "metadata": {
+            "polymer": {
+              "notify": true
+            }
+          },
+          "defaultValue": "\"text\""
+        },
+        {
+          "name": "placeholder",
+          "type": "string",
+          "description": "placeholder string",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 115,
+              "column": 10
+            },
+            "end": {
+              "line": 117,
+              "column": 11
+            }
+          },
+          "metadata": {
+            "polymer": {}
+          }
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "description": "disables the input",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 123,
+              "column": 10
+            },
+            "end": {
+              "line": 126,
+              "column": 11
+            }
+          },
+          "metadata": {
+            "polymer": {}
+          }
+        },
+        {
+          "name": "required",
+          "type": "boolean",
+          "description": "required attribute",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 132,
+              "column": 10
+            },
+            "end": {
+              "line": 135,
+              "column": 11
+            }
+          },
+          "metadata": {
+            "polymer": {}
+          }
+        },
+        {
+          "name": "pattern",
+          "type": "string",
+          "description": "regular expression pattern of the input",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 141,
+              "column": 10
+            },
+            "end": {
+              "line": 145,
+              "column": 11
+            }
+          },
+          "metadata": {
+            "polymer": {
+              "notify": true,
+              "observer": "\"_patternChanged\""
+            }
+          }
+        },
+        {
+          "name": "default",
+          "type": "string",
+          "description": "default value of the input",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 151,
+              "column": 10
+            },
+            "end": {
+              "line": 155,
+              "column": 11
+            }
+          },
+          "metadata": {
+            "polymer": {
+              "notify": true,
+              "observer": "\"_inputChanged\""
+            }
+          }
+        },
+        {
+          "name": "input",
+          "type": "string",
+          "description": "value string of the input",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 161,
+              "column": 10
+            },
+            "end": {
+              "line": 165,
+              "column": 11
+            }
+          },
+          "metadata": {
+            "polymer": {
+              "notify": true,
+              "observer": "\"_inputChanged\""
+            }
+          }
+        },
+        {
+          "name": "value",
+          "type": "string",
+          "description": "value string of the input",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 171,
+              "column": 10
+            },
+            "end": {
+              "line": 175,
+              "column": 11
+            }
+          },
+          "metadata": {
+            "polymer": {
+              "notify": true,
+              "observer": "\"_valueChanged\""
+            }
+          }
+        },
+        {
+          "name": "minlength",
+          "type": "number",
+          "description": "minlength of the input",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 181,
+              "column": 10
+            },
+            "end": {
+              "line": 183,
+              "column": 11
+            }
+          },
+          "metadata": {
+            "polymer": {}
+          }
+        },
+        {
+          "name": "maxlength",
+          "type": "number",
+          "description": "maxlength of the input",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 189,
+              "column": 10
+            },
+            "end": {
+              "line": 191,
+              "column": 11
+            }
+          },
+          "metadata": {
+            "polymer": {}
+          }
+        },
+        {
+          "name": "size",
+          "type": "number",
+          "description": "size of the input",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 197,
+              "column": 10
+            },
+            "end": {
+              "line": 199,
+              "column": 11
+            }
+          },
+          "metadata": {
+            "polymer": {}
+          }
+        },
+        {
+          "name": "noAutoSize",
+          "type": "number",
+          "description": "if true, the length of the value is not used for computing the size-attribute",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 205,
+              "column": 10
+            },
+            "end": {
+              "line": 207,
+              "column": 11
+            }
+          },
+          "metadata": {
+            "polymer": {}
+          }
+        },
+        {
+          "name": "spellcheck",
+          "type": "number",
+          "description": "if true, the input will check the spelling",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 213,
+              "column": 10
+            },
+            "end": {
+              "line": 216,
+              "column": 11
+            }
+          },
+          "metadata": {
+            "polymer": {}
+          },
+          "defaultValue": "false"
+        }
+      ],
+      "methods": [
+        {
+          "name": "connectedCallback",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 220,
+              "column": 6
+            },
+            "end": {
+              "line": 227,
+              "column": 7
+            }
+          },
+          "metadata": {},
+          "params": []
+        },
+        {
+          "name": "disconnectedCallback",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 229,
+              "column": 6
+            },
+            "end": {
+              "line": 232,
+              "column": 7
+            }
+          },
+          "metadata": {},
+          "params": []
+        },
+        {
+          "name": "_checkInput",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 234,
+              "column": 6
+            },
+            "end": {
+              "line": 240,
+              "column": 7
+            }
+          },
+          "metadata": {},
+          "params": []
+        },
+        {
+          "name": "_patternChanged",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 242,
+              "column": 6
+            },
+            "end": {
+              "line": 249,
+              "column": 7
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "pattern"
+            }
+          ]
+        },
+        {
+          "name": "_inputChanged",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 251,
+              "column": 6
+            },
+            "end": {
+              "line": 257,
+              "column": 7
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "input"
+            }
+          ]
+        },
+        {
+          "name": "_valueChanged",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 259,
+              "column": 6
+            },
+            "end": {
+              "line": 270,
+              "column": 7
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "value"
+            },
+            {
+              "name": "oldValue"
+            }
+          ]
+        },
+        {
+          "name": "_checkKeycode",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 272,
+              "column": 6
+            },
+            "end": {
+              "line": 290,
+              "column": 7
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "e"
+            }
+          ]
+        },
+        {
+          "name": "_computeSpellcheckAttribute",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 292,
+              "column": 6
+            },
+            "end": {
+              "line": 294,
+              "column": 7
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "spellcheck"
+            }
+          ]
+        },
+        {
+          "name": "focus",
+          "description": "focus the input",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 299,
+              "column": 6
+            },
+            "end": {
+              "line": 301,
+              "column": 7
+            }
+          },
+          "metadata": {},
+          "params": []
+        },
+        {
+          "name": "blur",
+          "description": "focus the input",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 306,
+              "column": 6
+            },
+            "end": {
+              "line": 308,
+              "column": 7
+            }
+          },
+          "metadata": {},
+          "params": []
+        }
+      ],
+      "staticMethods": [],
+      "demos": [],
+      "metadata": {},
+      "sourceRange": {
+        "start": {
+          "line": 10,
+          "column": 2
+        },
+        "end": {
+          "line": 310,
+          "column": 3
+        }
+      },
+      "privacy": "public",
+      "name": "TextInputMixin",
+      "attributes": [
+        {
+          "name": "autocomplete",
+          "description": "autocomplete the input",
+          "sourceRange": {
+            "start": {
+              "line": 99,
+              "column": 10
+            },
+            "end": {
+              "line": 101,
+              "column": 11
+            }
+          },
+          "metadata": {},
+          "type": "string"
+        },
+        {
+          "name": "type",
+          "description": "specify the type like 'password'",
+          "sourceRange": {
+            "start": {
+              "line": 106,
+              "column": 10
+            },
+            "end": {
+              "line": 110,
+              "column": 11
+            }
+          },
+          "metadata": {},
+          "type": "string"
+        },
+        {
+          "name": "placeholder",
+          "description": "placeholder string",
+          "sourceRange": {
+            "start": {
+              "line": 115,
+              "column": 10
+            },
+            "end": {
+              "line": 117,
+              "column": 11
+            }
+          },
+          "metadata": {},
+          "type": "string"
+        },
+        {
+          "name": "disabled",
+          "description": "disables the input",
+          "sourceRange": {
+            "start": {
+              "line": 123,
+              "column": 10
+            },
+            "end": {
+              "line": 126,
+              "column": 11
+            }
+          },
+          "metadata": {},
+          "type": "boolean"
+        },
+        {
+          "name": "required",
+          "description": "required attribute",
+          "sourceRange": {
+            "start": {
+              "line": 132,
+              "column": 10
+            },
+            "end": {
+              "line": 135,
+              "column": 11
+            }
+          },
+          "metadata": {},
+          "type": "boolean"
+        },
+        {
+          "name": "pattern",
+          "description": "regular expression pattern of the input",
+          "sourceRange": {
+            "start": {
+              "line": 141,
+              "column": 10
+            },
+            "end": {
+              "line": 145,
+              "column": 11
+            }
+          },
+          "metadata": {},
+          "type": "string"
+        },
+        {
+          "name": "default",
+          "description": "default value of the input",
+          "sourceRange": {
+            "start": {
+              "line": 151,
+              "column": 10
+            },
+            "end": {
+              "line": 155,
+              "column": 11
+            }
+          },
+          "metadata": {},
+          "type": "string"
+        },
+        {
+          "name": "input",
+          "description": "value string of the input",
+          "sourceRange": {
+            "start": {
+              "line": 161,
+              "column": 10
+            },
+            "end": {
+              "line": 165,
+              "column": 11
+            }
+          },
+          "metadata": {},
+          "type": "string"
+        },
+        {
+          "name": "value",
+          "description": "value string of the input",
+          "sourceRange": {
+            "start": {
+              "line": 171,
+              "column": 10
+            },
+            "end": {
+              "line": 175,
+              "column": 11
+            }
+          },
+          "metadata": {},
+          "type": "string"
+        },
+        {
+          "name": "minlength",
+          "description": "minlength of the input",
+          "sourceRange": {
+            "start": {
+              "line": 181,
+              "column": 10
+            },
+            "end": {
+              "line": 183,
+              "column": 11
+            }
+          },
+          "metadata": {},
+          "type": "number"
+        },
+        {
+          "name": "maxlength",
+          "description": "maxlength of the input",
+          "sourceRange": {
+            "start": {
+              "line": 189,
+              "column": 10
+            },
+            "end": {
+              "line": 191,
+              "column": 11
+            }
+          },
+          "metadata": {},
+          "type": "number"
+        },
+        {
+          "name": "size",
+          "description": "size of the input",
+          "sourceRange": {
+            "start": {
+              "line": 197,
+              "column": 10
+            },
+            "end": {
+              "line": 199,
+              "column": 11
+            }
+          },
+          "metadata": {},
+          "type": "number"
+        },
+        {
+          "name": "no-auto-size",
+          "description": "if true, the length of the value is not used for computing the size-attribute",
+          "sourceRange": {
+            "start": {
+              "line": 205,
+              "column": 10
+            },
+            "end": {
+              "line": 207,
+              "column": 11
+            }
+          },
+          "metadata": {},
+          "type": "number"
+        },
+        {
+          "name": "spellcheck",
+          "description": "if true, the input will check the spelling",
+          "sourceRange": {
+            "start": {
+              "line": 213,
+              "column": 10
+            },
+            "end": {
+              "line": 216,
+              "column": 11
+            }
+          },
+          "metadata": {},
+          "type": "number"
+        }
+      ],
+      "events": [],
+      "styling": {
+        "cssVariables": [],
+        "selectors": []
+      },
+      "slots": []
+    }
+  ]
+}
