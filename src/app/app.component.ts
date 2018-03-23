@@ -464,6 +464,7 @@ export class AppComponent implements OnInit {
   }
 
   nombreSeleccionado(v, codigo, dependencia, ubicacion, telefono, correo) {
+    console.log('NOMBRE SELECCIONADO');
     for (let x = 0; x < this.listaNombres.length; x++) {
       if (this.listaNombres[x] === v.value) {
         codigo.value = this.listaCodigos[x];
@@ -477,16 +478,21 @@ export class AppComponent implements OnInit {
   }
 
   codigoSeleccionado(v, nombre, dependencia, ubicacion, telefono, correo) {
-    for (let x = 0; x < this.listaCodigos.length; x++) {
-      if (this.listaCodigos[x] === v) {
-        nombre.value = this.listaNombres[x];
-        dependencia.value = this.listaDependencias[x];
-        ubicacion.value = this.listaUbicaciones[x];
-        telefono.value = this.listaTelefonos[x];
-        correo.value = this.listaCorreos[x];
-        break;
+    console.log('CODIGO SELECCIONADO');
+    console.log(v);
+    if(v.trim() !== '') {
+      for (let x = 0; x < this.listaCodigos.length; x++) {
+        if (this.listaCodigos[x] === v) {
+          nombre.value = this.listaNombres[x];
+          dependencia.value = this.listaDependencias[x];
+          ubicacion.value = this.listaUbicaciones[x];
+          telefono.value = this.listaTelefonos[x];
+          correo.value = this.listaCorreos[x];
+          break;
+        }
       }
     }
+
   }
 
   login(email, password, login_dialog, toast_bienvenido) {
@@ -538,7 +544,7 @@ export class AppComponent implements OnInit {
       case 'checkhelzio@gmail.com':
         return 0;
       case 'oscar.mendez@csh.udg.mx':
-        return 3;
+        return 0;
       case 'hiram.franco@csh.udg.mx':
         return 3;
       case 'roberto_028@outlook.com':
