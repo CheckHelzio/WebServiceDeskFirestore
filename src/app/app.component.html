@@ -1,104 +1,104 @@
 <app-header-layout fullbleed>
   <app-header fixed shadow slot="header">
     <app-toolbar id="toolbar">
-      <img src="assets/imagenes/cta.png" id="logo_cta">
+      <img src="../../aplicacion/servicedesk/assets/imagenes/cta.png" id="logo_cta">
       <div main-title>Service Desk CUCSH</div>
       <div *ngIf="afAuth.authState | async as user; else showLogin">
         <div [ngSwitch]="user.email">
           <div *ngSwitchCase="'oscar.mendez@csh.udg.mx'" #avatar id="avatar" style="width: 32px; height: 32px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('assets/imagenes/oscar.jpg')"
+    background-position: center; background-image: url('../../aplicacion/servicedesk/assets/imagenes/oscar.jpg')"
                (click)="logoutDialog(avatar, logout_dialog)">
           </div>
           <div *ngSwitchCase="'invitado@gmail.com'" #avatar id="avatar" style="width: 32px; height: 32px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('assets/imagenes/man.png')"
+    background-position: center; background-image: url('../../aplicacion/servicedesk/assets/imagenes/man.png')"
                (click)="logoutDialog(avatar, logout_dialog)">
           </div>
           <div *ngSwitchCase="'idania.gomez@csh.udg.mx'" #avatar id="avatar" style="width: 32px; height: 32px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('assets/imagenes/idania.png')"
+    background-position: center; background-image: url('../../aplicacion/servicedesk/assets/imagenes/idania.png')"
                (click)="logoutDialog(avatar, logout_dialog)">
           </div>
           <div *ngSwitchCase="'juan.mancilla@csh.udg.mx'" #avatar id="avatar" style="width: 32px; height: 32px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('assets/imagenes/juan.png')"
+    background-position: center; background-image: url('../../aplicacion/servicedesk/assets/imagenes/juan.png')"
                (click)="logoutDialog(avatar, logout_dialog)">
           </div>
           <div *ngSwitchCase="'hiram.franco@csh.udg.mx'" #avatar id="avatar" style="width: 32px; height: 32px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('assets/imagenes/hiram.jpg')"
+    background-position: center; background-image: url('../../aplicacion/servicedesk/assets/imagenes/hiram.jpg')"
                (click)="logoutDialog(avatar, logout_dialog)">
           </div>
           <div *ngSwitchCase="'ricardo.cortes@csh.udg.mx'" #avatar id="avatar" style="width: 32px; height: 32px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('assets/imagenes/ricardo.png')"
+    background-position: center; background-image: url('../../aplicacion/servicedesk/assets/imagenes/ricardo.png')"
                (click)="logoutDialog(avatar, logout_dialog)">
           </div>
           <div *ngSwitchCase="'teresa.dlsantos@csh.udg.mx'" #avatar id="avatar" style="width: 32px; height: 32px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('assets/imagenes/tere.png')"
+    background-position: center; background-image: url('../../aplicacion/servicedesk/assets/imagenes/tere.png')"
                (click)="logoutDialog(avatar, logout_dialog)">
           </div>
           <div *ngSwitchCase="'deleon.jonathan@csh.udg.mx'" #avatar id="avatar" style="width: 32px; height: 32px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('assets/imagenes/jona.png')"
+    background-position: center; background-image: url('../../aplicacion/servicedesk/assets/imagenes/jona.png')"
                (click)="logoutDialog(avatar, logout_dialog)">
           </div>
           <div *ngSwitchCase="'jose.carrillom@csh.udg.mx'" #avatar id="avatar" style="width: 32px; height: 32px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('assets/imagenes/gera.png')"
+    background-position: center; background-image: url('../../aplicacion/servicedesk/assets/imagenes/gera.png')"
                (click)="logoutDialog(avatar, logout_dialog)">
           </div>
           <div *ngSwitchCase="'eduardo.solano@redudg.udg.mx'" #avatar id="avatar" style="width: 32px; height: 32px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('assets/imagenes/solano.png')"
+    background-position: center; background-image: url('../../aplicacion/servicedesk/assets/imagenes/solano.png')"
                (click)="logoutDialog(avatar, logout_dialog)">
           </div>
           <div *ngSwitchCase="'octavio.cortazar@csh.udg.mx'" #avatar id="avatar" style="width: 32px; height: 32px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('assets/imagenes/octavio.png')"
+    background-position: center; background-image: url('../../aplicacion/servicedesk/assets/imagenes/octavio.png')"
                (click)="logoutDialog(avatar, logout_dialog)">
           </div>
           <div *ngSwitchCase="'oswaldo.mendoza@csh.udg.mx'" #avatar id="avatar" style="width: 32px; height: 32px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('assets/imagenes/oswaldo.png')"
+    background-position: center; background-image: url('../../aplicacion/servicedesk/assets/imagenes/oswaldo.png')"
                (click)="logoutDialog(avatar, logout_dialog)">
           </div>
           <div *ngSwitchCase="'elba.moralesg@csh.udg.mx'" #avatar id="avatar" style="width: 32px; height: 32px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('assets/imagenes/elba.png')"
+    background-position: center; background-image: url('../../aplicacion/servicedesk/assets/imagenes/elba.png')"
                (click)="logoutDialog(avatar, logout_dialog)">
           </div>
           <div *ngSwitchCase="'hector.shimizu@csh.udg.mx'" #avatar id="avatar" style="width: 32px; height: 32px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('assets/imagenes/hector.png')"
+    background-position: center; background-image: url('../../aplicacion/servicedesk/assets/imagenes/hector.png')"
                (click)="logoutDialog(avatar, logout_dialog)">
           </div>
           <div *ngSwitchCase="'eduardo.salazar@csh.udg.mx'" #avatar id="avatar" style="width: 32px; height: 32px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('assets/imagenes/lalo.png')"
+    background-position: center; background-image: url('../../aplicacion/servicedesk/assets/imagenes/lalo.png')"
                (click)="logoutDialog(avatar, logout_dialog)">
           </div>
           <div *ngSwitchCase="'enrique.vega@csh.udg.mx'" #avatar id="avatar" style="width: 32px; height: 32px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('assets/imagenes/enrique.png')"
+    background-position: center; background-image: url('../../aplicacion/servicedesk/assets/imagenes/enrique.png')"
                (click)="logoutDialog(avatar, logout_dialog)">
           </div>
           <div *ngSwitchCase="'emmanuelchacon_1@csh.udg.mx'" #avatar id="avatar" style="width: 32px; height: 32px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('assets/imagenes/manny.jpg')"
+    background-position: center; background-image: url('../../aplicacion/servicedesk/assets/imagenes/manny.jpg')"
                (click)="logoutDialog(avatar, logout_dialog)">
           </div>
           <div *ngSwitchCase="'omara@csh.udg.mx'" #avatar id="avatar" style="width: 32px; height: 32px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('assets/imagenes/omar.png')"
+    background-position: center; background-image: url('../../aplicacion/servicedesk/assets/imagenes/omar.png')"
                (click)="logoutDialog(avatar, logout_dialog)">
           </div>
           <div *ngSwitchCase="'zyanya.lopez@csh.udg.mx'" #avatar id="avatar" style="width: 32px; height: 32px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('assets/imagenes/zyan.png')"
+    background-position: center; background-image: url('../../aplicacion/servicedesk/assets/imagenes/zyan.png')"
                (click)="logoutDialog(avatar, logout_dialog)">
           </div>
           <div *ngSwitchCase="'alberto.franco@csh.udg.mx'" #avatar id="avatar" style="width: 32px; height: 32px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('assets/imagenes/mario.png')"
+    background-position: center; background-image: url('../../aplicacion/servicedesk/assets/imagenes/mario.png')"
                (click)="logoutDialog(avatar, logout_dialog)">
           </div>
           <div *ngSwitchCase="'jorge.plascencia@redudg.udg.mx'" #avatar id="avatar" style="width: 32px; height: 32px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('assets/imagenes/jorge.png')"
+    background-position: center; background-image: url('../../aplicacion/servicedesk/assets/imagenes/jorge.png')"
                (click)="logoutDialog(avatar, logout_dialog)">
           </div>
           <div *ngSwitchCase="'edgar.orozco@csh.udg.mx'" #avatar id="avatar" style="width: 32px; height: 32px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('assets/imagenes/edgar.png')"
+    background-position: center; background-image: url('../../aplicacion/servicedesk/assets/imagenes/edgar.png')"
                (click)="logoutDialog(avatar, logout_dialog)">
           </div>
           <div *ngSwitchCase="'roberto.villasenor@redudg.udg.mx'" #avatar id="avatar" style="width: 32px; height: 32px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('assets/imagenes/rober.png')"
+    background-position: center; background-image: url('../../aplicacion/servicedesk/assets/imagenes/rober.png')"
                (click)="logoutDialog(avatar, logout_dialog)">
           </div>
           <div *ngSwitchCase="'jose.crubio@csh.udg.mx'" #avatar id="avatar" style="width: 32px; height: 32px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('assets/imagenes/alberto.png')"
+    background-position: center; background-image: url('../../aplicacion/servicedesk/assets/imagenes/alberto.png')"
                (click)="logoutDialog(avatar, logout_dialog)">
           </div>
         </div>
@@ -796,7 +796,7 @@
     <div *ngIf="dialogCrearIncidente.opened" style="margin-top: 16px; margin-bottom: 16px">
       <div style="margin-bottom: 16px">
         <div style="display: flex; align-items: center;">
-          <img src="assets/imagenes/ic_taller.png" style="height: 24px; margin-left: 8px;">
+          <img src="../../aplicacion/servicedesk/assets/imagenes/ic_taller.png" style="height: 24px; margin-left: 8px;">
           <div style="padding-left: 16px">
             Taller de computo
           </div>
@@ -835,7 +835,7 @@
 
       <div style="margin-top: 24px">
         <div style="display: flex; align-items: center;">
-          <img src="assets/imagenes/ic_redes.svg" style="height: 24px; margin-left: 12px;">
+          <img src="../../aplicacion/servicedesk/assets/imagenes/ic_redes.svg" style="height: 24px; margin-left: 12px;">
           <div style="padding-left: 16px">
             Redes y telefonía
           </div>
@@ -948,7 +948,7 @@
 
       <div style="margin-top: 24px">
         <div style="display: flex; align-items: center;">
-          <img src="assets/imagenes/ic_aviso.png" style="height: 24px; margin-left: 8px;">
+          <img src="../../aplicacion/servicedesk/assets/imagenes/ic_aviso.png" style="height: 24px; margin-left: 8px;">
           <div style="padding-left: 16px">
             Avisos
           </div>
@@ -1020,7 +1020,7 @@
     <div style="margin-top: 16px; margin-bottom: 16px">
       <div style="margin-bottom: 16px">
         <div style="display: flex; align-items: center;">
-          <img src="assets/imagenes/ic_taller.png" style="height: 24px; margin-left: 8px;">
+          <img src="../../aplicacion/servicedesk/assets/imagenes/ic_taller.png" style="height: 24px; margin-left: 8px;">
           <div style="padding-left: 16px">
             Taller de computo
           </div>
@@ -1059,7 +1059,7 @@
 
       <div style="margin-top: 24px">
         <div style="display: flex; align-items: center;">
-          <img src="assets/imagenes/ic_redes.svg" style="height: 24px; margin-left: 12px;">
+          <img src="../../aplicacion/servicedesk/assets/imagenes/ic_redes.svg" style="height: 24px; margin-left: 12px;">
           <div style="padding-left: 16px">
             Redes y telefonía
           </div>
@@ -1201,7 +1201,7 @@
 
       <div style="margin-top: 24px">
         <div style="display: flex; align-items: center;">
-          <img src="assets/imagenes/ic_taller.png" style="height: 24px; margin-left: 8px;">
+          <img src="../../aplicacion/servicedesk/assets/imagenes/ic_taller.png" style="height: 24px; margin-left: 8px;">
           <div style="padding-left: 16px">
             Taller de computo
           </div>
@@ -1242,7 +1242,7 @@
 
       <div style="margin-top: 24px">
         <div style="display: flex; align-items: center;">
-          <img src="assets/imagenes/ic_redes.svg" style="height: 24px; margin-left: 12px;">
+          <img src="../../aplicacion/servicedesk/assets/imagenes/ic_redes.svg" style="height: 24px; margin-left: 12px;">
           <div style="padding-left: 16px">
             Redes y telefonía
           </div>
@@ -1346,11 +1346,11 @@
   <div style="height: 6px; width: 100%; background: #e66100; margin: 0; padding: 0;"></div>
 
   <div style="display: flex; margin: 0; padding: 0;">
-    <div style="width: 50%;  background-image: url('assets/imagenes/img_login.jpg');
+    <div style="width: 50%;  background-image: url('../../aplicacion/servicedesk/assets/imagenes/img_login.jpg');
     background-position: center; display: flex; align-items: center; justify-items: center">
 
       <div style="width: 100%;">
-        <img src="assets/imagenes/cta_letras.png" style="width: 50%; margin-left: auto; display: block;
+        <img src="../../aplicacion/servicedesk/assets/imagenes/cta_letras.png" style="width: 50%; margin-left: auto; display: block;
     margin-right: auto;">
         <div style="height: 2px; margin-top: 8px; width: 50%; background: #e66100; margin-left: auto; display: block;
     margin-right: auto;"></div>
@@ -1363,7 +1363,7 @@
       <div *ngIf="loginDialog.opened"
            style="box-sizing: border-box; padding-left: 56px; padding-right: 56px; padding-top: 32px; padding-bottom: 24px;">
 
-        <img src="assets/imagenes/logo_service_desk_blanco.png" style="height: 50px; margin-left: auto; display: block;
+        <img src="../../aplicacion/servicedesk/assets/imagenes/logo_service_desk_blanco.png" style="height: 50px; margin-left: auto; display: block;
     margin-right: auto;">
         <div class="labelBold" style="text-align: center; font-size: x-large; margin-top: 12px; margin-bottom: 32px">
           Service Desk CUCSH
@@ -1424,103 +1424,103 @@
     <div style="margin: 20px">
       <div [ngSwitch]="(user | async)?.email">
         <div *ngSwitchCase="'oscar.mendez@csh.udg.mx'" style="width: 90px; height: 90px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('assets/imagenes/oscar.jpg')"
+    background-position: center; background-image: url('../../aplicacion/servicedesk/assets/imagenes/oscar.jpg')"
              (click)="logoutDialog(avatar, logout_dialog)">
         </div>
         <div *ngSwitchCase="'invitado@gmail.com'" style="width: 90px; height: 90px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('assets/imagenes/man.png')"
+    background-position: center; background-image: url('../../aplicacion/servicedesk/assets/imagenes/man.png')"
              (click)="logoutDialog(avatar, logout_dialog)">
         </div>
         <div *ngSwitchCase="'idania.gomez@csh.udg.mx'" style="width: 90px; height: 90px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('assets/imagenes/idania.png')"
+    background-position: center; background-image: url('../../aplicacion/servicedesk/assets/imagenes/idania.png')"
              (click)="logoutDialog(avatar, logout_dialog)">
         </div>
         <div *ngSwitchCase="'juan.mancilla@csh.udg.mx'" style="width: 90px; height: 90px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('assets/imagenes/juan.png')"
+    background-position: center; background-image: url('../../aplicacion/servicedesk/assets/imagenes/juan.png')"
              (click)="logoutDialog(avatar, logout_dialog)">
         </div>
         <div *ngSwitchCase="'hiram.franco@csh.udg.mx'" style="width: 90px; height: 90px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('assets/imagenes/hiram.jpg')"
+    background-position: center; background-image: url('../../aplicacion/servicedesk/assets/imagenes/hiram.jpg')"
              (click)="logoutDialog(avatar, logout_dialog)">
         </div>
         <div *ngSwitchCase="'ricardo.cortes@csh.udg.mx'" style="width: 90px; height: 90px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('assets/imagenes/ricardo.png')"
+    background-position: center; background-image: url('../../aplicacion/servicedesk/assets/imagenes/ricardo.png')"
              (click)="logoutDialog(avatar, logout_dialog)">
         </div>
         <div *ngSwitchCase="'teresa.dlsantos@csh.udg.mx'" style="width: 90px; height: 90px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('assets/imagenes/tere.png')"
+    background-position: center; background-image: url('../../aplicacion/servicedesk/assets/imagenes/tere.png')"
              (click)="logoutDialog(avatar, logout_dialog)">
         </div>
         <div *ngSwitchCase="'deleon.jonathan@csh.udg.mx'" style="width: 90px; height: 90px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('assets/imagenes/jona.png')"
+    background-position: center; background-image: url('../../aplicacion/servicedesk/assets/imagenes/jona.png')"
              (click)="logoutDialog(avatar, logout_dialog)">
         </div>
         <div *ngSwitchCase="'jose.carrillom@csh.udg.mx'" style="width: 90px; height: 90px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('assets/imagenes/gera.png')"
+    background-position: center; background-image: url('../../aplicacion/servicedesk/assets/imagenes/gera.png')"
              (click)="logoutDialog(avatar, logout_dialog)">
         </div>
         <div *ngSwitchCase="'eduardo.solano@redudg.udg.mx'" style="width: 90px; height: 90px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('assets/imagenes/solano.png')"
+    background-position: center; background-image: url('../../aplicacion/servicedesk/assets/imagenes/solano.png')"
              (click)="logoutDialog(avatar, logout_dialog)">
         </div>
         <div *ngSwitchCase="'octavio.cortazar@csh.udg.mx'" style="width: 90px; height: 90px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('assets/imagenes/octavio.png')"
+    background-position: center; background-image: url('../../aplicacion/servicedesk/assets/imagenes/octavio.png')"
              (click)="logoutDialog(avatar, logout_dialog)">
         </div>
         <div *ngSwitchCase="'oswaldo.mendoza@csh.udg.mx'" style="width: 90px; height: 90px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('assets/imagenes/oswaldo.png')"
+    background-position: center; background-image: url('../../aplicacion/servicedesk/assets/imagenes/oswaldo.png')"
              (click)="logoutDialog(avatar, logout_dialog)">
         </div>
         <div *ngSwitchCase="'elba.moralesg@csh.udg.mx'" style="width: 90px; height: 90px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('assets/imagenes/elba.png')"
+    background-position: center; background-image: url('../../aplicacion/servicedesk/assets/imagenes/elba.png')"
              (click)="logoutDialog(avatar, logout_dialog)">
         </div>
         <div *ngSwitchCase="'hector.shimizu@csh.udg.mx'" style="width: 90px; height: 90px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('assets/imagenes/hector.png')"
+    background-position: center; background-image: url('../../aplicacion/servicedesk/assets/imagenes/hector.png')"
              (click)="logoutDialog(avatar, logout_dialog)">
         </div>
         <div *ngSwitchCase="'eduardo.salazar@csh.udg.mx'" style="width: 90px; height: 90px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('assets/imagenes/lalo.png')"
+    background-position: center; background-image: url('../../aplicacion/servicedesk/assets/imagenes/lalo.png')"
              (click)="logoutDialog(avatar, logout_dialog)">
         </div>
         <div *ngSwitchCase="'enrique.vega@csh.udg.mx'" style="width: 90px; height: 90px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('assets/imagenes/enrique.png')"
+    background-position: center; background-image: url('../../aplicacion/servicedesk/assets/imagenes/enrique.png')"
              (click)="logoutDialog(avatar, logout_dialog)">
         </div>
         <div *ngSwitchCase="'emmanuelchacon_1@csh.udg.mx'" style="width: 90px; height: 90px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('assets/imagenes/manny.jpg')"
+    background-position: center; background-image: url('../../aplicacion/servicedesk/assets/imagenes/manny.jpg')"
              (click)="logoutDialog(avatar, logout_dialog)">
         </div>
         <div *ngSwitchCase="'omara@csh.udg.mx'" style="width: 90px; height: 90px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('assets/imagenes/omar.png')"
+    background-position: center; background-image: url('../../aplicacion/servicedesk/assets/imagenes/omar.png')"
              (click)="logoutDialog(avatar, logout_dialog)">
         </div>
         <div *ngSwitchCase="'zyanya.lopez@csh.udg.mx'" style="width: 90px; height: 90px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('assets/imagenes/zyan.png')"
+    background-position: center; background-image: url('../../aplicacion/servicedesk/assets/imagenes/zyan.png')"
              (click)="logoutDialog(avatar, logout_dialog)">
         </div>
         <div *ngSwitchCase="'alberto.franco@csh.udg.mx'" style="width: 90px; height: 90px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('assets/imagenes/mario.png')"
+    background-position: center; background-image: url('../../aplicacion/servicedesk/assets/imagenes/mario.png')"
              (click)="logoutDialog(avatar, logout_dialog)">
         </div>
         <div *ngSwitchCase="'jorge.plascencia@redudg.udg.mx'" style="width: 90px; height: 90px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('assets/imagenes/jorge.png')"
+    background-position: center; background-image: url('../../aplicacion/servicedesk/assets/imagenes/jorge.png')"
              (click)="logoutDialog(avatar, logout_dialog)">
         </div>
         <div *ngSwitchCase="'edgar.orozco@csh.udg.mx'" style="width: 90px; height: 90px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('assets/imagenes/edgar.png')"
+    background-position: center; background-image: url('../../aplicacion/servicedesk/assets/imagenes/edgar.png')"
              (click)="logoutDialog(avatar, logout_dialog)">
         </div>
         <div *ngSwitchCase="'kenya.andrade@csh.udg.mx'" style="width: 90px; height: 90px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('assets/imagenes/kenia.png')"
+    background-position: center; background-image: url('../../aplicacion/servicedesk/assets/imagenes/kenia.png')"
              (click)="logoutDialog(avatar, logout_dialog)">
         </div>
         <div *ngSwitchCase="'roberto.villasenor@redudg.udg.mx'" style="width: 90px; height: 90px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('assets/imagenes/rober.png')"
+    background-position: center; background-image: url('../../aplicacion/servicedesk/assets/imagenes/rober.png')"
              (click)="logoutDialog(avatar, logout_dialog)">
         </div>
         <div *ngSwitchCase="'jose.crubio@csh.udg.mx'" style="width: 90px; height: 90px; overflow: hidden; border-radius: 50%; background-size: cover;
-    background-position: center; background-image: url('assets/imagenes/alberto.png')"
+    background-position: center; background-image: url('../../aplicacion/servicedesk/assets/imagenes/alberto.png')"
              (click)="logoutDialog(avatar, logout_dialog)">
         </div>
       </div>
